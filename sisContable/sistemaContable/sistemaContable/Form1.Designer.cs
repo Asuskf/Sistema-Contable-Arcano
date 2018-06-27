@@ -89,9 +89,9 @@
             // pictureLogo
             // 
             this.pictureLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureLogo.Image")));
-            this.pictureLogo.Location = new System.Drawing.Point(67, 94);
+            this.pictureLogo.Location = new System.Drawing.Point(59, 53);
             this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(100, 77);
+            this.pictureLogo.Size = new System.Drawing.Size(129, 109);
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLogo.TabIndex = 0;
             this.pictureLogo.TabStop = false;
