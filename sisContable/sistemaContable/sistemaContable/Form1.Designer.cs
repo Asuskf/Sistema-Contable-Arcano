@@ -79,11 +79,11 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(17, 179);
+            this.lblNombre.Location = new System.Drawing.Point(11, 179);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(230, 23);
+            this.lblNombre.Size = new System.Drawing.Size(236, 23);
             this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Sistema contable Arcano";
+            this.lblNombre.Text = "Sistema Contable Arcano";
             this.lblNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureLogo
@@ -179,10 +179,10 @@
             this.linkRecPassword.LinkColor = System.Drawing.Color.Silver;
             this.linkRecPassword.Location = new System.Drawing.Point(417, 278);
             this.linkRecPassword.Name = "linkRecPassword";
-            this.linkRecPassword.Size = new System.Drawing.Size(186, 16);
+            this.linkRecPassword.Size = new System.Drawing.Size(182, 16);
             this.linkRecPassword.TabIndex = 0;
             this.linkRecPassword.TabStop = true;
-            this.linkRecPassword.Text = "¿Has olvidadoi tu contraseña?";
+            this.linkRecPassword.Text = "¿Has olvidado tu contraseña?";
             // 
             // btnCrearCuenta
             // 
