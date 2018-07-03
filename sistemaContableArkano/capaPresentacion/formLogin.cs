@@ -16,12 +16,10 @@ namespace capaPresentacion
         public formLogin()
         {
             InitializeComponent();
+            
         }
         //Arrastrar con mouse para mover la ventana 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -98,8 +96,7 @@ namespace capaPresentacion
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+           Controladores.controladores.moverCuadro.mover(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
