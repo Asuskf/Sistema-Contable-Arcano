@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace sistemaContable.Properties
+namespace capaPresentacion.Properties
 {
 
 

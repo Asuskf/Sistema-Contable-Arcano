@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace sistemaContable
+namespace capaPresentacion
 {
-    public partial class Form1 : Form
+    public partial class formLogin : Form
     {
-        public Form1()
+        public formLogin()
         {
             InitializeComponent();
         }
@@ -100,6 +100,11 @@ namespace sistemaContable
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
