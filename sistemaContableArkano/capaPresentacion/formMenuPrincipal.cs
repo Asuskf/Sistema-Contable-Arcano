@@ -86,5 +86,7 @@ namespace capaPresentacion
             this.panelContenedor.Tag = formulario;
             formulario.Show();
         }
+
+        
     }
 }

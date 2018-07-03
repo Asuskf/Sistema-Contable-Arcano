@@ -60,6 +60,12 @@
     <Compile Include="formMenuPrincipal.Designer.cs">
       <DependentUpon>formMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="formUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUsuario.Designer.cs">
+      <DependentUpon>formUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formLogin.resx">
@@ -67,6 +73,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMenuPrincipal.resx">
       <DependentUpon>formMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUsuario.resx">
+      <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

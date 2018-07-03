@@ -40,7 +40,6 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.linkRecPassword = new System.Windows.Forms.LinkLabel();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -166,7 +165,7 @@
             this.btnAcceder.ForeColor = System.Drawing.Color.LightGray;
             this.btnAcceder.Location = new System.Drawing.Point(298, 205);
             this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(176, 40);
+            this.btnAcceder.Size = new System.Drawing.Size(439, 40);
             this.btnAcceder.TabIndex = 3;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = false;
@@ -183,22 +182,6 @@
             this.linkRecPassword.TabIndex = 0;
             this.linkRecPassword.TabStop = true;
             this.linkRecPassword.Text = "¿Has olvidado tu contraseña?";
-            // 
-            // btnCrearCuenta
-            // 
-            this.btnCrearCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
-            this.btnCrearCuenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnCrearCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(561, 205);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(176, 40);
-            this.btnCrearCuenta.TabIndex = 4;
-            this.btnCrearCuenta.Text = "Crear Cuenta";
-            this.btnCrearCuenta.UseVisualStyleBackColor = false;
             // 
             // btnMinimizar
             // 
@@ -239,7 +222,7 @@
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter_1);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave_1);
             // 
-            // Form1
+            // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,7 +231,6 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnMinimizar);
-            this.Controls.Add(this.btnCrearCuenta);
             this.Controls.Add(this.linkRecPassword);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.lblLogin);
@@ -256,7 +238,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "formLogin";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -285,7 +267,6 @@
         private System.Windows.Forms.PictureBox pictureLogo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button btnCrearCuenta;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.TextBox txtUsuario;
