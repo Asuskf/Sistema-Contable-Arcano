@@ -88,6 +88,7 @@
             this.btnUsuario.TabIndex = 8;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = true;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // btnCompras
             // 

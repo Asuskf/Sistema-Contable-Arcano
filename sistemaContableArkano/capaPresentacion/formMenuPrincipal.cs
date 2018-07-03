@@ -87,6 +87,9 @@ namespace capaPresentacion
             formulario.Show();
         }
 
-        
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            abrirFormularioPanel(new formUsuario());
+        }
     }
 }
