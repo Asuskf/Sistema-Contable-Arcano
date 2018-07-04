@@ -91,5 +91,15 @@ namespace capaPresentacion
         {
             abrirFormularioPanel(new formUsuario());
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblReloj.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

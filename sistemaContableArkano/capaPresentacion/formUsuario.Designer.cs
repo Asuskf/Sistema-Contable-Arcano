@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUsuario));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.btnActualizarUsuario = new System.Windows.Forms.Button();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCambiarUsuario = new System.Windows.Forms.Button();
@@ -42,198 +43,226 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.lblCrearUsuario = new System.Windows.Forms.Label();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // btnEliminarUsuario
             // 
-            this.panel1.Controls.Add(this.txtNombreUsuario);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnCambiarUsuario);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtCorreo);
-            this.panel1.Controls.Add(this.txtDireccion);
-            this.panel1.Controls.Add(this.lblDireccion);
-            this.panel1.Controls.Add(this.lblApellido);
-            this.panel1.Controls.Add(this.txtApellido);
-            this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Controls.Add(this.lblNombre);
-            this.panel1.Controls.Add(this.btnCerrar);
-            this.panel1.Controls.Add(this.lblCrearUsuario);
-            this.panel1.Controls.Add(this.btnCrearUsuario);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 0;
+            this.btnEliminarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(47)))), ((int)(((byte)(30)))));
+            this.btnEliminarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEliminarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnEliminarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarUsuario.Image")));
+            this.btnEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(12, 137);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(380, 42);
+            this.btnEliminarUsuario.TabIndex = 61;
+            this.btnEliminarUsuario.TabStop = false;
+            this.btnEliminarUsuario.Text = "Eliminar  Usuario";
+            this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizarUsuario
+            // 
+            this.btnActualizarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(194)))), ((int)(((byte)(83)))));
+            this.btnActualizarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnActualizarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnActualizarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnActualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnActualizarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizarUsuario.Image")));
+            this.btnActualizarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizarUsuario.Location = new System.Drawing.Point(12, 70);
+            this.btnActualizarUsuario.Name = "btnActualizarUsuario";
+            this.btnActualizarUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnActualizarUsuario.Size = new System.Drawing.Size(380, 41);
+            this.btnActualizarUsuario.TabIndex = 60;
+            this.btnActualizarUsuario.TabStop = false;
+            this.btnActualizarUsuario.Text = "Editar Usuario";
+            this.btnActualizarUsuario.UseVisualStyleBackColor = false;
             // 
             // txtNombreUsuario
             // 
-            this.txtNombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreUsuario.Location = new System.Drawing.Point(212, 116);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(3, 3);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(191, 22);
-            this.txtNombreUsuario.TabIndex = 42;
+            this.txtNombreUsuario.Size = new System.Drawing.Size(497, 22);
+            this.txtNombreUsuario.TabIndex = 59;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 116);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 20);
-            this.label2.TabIndex = 41;
+            this.label2.Size = new System.Drawing.Size(181, 20);
+            this.label2.TabIndex = 58;
             this.label2.Text = "Nombre de Usuario:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCambiarUsuario
             // 
-            this.btnCambiarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCambiarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(120)))), ((int)(((byte)(89)))));
+            this.btnCambiarUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCambiarUsuario.FlatAppearance.BorderSize = 0;
             this.btnCambiarUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnCambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarUsuario.ForeColor = System.Drawing.Color.White;
             this.btnCambiarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambiarUsuario.Location = new System.Drawing.Point(516, 281);
+            this.btnCambiarUsuario.Location = new System.Drawing.Point(24, 191);
             this.btnCambiarUsuario.Name = "btnCambiarUsuario";
             this.btnCambiarUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCambiarUsuario.Size = new System.Drawing.Size(183, 45);
-            this.btnCambiarUsuario.TabIndex = 40;
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(415, 41);
+            this.btnCambiarUsuario.TabIndex = 57;
             this.btnCambiarUsuario.Text = "icono de usuario";
             this.btnCambiarUsuario.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(516, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(415, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 292);
+            this.label1.Location = new System.Drawing.Point(3, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 38;
+            this.label1.Size = new System.Drawing.Size(181, 27);
+            this.label1.TabIndex = 55;
             this.label1.Text = "Correo:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(133, 293);
+            this.txtCorreo.Location = new System.Drawing.Point(3, 195);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(191, 22);
-            this.txtCorreo.TabIndex = 37;
+            this.txtCorreo.Size = new System.Drawing.Size(497, 22);
+            this.txtCorreo.TabIndex = 54;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDireccion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(133, 244);
+            this.txtDireccion.Location = new System.Drawing.Point(3, 147);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(191, 22);
-            this.txtDireccion.TabIndex = 36;
+            this.txtDireccion.Size = new System.Drawing.Size(497, 22);
+            this.txtDireccion.TabIndex = 53;
             // 
             // lblDireccion
             // 
-            this.lblDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDireccion.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(43, 244);
+            this.lblDireccion.Location = new System.Drawing.Point(3, 78);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(82, 20);
-            this.lblDireccion.TabIndex = 35;
+            this.lblDireccion.Size = new System.Drawing.Size(181, 20);
+            this.lblDireccion.TabIndex = 52;
             this.lblDireccion.Text = "Dirección:";
+            this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblApellido
             // 
-            this.lblApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblApellido.AutoSize = true;
+            this.lblApellido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblApellido.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(46, 201);
+            this.lblApellido.Location = new System.Drawing.Point(3, 52);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(74, 20);
-            this.lblApellido.TabIndex = 34;
+            this.lblApellido.Size = new System.Drawing.Size(181, 20);
+            this.lblApellido.TabIndex = 51;
             this.lblApellido.Text = "Apellido:";
+            this.lblApellido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtApellido
             // 
-            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApellido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(133, 199);
+            this.txtApellido.Location = new System.Drawing.Point(3, 99);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(191, 22);
-            this.txtApellido.TabIndex = 33;
+            this.txtApellido.Size = new System.Drawing.Size(497, 22);
+            this.txtApellido.TabIndex = 50;
             // 
             // txtNombre
             // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(133, 157);
+            this.txtNombre.Location = new System.Drawing.Point(3, 51);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(191, 22);
-            this.txtNombre.TabIndex = 32;
+            this.txtNombre.Size = new System.Drawing.Size(497, 22);
+            this.txtNombre.TabIndex = 49;
             // 
             // lblNombre
             // 
-            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNombre.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(46, 156);
+            this.lblNombre.Location = new System.Drawing.Point(3, 26);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(72, 20);
-            this.lblNombre.TabIndex = 31;
+            this.lblNombre.Size = new System.Drawing.Size(181, 20);
+            this.lblNombre.TabIndex = 48;
             this.lblNombre.Text = "Nombre:";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(721, 28);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(36, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 30;
-            this.btnCerrar.TabStop = false;
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblCrearUsuario
             // 
-            this.lblCrearUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCrearUsuario.AutoSize = true;
+            this.lblCrearUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCrearUsuario.Font = new System.Drawing.Font("Century", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrearUsuario.Location = new System.Drawing.Point(184, 40);
+            this.lblCrearUsuario.Location = new System.Drawing.Point(3, 0);
             this.lblCrearUsuario.Name = "lblCrearUsuario";
-            this.lblCrearUsuario.Size = new System.Drawing.Size(326, 33);
-            this.lblCrearUsuario.TabIndex = 29;
+            this.lblCrearUsuario.Size = new System.Drawing.Size(1691, 37);
+            this.lblCrearUsuario.TabIndex = 46;
             this.lblCrearUsuario.Text = "Datos del nuevo usuario";
+            this.lblCrearUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCrearUsuario.Click += new System.EventHandler(this.lblCrearUsuario_Click);
             // 
             // btnCrearUsuario
             // 
             this.btnCrearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(130)))));
-            this.btnCrearUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCrearUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCrearUsuario.FlatAppearance.BorderSize = 0;
             this.btnCrearUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnCrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -241,35 +270,229 @@
             this.btnCrearUsuario.ForeColor = System.Drawing.Color.White;
             this.btnCrearUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearUsuario.Image")));
             this.btnCrearUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(0, 405);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(12, 3);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCrearUsuario.Size = new System.Drawing.Size(800, 45);
-            this.btnCrearUsuario.TabIndex = 28;
+            this.btnCrearUsuario.Size = new System.Drawing.Size(380, 41);
+            this.btnCrearUsuario.TabIndex = 45;
+            this.btnCrearUsuario.TabStop = false;
             this.btnCrearUsuario.Text = "Añadir usuario";
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.lblCrearUsuario, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1697, 37);
+            this.tableLayoutPanel1.TabIndex = 62;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 37);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1697, 301);
+            this.tableLayoutPanel2.TabIndex = 63;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblNombre, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblApellido, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblDireccion, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 8);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 63);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 9;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(333, 235);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.txtNombreUsuario, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtNombre, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtApellido, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtDireccion, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.txtCorreo, 0, 8);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(342, 63);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 9;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(503, 235);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.5F));
+            this.tableLayoutPanel5.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnCambiarUsuario, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 2, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(851, 63);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(843, 235);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 97.5F));
+            this.tableLayoutPanel6.Controls.Add(this.btnCrearUsuario, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnActualizarUsuario, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.btnEliminarUsuario, 1, 4);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(445, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 5;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(395, 182);
+            this.tableLayoutPanel6.TabIndex = 58;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel7.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 1);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 338);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1697, 222);
+            this.tableLayoutPanel7.TabIndex = 64;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1691, 171);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel8.Controls.Add(this.btnCerrar, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 180);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1691, 39);
+            this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(170)))), ((int)(((byte)(103)))));
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(1524, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCerrar.Size = new System.Drawing.Size(164, 33);
+            this.btnCerrar.TabIndex = 64;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar2_Click_1);
             // 
             // formUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1697, 560);
+            this.Controls.Add(this.tableLayoutPanel7);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formUsuario";
             this.Text = "formUsuario";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEliminarUsuario;
+        private System.Windows.Forms.Button btnActualizarUsuario;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCambiarUsuario;
@@ -282,8 +505,17 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label lblCrearUsuario;
         private System.Windows.Forms.Button btnCrearUsuario;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

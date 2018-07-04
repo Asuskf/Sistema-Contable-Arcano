@@ -27,6 +27,24 @@ namespace capaPresentacion
 
         }
 
-       
+        private void lblCrearUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCerrar2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCerrar2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
