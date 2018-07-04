@@ -50,13 +50,13 @@ namespace capaPresentacion
 
         private void txtContrasenia_Enter(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosTextoMouse(txtContrasenia, txtContrasenia.Text);
+            Controladores.controladores.cuadrosTextoMouse(txtContrasenia, lblContrasenia.Text);
             txtContrasenia.UseSystemPasswordChar = true;
         }
 
         private void txtNombre_Enter(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosTextoMouse(txtNombre, txtNombre.Text);
+            Controladores.controladores.cuadrosTextoMouse(txtNombre, lblNombre.Text);
         }
 
         private void txtNombre_Leave(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace capaPresentacion
 
         private void txtApellido_Enter(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosTextoMouse(txtApellido, txtApellido.Text);
+            Controladores.controladores.cuadrosTextoMouse(txtApellido, lblApellido.Text);
         }
 
         private void txtApellido_Leave(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace capaPresentacion
 
         private void txtDireccion_Enter(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosTextoMouse(txtDireccion, txtDireccion.Text);
+            Controladores.controladores.cuadrosTextoMouse(txtDireccion, lblDireccion.Text);
         }
 
         private void txtDireccion_Leave(object sender, EventArgs e)
@@ -86,17 +86,17 @@ namespace capaPresentacion
 
         private void txtCorreo_Enter(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosTextoMouse(txtCorreo, txtCorreo.Text);
+            Controladores.controladores.cuadrosTextoMouse(txtCorreo, lblCorreo.Text);
         }
 
         private void txtCorreo_Leave(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosSinTextoMouse(txtDireccion, lblDireccion.Text);
+            Controladores.controladores.cuadrosSinTextoMouse(txtCorreo, lblCorreo.Text);
         }
 
         private void txtNombreUsuario_Enter(object sender, EventArgs e)
         {
-            Controladores.controladores.cuadrosTextoMouse(txtNombreUsuario, txtNombreUsuario.Text);
+            Controladores.controladores.cuadrosTextoMouse(txtNombreUsuario, lblNombreUsuario.Text);
         }
 
         private void txtNombreUsuario_Leave(object sender, EventArgs e)
@@ -107,7 +107,8 @@ namespace capaPresentacion
         private void txtContrasenia_Leave(object sender, EventArgs e)
         {
             Controladores.controladores.cuadrosSinTextoMouse(txtContrasenia, lblContrasenia.Text);
-            txtContrasenia.UseSystemPasswordChar = false;
+            if (txtContrasenia.Text == lblContrasenia.Text)
+                txtContrasenia.UseSystemPasswordChar = false;
         }
     }
 }
