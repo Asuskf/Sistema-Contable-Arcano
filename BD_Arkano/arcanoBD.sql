@@ -1,6 +1,6 @@
 /*==============================================================*/
-/* DBMS name:      Microsoft SQL Server 2014                    */
-/* Created on:     3/7/2018 16:39:00                            */
+/* DBMS name:      Microsoft SQL Server 2012                    */
+/* Created on:     4/7/2018 8:35:42                             */
 /*==============================================================*/
 
 
@@ -227,7 +227,7 @@ create table TB_CLIENTE (
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
-   constraint PK_TB_CLIENTE primary key (CLIENTEID)
+   constraint PK_TB_CLIENTE primary key nonclustered (CLIENTEID)
 )
 go
 
@@ -239,49 +239,43 @@ create table TB_DETALLES_TRANSACCION (
    TRANSACCIONID        int                  null,
    DESCRIPCION          text                 not null,
    PRECIOUNIDAD         money                not null,
-   constraint PK_TB_DETALLES_TRANSACCION primary key (DETALLETRANSACCIONID)
+   constraint PK_TB_DETALLES_TRANSACCION primary key nonclustered (DETALLETRANSACCIONID)
 )
 go
 
 /*==============================================================*/
 /* Index: FK_DTRANSACCIOON_FK                                   */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_DTRANSACCIOON_FK on TB_DETALLES_TRANSACCION (TRANSACCIONID ASC)
+create index FK_DTRANSACCIOON_FK on TB_DETALLES_TRANSACCION (
+TRANSACCIONID ASC
+)
 go
 
 /*==============================================================*/
 /* Table: TB_ITEM_TRANSACCION                                   */
 /*==============================================================*/
 create table TB_ITEM_TRANSACCION (
+   ITEMTRANSACCIONID    int                  not null,
    DETALLETRANSACCIONID int                  not null,
    ITEMID               int                  not null,
-   ITEMTRANSACCIONID    int                  not null,
-   constraint PK_TB_ITEM_TRANSACCION primary key (ITEMTRANSACCIONID)
+   constraint PK_TB_ITEM_TRANSACCION primary key nonclustered (ITEMTRANSACCIONID)
 )
 go
 
 /*==============================================================*/
 /* Index: TB_ITEM_TRANSACCION2_FK                               */
 /*==============================================================*/
-
-
-
-
-create nonclustered index TB_ITEM_TRANSACCION2_FK on TB_ITEM_TRANSACCION (ITEMID ASC)
+create index TB_ITEM_TRANSACCION2_FK on TB_ITEM_TRANSACCION (
+ITEMID ASC
+)
 go
 
 /*==============================================================*/
 /* Index: FK_ITRANSACCION_DTRANSACCION_FK                       */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_ITRANSACCION_DTRANSACCION_FK on TB_ITEM_TRANSACCION (DETALLETRANSACCIONID ASC)
+create index FK_ITRANSACCION_DTRANSACCION_FK on TB_ITEM_TRANSACCION (
+DETALLETRANSACCIONID ASC
+)
 go
 
 /*==============================================================*/
@@ -292,18 +286,16 @@ create table TB_PLANCUENTAS_ASIENTO (
    SUBGRUPOID           int                  null,
    NUMEROIASIENTO       char(10)             not null,
    NOMBREASIENTO        char(90)             null,
-   constraint PK_TB_PLANCUENTAS_ASIENTO primary key (ASIENTOID2)
+   constraint PK_TB_PLANCUENTAS_ASIENTO primary key nonclustered (ASIENTOID2)
 )
 go
 
 /*==============================================================*/
 /* Index: FK_CASIENTO_CSUBGRUPO_FK                              */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_CASIENTO_CSUBGRUPO_FK on TB_PLANCUENTAS_ASIENTO (SUBGRUPOID ASC)
+create index FK_CASIENTO_CSUBGRUPO_FK on TB_PLANCUENTAS_ASIENTO (
+SUBGRUPOID ASC
+)
 go
 
 /*==============================================================*/
@@ -313,7 +305,7 @@ create table TB_PLANCUENTAS_GRUPO (
    PLANCUENTASID        int                  not null,
    CODIGOGRUPO          numeric(1)           not null,
    TIPO                 varchar(31)          not null,
-   constraint PK_TB_PLANCUENTAS_GRUPO primary key (PLANCUENTASID)
+   constraint PK_TB_PLANCUENTAS_GRUPO primary key nonclustered (PLANCUENTASID)
 )
 go
 
@@ -325,18 +317,16 @@ create table TB_PLANCUENTAS_ITEM (
    ASIENTOID2           int                  null,
    NUMEROITEM           char(14)             not null,
    NOMBREITEM           char(85)             not null,
-   constraint PK_TB_PLANCUENTAS_ITEM primary key (ITEMID)
+   constraint PK_TB_PLANCUENTAS_ITEM primary key nonclustered (ITEMID)
 )
 go
 
 /*==============================================================*/
 /* Index: FK_CITEM_CASIENTO_FK                                  */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_CITEM_CASIENTO_FK on TB_PLANCUENTAS_ITEM (ASIENTOID2 ASC)
+create index FK_CITEM_CASIENTO_FK on TB_PLANCUENTAS_ITEM (
+ASIENTOID2 ASC
+)
 go
 
 /*==============================================================*/
@@ -347,18 +337,16 @@ create table TB_PLANCUENTAS_SUBGRUPO (
    PLANCUENTASID        int                  null,
    CODIGOSUBGRUPO       char(4)              not null,
    NOMBRESUBGRUPO       char(65)             not null,
-   constraint PK_TB_PLANCUENTAS_SUBGRUPO primary key (SUBGRUPOID)
+   constraint PK_TB_PLANCUENTAS_SUBGRUPO primary key nonclustered (SUBGRUPOID)
 )
 go
 
 /*==============================================================*/
 /* Index: FK_CSUBGRUPO_CGRUPO_FK                                */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_CSUBGRUPO_CGRUPO_FK on TB_PLANCUENTAS_SUBGRUPO (PLANCUENTASID ASC)
+create index FK_CSUBGRUPO_CGRUPO_FK on TB_PLANCUENTAS_SUBGRUPO (
+PLANCUENTASID ASC
+)
 go
 
 /*==============================================================*/
@@ -370,7 +358,7 @@ create table TB_PROVEEDOR (
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
-   constraint PK_TB_PROVEEDOR primary key (PROVEEDORID)
+   constraint PK_TB_PROVEEDOR primary key nonclustered (PROVEEDORID)
 )
 go
 
@@ -379,45 +367,39 @@ go
 /*==============================================================*/
 create table TB_TRANSACCION (
    TRANSACCIONID        int                  not null,
+   USUARIOID            int                  null,
    CLIENTEID            int                  null,
    PROVEEDORID          int                  null,
-   USUARIOID            int                  null,
    DESCRIPCION          text                 not null,
    TIPO                 text                 not null,
    FECHA_               datetime             not null,
    AUTORIZACION         text                 not null,
-   constraint PK_TB_TRANSACCION primary key (TRANSACCIONID)
+   constraint PK_TB_TRANSACCION primary key nonclustered (TRANSACCIONID)
 )
 go
 
 /*==============================================================*/
 /* Index: FK_TRANSACCION_CLIENTE_FK                             */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_TRANSACCION_CLIENTE_FK on TB_TRANSACCION (CLIENTEID ASC)
+create index FK_TRANSACCION_CLIENTE_FK on TB_TRANSACCION (
+CLIENTEID ASC
+)
 go
 
 /*==============================================================*/
 /* Index: FK_TRANSACCION_PROVEEDOR_FK                           */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_TRANSACCION_PROVEEDOR_FK on TB_TRANSACCION (PROVEEDORID ASC)
+create index FK_TRANSACCION_PROVEEDOR_FK on TB_TRANSACCION (
+PROVEEDORID ASC
+)
 go
 
 /*==============================================================*/
 /* Index: FK_USUARIO_TRANSACCION_FK                             */
 /*==============================================================*/
-
-
-
-
-create nonclustered index FK_USUARIO_TRANSACCION_FK on TB_TRANSACCION (USUARIOID ASC)
+create index FK_USUARIO_TRANSACCION_FK on TB_TRANSACCION (
+USUARIOID ASC
+)
 go
 
 /*==============================================================*/
@@ -431,7 +413,8 @@ create table TB_USUARIO (
    CORREO               varchar(30)          not null,
    FOTO                 image                null,
    NOMBRE_USUARIO       varchar(20)          null,
-   constraint PK_TB_USUARIO primary key (USUARIOID)
+   CONTRASENIA_USUARIO  varchar(50)          null,
+   constraint PK_TB_USUARIO primary key nonclustered (USUARIOID)
 )
 go
 
