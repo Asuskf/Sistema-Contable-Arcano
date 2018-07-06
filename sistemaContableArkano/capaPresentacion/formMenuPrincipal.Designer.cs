@@ -111,6 +111,7 @@
             this.btnCompras.TabIndex = 7;
             this.btnCompras.Text = "Compras";
             this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnProveedores
             // 

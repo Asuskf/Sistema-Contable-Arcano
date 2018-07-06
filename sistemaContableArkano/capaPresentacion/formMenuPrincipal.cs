@@ -106,5 +106,10 @@ namespace capaPresentacion
         {
             //relooj
         }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            ///comentario en la asasa
+        }
     }
 }
