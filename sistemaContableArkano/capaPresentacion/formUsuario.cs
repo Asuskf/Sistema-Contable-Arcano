@@ -110,5 +110,10 @@ namespace capaPresentacion
             if (txtContrasenia.Text == lblContrasenia.Text)
                 txtContrasenia.UseSystemPasswordChar = false;
         }
+
+        private void btnCambiarUsuario_Click(object sender, EventArgs e)
+        {
+            /////dario
+        }
     }
 }
