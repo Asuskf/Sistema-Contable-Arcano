@@ -101,5 +101,10 @@ namespace capaPresentacion
         {
             lblReloj.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void lblReloj_Click(object sender, EventArgs e)
+        {
+            //relooj
+        }
     }
 }

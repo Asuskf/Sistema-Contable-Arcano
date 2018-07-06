@@ -318,6 +318,7 @@
             this.lblReloj.TabIndex = 0;
             this.lblReloj.Text = "00:00:00";
             this.lblReloj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblReloj.Click += new System.EventHandler(this.lblReloj_Click);
             // 
             // timer1
             // 
