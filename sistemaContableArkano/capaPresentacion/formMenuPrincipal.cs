@@ -106,7 +106,7 @@ namespace capaPresentacion
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            ///comentario en la asasa
+            
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
