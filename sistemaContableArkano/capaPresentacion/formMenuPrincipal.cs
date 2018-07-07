@@ -101,5 +101,17 @@ namespace capaPresentacion
         {
             lblReloj.Text = DateTime.Now.ToLongTimeString();
         }
+
+        
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            ///comentario en la asasa
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            abrirFormularioPanel(new formProveedoresClientes());
+        }
     }
 }

@@ -61,23 +61,11 @@
     <Compile Include="formMenuPrincipal.Designer.cs">
       <DependentUpon>formMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="formProveedor_Usuario.cs">
+    <Compile Include="formProveedoresClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formProveedor_Usuario.Designer.cs">
-      <DependentUpon>formProveedor_Usuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formProducto.Designer.cs">
-      <DependentUpon>formProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formCompra_Ventas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formCompra_Ventas.Designer.cs">
-      <DependentUpon>formCompra_Ventas.cs</DependentUpon>
+    <Compile Include="formProveedoresClientes.Designer.cs">
+      <DependentUpon>formProveedoresClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="formUsuario.cs">
       <SubType>Form</SubType>
@@ -93,14 +81,8 @@
     <EmbeddedResource Include="formMenuPrincipal.resx">
       <DependentUpon>formMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formProveedor_Usuario.resx">
-      <DependentUpon>formProveedor_Usuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formProducto.resx">
-      <DependentUpon>formProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formCompra_Ventas.resx">
-      <DependentUpon>formCompra_Ventas.cs</DependentUpon>
+    <EmbeddedResource Include="formProveedoresClientes.resx">
+      <DependentUpon>formProveedoresClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>

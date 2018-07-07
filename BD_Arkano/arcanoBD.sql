@@ -1,8 +1,15 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     7/7/2018 11:42:23                            */
+/* Created on:     7/7/2018 13:22:54                            */
 /*==============================================================*/
 
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('TB_CLIENTE_PROVEEDOR') and o.name = 'FK_TB_CLIEN_FK_CODIGO_TB_PERFI')
+alter table TB_CLIENTE_PROVEEDOR
+   drop constraint FK_TB_CLIEN_FK_CODIGO_TB_PERFI
+go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
@@ -61,6 +68,15 @@ alter table TB_TRANSACCION
 go
 
 if exists (select 1
+            from  sysindexes
+           where  id    = object_id('TB_CLIENTE_PROVEEDOR')
+            and   name  = 'FK_CODIGO_PERFIL_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index TB_CLIENTE_PROVEEDOR.FK_CODIGO_PERFIL_FK
+go
+
+if exists (select 1
             from  sysobjects
            where  id = object_id('TB_CLIENTE_PROVEEDOR')
             and   type = 'U')
@@ -106,6 +122,13 @@ if exists (select 1
            where  id = object_id('TB_ITEM_TRANSACCION')
             and   type = 'U')
    drop table TB_ITEM_TRANSACCION
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('TB_PERFILES')
+            and   type = 'U')
+   drop table TB_PERFILES
 go
 
 if exists (select 1
@@ -200,12 +223,21 @@ go
 /*==============================================================*/
 create table TB_CLIENTE_PROVEEDOR (
    CLIENTEIPROVEEDORID  int                  not null,
+   CODIGO_PERFIL        int                  not null,
    CEDULA_RUC           numeric(13)          not null,
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
-   TIPO                 bit                  not null,
+   CORREO               text                 not null,
    constraint PK_TB_CLIENTE_PROVEEDOR primary key nonclustered (CLIENTEIPROVEEDORID)
+)
+go
+
+/*==============================================================*/
+/* Index: FK_CODIGO_PERFIL_FK                                   */
+/*==============================================================*/
+create index FK_CODIGO_PERFIL_FK on TB_CLIENTE_PROVEEDOR (
+CODIGO_PERFIL ASC
 )
 go
 
@@ -253,6 +285,16 @@ go
 /*==============================================================*/
 create index FK_ITRANSACCION_DTRANSACCION_FK on TB_ITEM_TRANSACCION (
 DETALLETRANSACCIONID ASC
+)
+go
+
+/*==============================================================*/
+/* Table: TB_PERFILES                                           */
+/*==============================================================*/
+create table TB_PERFILES (
+   CODIGO_PERFIL        int                  not null,
+   DESCRIPCION_PERFIL   varchar(50)          not null,
+   constraint PK_TB_PERFILES primary key nonclustered (CODIGO_PERFIL)
 )
 go
 
@@ -336,7 +378,7 @@ create table TB_TRANSACCION (
    CLIENTEID3           int                  null,
    DESCRIPCION          text                 not null,
    TIPO                 bit                  not null,
-   FECHA               datetime             not null,
+   FECHA_               datetime             not null,
    AUTORIZACION         text                 not null,
    constraint PK_TB_TRANSACCION primary key nonclustered (TRANSACCIONID)
 )
@@ -371,6 +413,11 @@ create table TB_USUARIO (
    NOMBRE_USUARIO       varchar(20)          null,
    constraint PK_TB_USUARIO primary key nonclustered (CLIENTEID3)
 )
+go
+
+alter table TB_CLIENTE_PROVEEDOR
+   add constraint FK_TB_CLIEN_FK_CODIGO_TB_PERFI foreign key (CODIGO_PERFIL)
+      references TB_PERFILES (CODIGO_PERFIL)
 go
 
 alter table TB_DETALLES_TRANSACCION

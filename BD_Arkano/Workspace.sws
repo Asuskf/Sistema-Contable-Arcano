@@ -5,9 +5,13 @@
 <Workspace>
 	<Local Expanded="Yes">
 		<Model Expanded="Yes" ID="{EB490790-E22C-46A0-9C92-137AFE46DF76}" Loaded="No" Name="Modelo_Conceptual" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="/Users/PreNatal 2016/Downloads/Sistema-Contable-Arcano-master/BD_Arkano/Modelo_Logico.cdm"/>
-		<Model Expanded="Yes" ID="{011C023C-6A28-4F7F-8345-278CFFB7A7AD}" Loaded="No" Name="Modelo_Conceptual" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="../Modelo_Conceptual.ldm"/>
-		<Model Expanded="Yes" ID="{700F4F33-92D7-469E-890B-06CCBFB1A3DA}" Loaded="No" Name="Modelo_Conceptual" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="../Modelo_Fisico.pdm"/>
-		<Model Expanded="Yes" ID="{011C023C-6A28-4F7F-8345-278CFFB7A7AD}" Name="Modelo_Conceptual" Selected="Yes" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="Modelo_Logico.ldm"/>
+		<Model Expanded="Yes" ID="{011C023C-6A28-4F7F-8345-278CFFB7A7AD}" Loaded="No" Name="Modelo_Conceptual" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="../../../Modelo_Conceptual.ldm"/>
+		<Model Expanded="Yes" ID="{700F4F33-92D7-469E-890B-06CCBFB1A3DA}" Loaded="No" Name="Modelo_Conceptual" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="../../../Modelo_Fisico.pdm"/>
+		<Model Expanded="Yes" ID="{011C023C-6A28-4F7F-8345-278CFFB7A7AD}" Loaded="No" Name="Modelo_Conceptual" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="../../Modelo_Logico.ldm"/>
+		<Model ID="{FDE30722-1BC8-4F08-8EA6-D0B905104710}" Name="Modelo_Conceptual" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="Modelo_Conceptual.cdm"/>
+		<Model Expanded="Yes" ID="{5E872F27-36A9-4188-9379-ED381248B213}" Name="Modelo_logico" Selected="Yes" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="Modelo_logico2.ldm"/>
+		<Model ID="{43CABD40-FC85-4B44-8BDA-CD57C65DD2D4}" Loaded="No" Name="Modelo_Conceptual" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Modelo_Conceptual.pdm"/>
+		<Model Expanded="Yes" ID="{70A3495F-1FFB-44A7-8EBC-9261F8E048C9}" Name="Modelo_Fisico" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="Modelo_Fisico.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
