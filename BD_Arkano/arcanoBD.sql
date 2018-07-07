@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     4/7/2018 8:35:42                             */
+/* Created on:     7/7/2018 11:42:23                            */
 /*==============================================================*/
 
 
@@ -55,13 +55,6 @@ go
 
 if exists (select 1
    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
-   where r.fkeyid = object_id('TB_TRANSACCION') and o.name = 'FK_TB_TRANS_FK_TRANSA_TB_PROVE')
-alter table TB_TRANSACCION
-   drop constraint FK_TB_TRANS_FK_TRANSA_TB_PROVE
-go
-
-if exists (select 1
-   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
    where r.fkeyid = object_id('TB_TRANSACCION') and o.name = 'FK_TB_TRANS_FK_USUARI_TB_USUAR')
 alter table TB_TRANSACCION
    drop constraint FK_TB_TRANS_FK_USUARI_TB_USUAR
@@ -69,9 +62,9 @@ go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('TB_CLIENTE')
+           where  id = object_id('TB_CLIENTE_PROVEEDOR')
             and   type = 'U')
-   drop table TB_CLIENTE
+   drop table TB_CLIENTE_PROVEEDOR
 go
 
 if exists (select 1
@@ -171,28 +164,12 @@ if exists (select 1
 go
 
 if exists (select 1
-            from  sysobjects
-           where  id = object_id('TB_PROVEEDOR')
-            and   type = 'U')
-   drop table TB_PROVEEDOR
-go
-
-if exists (select 1
             from  sysindexes
            where  id    = object_id('TB_TRANSACCION')
             and   name  = 'FK_USUARIO_TRANSACCION_FK'
             and   indid > 0
             and   indid < 255)
    drop index TB_TRANSACCION.FK_USUARIO_TRANSACCION_FK
-go
-
-if exists (select 1
-            from  sysindexes
-           where  id    = object_id('TB_TRANSACCION')
-            and   name  = 'FK_TRANSACCION_PROVEEDOR_FK'
-            and   indid > 0
-            and   indid < 255)
-   drop index TB_TRANSACCION.FK_TRANSACCION_PROVEEDOR_FK
 go
 
 if exists (select 1
@@ -219,15 +196,16 @@ if exists (select 1
 go
 
 /*==============================================================*/
-/* Table: TB_CLIENTE                                            */
+/* Table: TB_CLIENTE_PROVEEDOR                                  */
 /*==============================================================*/
-create table TB_CLIENTE (
-   CLIENTEID            int                  not null,
+create table TB_CLIENTE_PROVEEDOR (
+   CLIENTEIPROVEEDORID  int                  not null,
    CEDULA_RUC           numeric(13)          not null,
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
-   constraint PK_TB_CLIENTE primary key nonclustered (CLIENTEID)
+   TIPO                 bit                  not null,
+   constraint PK_TB_CLIENTE_PROVEEDOR primary key nonclustered (CLIENTEIPROVEEDORID)
 )
 go
 
@@ -350,29 +328,15 @@ PLANCUENTASID ASC
 go
 
 /*==============================================================*/
-/* Table: TB_PROVEEDOR                                          */
-/*==============================================================*/
-create table TB_PROVEEDOR (
-   PROVEEDORID          int                  not null,
-   CEDULA_RUC           numeric(13)          not null,
-   NOMBRE               varchar(50)          not null,
-   APELLIDO             varchar(50)          not null,
-   DIRECCION            text                 not null,
-   constraint PK_TB_PROVEEDOR primary key nonclustered (PROVEEDORID)
-)
-go
-
-/*==============================================================*/
 /* Table: TB_TRANSACCION                                        */
 /*==============================================================*/
 create table TB_TRANSACCION (
    TRANSACCIONID        int                  not null,
-   USUARIOID            int                  null,
-   CLIENTEID            int                  null,
-   PROVEEDORID          int                  null,
+   CLIENTEIPROVEEDORID  int                  null,
+   CLIENTEID3           int                  null,
    DESCRIPCION          text                 not null,
-   TIPO                 text                 not null,
-   FECHA_               datetime             not null,
+   TIPO                 bit                  not null,
+   FECHA               datetime             not null,
    AUTORIZACION         text                 not null,
    constraint PK_TB_TRANSACCION primary key nonclustered (TRANSACCIONID)
 )
@@ -382,15 +346,7 @@ go
 /* Index: FK_TRANSACCION_CLIENTE_FK                             */
 /*==============================================================*/
 create index FK_TRANSACCION_CLIENTE_FK on TB_TRANSACCION (
-CLIENTEID ASC
-)
-go
-
-/*==============================================================*/
-/* Index: FK_TRANSACCION_PROVEEDOR_FK                           */
-/*==============================================================*/
-create index FK_TRANSACCION_PROVEEDOR_FK on TB_TRANSACCION (
-PROVEEDORID ASC
+CLIENTEIPROVEEDORID ASC
 )
 go
 
@@ -398,7 +354,7 @@ go
 /* Index: FK_USUARIO_TRANSACCION_FK                             */
 /*==============================================================*/
 create index FK_USUARIO_TRANSACCION_FK on TB_TRANSACCION (
-USUARIOID ASC
+CLIENTEID3 ASC
 )
 go
 
@@ -406,15 +362,14 @@ go
 /* Table: TB_USUARIO                                            */
 /*==============================================================*/
 create table TB_USUARIO (
-   USUARIOID            int                  not null,
+   CLIENTEID3           int                  not null,
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
    CORREO               varchar(30)          not null,
    FOTO                 image                null,
    NOMBRE_USUARIO       varchar(20)          null,
-   CONTRASENIA_USUARIO  varchar(50)          null,
-   constraint PK_TB_USUARIO primary key nonclustered (USUARIOID)
+   constraint PK_TB_USUARIO primary key nonclustered (CLIENTEID3)
 )
 go
 
@@ -449,17 +404,12 @@ alter table TB_PLANCUENTAS_SUBGRUPO
 go
 
 alter table TB_TRANSACCION
-   add constraint FK_TB_TRANS_FK_TRANSA_TB_CLIEN foreign key (CLIENTEID)
-      references TB_CLIENTE (CLIENTEID)
+   add constraint FK_TB_TRANS_FK_TRANSA_TB_CLIEN foreign key (CLIENTEIPROVEEDORID)
+      references TB_CLIENTE_PROVEEDOR (CLIENTEIPROVEEDORID)
 go
 
 alter table TB_TRANSACCION
-   add constraint FK_TB_TRANS_FK_TRANSA_TB_PROVE foreign key (PROVEEDORID)
-      references TB_PROVEEDOR (PROVEEDORID)
-go
-
-alter table TB_TRANSACCION
-   add constraint FK_TB_TRANS_FK_USUARI_TB_USUAR foreign key (USUARIOID)
-      references TB_USUARIO (USUARIOID)
+   add constraint FK_TB_TRANS_FK_USUARI_TB_USUAR foreign key (CLIENTEID3)
+      references TB_USUARIO (CLIENTEID3)
 go
 
