@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
-
+using System.Drawing;
 
 namespace capaPresentacion.Controladores
 {
@@ -24,17 +23,26 @@ namespace capaPresentacion.Controladores
                 SendMessage(hWnd, wMsg, wParam, lParam);
             }
         }
-        public static void cuadrosTextoMouse(TextBox textBox, string dialogo)
+        public  void cuadrosTextoMouse(TextBox textBox, string dialogo)
         {
             if (textBox.Text == dialogo) 
                 textBox.Text = "";
 
         }
 
-        public static void cuadrosSinTextoMouse(TextBox textBox, string dialogo)
+        public  void cuadrosSinTextoMouse(TextBox textBox, string dialogo)
         {
             if (textBox.Text == "")
                 textBox.Text = dialogo;
+        }
+
+        public  void colorBotones(Button btnDesabilitar, Button botonHabilitar, int R, int G, int B, Label lblLista, string lista)
+        {
+            btnDesabilitar.BackColor = Color.FromArgb(121, 128, 130);
+            btnDesabilitar.Enabled = false;
+            botonHabilitar.BackColor = Color.FromArgb(R, G, B);
+            botonHabilitar.Enabled = true;
+            lblLista.Text = lista;
         }
 
     }

@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     7/7/2018 13:22:54                            */
+/* Created on:     7/7/2018 17:42:11                            */
 /*==============================================================*/
 
 
@@ -51,6 +51,13 @@ if exists (select 1
    where r.fkeyid = object_id('TB_PLANCUENTAS_SUBGRUPO') and o.name = 'FK_TB_PLANC_FK_CSUBGR_TB_PLANC')
 alter table TB_PLANCUENTAS_SUBGRUPO
    drop constraint FK_TB_PLANC_FK_CSUBGR_TB_PLANC
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('TB_TRANSACCION') and o.name = 'FK_TB_TRANS_FK_TIPO_T_TB_TIPOT')
+alter table TB_TRANSACCION
+   drop constraint FK_TB_TRANS_FK_TIPO_T_TB_TIPOT
 go
 
 if exists (select 1
@@ -187,6 +194,22 @@ if exists (select 1
 go
 
 if exists (select 1
+            from  sysobjects
+           where  id = object_id('TB_TIPOTRANSACCION')
+            and   type = 'U')
+   drop table TB_TIPOTRANSACCION
+go
+
+if exists (select 1
+            from  sysindexes
+           where  id    = object_id('TB_TRANSACCION')
+            and   name  = 'FK_TIPO_TRANSACCION_FK'
+            and   indid > 0
+            and   indid < 255)
+   drop index TB_TRANSACCION.FK_TIPO_TRANSACCION_FK
+go
+
+if exists (select 1
             from  sysindexes
            where  id    = object_id('TB_TRANSACCION')
             and   name  = 'FK_USUARIO_TRANSACCION_FK'
@@ -223,11 +246,12 @@ go
 /*==============================================================*/
 create table TB_CLIENTE_PROVEEDOR (
    CLIENTEIPROVEEDORID  int                  not null,
-   CODIGO_PERFIL        int                  not null,
+   TB__CODIGO_PERFIL    int                  null,
    CEDULA_RUC           numeric(13)          not null,
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
+   CODIGO_PERFIL        int                  not null,
    CORREO               text                 not null,
    constraint PK_TB_CLIENTE_PROVEEDOR primary key nonclustered (CLIENTEIPROVEEDORID)
 )
@@ -237,7 +261,7 @@ go
 /* Index: FK_CODIGO_PERFIL_FK                                   */
 /*==============================================================*/
 create index FK_CODIGO_PERFIL_FK on TB_CLIENTE_PROVEEDOR (
-CODIGO_PERFIL ASC
+TB__CODIGO_PERFIL ASC
 )
 go
 
@@ -370,16 +394,27 @@ PLANCUENTASID ASC
 go
 
 /*==============================================================*/
+/* Table: TB_TIPOTRANSACCION                                    */
+/*==============================================================*/
+create table TB_TIPOTRANSACCION (
+   TIPO_TRANSACCION     int                  not null,
+   DESCRIPCION_TIPO_TRANSACCION varchar(50)          not null,
+   constraint PK_TB_TIPOTRANSACCION primary key nonclustered (TIPO_TRANSACCION)
+)
+go
+
+/*==============================================================*/
 /* Table: TB_TRANSACCION                                        */
 /*==============================================================*/
 create table TB_TRANSACCION (
    TRANSACCIONID        int                  not null,
    CLIENTEIPROVEEDORID  int                  null,
    CLIENTEID3           int                  null,
+   TB__TIPO_TRANSACCION int                  null,
    DESCRIPCION          text                 not null,
-   TIPO                 bit                  not null,
-   FECHA_               datetime             not null,
-   AUTORIZACION         text                 not null,
+   TIPO_TRANSACCION     int                  not null,
+   FECHA                datetime             not null,
+   AUTORIZACION         varchar(50)          not null,
    constraint PK_TB_TRANSACCION primary key nonclustered (TRANSACCIONID)
 )
 go
@@ -401,6 +436,14 @@ CLIENTEID3 ASC
 go
 
 /*==============================================================*/
+/* Index: FK_TIPO_TRANSACCION_FK                                */
+/*==============================================================*/
+create index FK_TIPO_TRANSACCION_FK on TB_TRANSACCION (
+TB__TIPO_TRANSACCION ASC
+)
+go
+
+/*==============================================================*/
 /* Table: TB_USUARIO                                            */
 /*==============================================================*/
 create table TB_USUARIO (
@@ -416,7 +459,7 @@ create table TB_USUARIO (
 go
 
 alter table TB_CLIENTE_PROVEEDOR
-   add constraint FK_TB_CLIEN_FK_CODIGO_TB_PERFI foreign key (CODIGO_PERFIL)
+   add constraint FK_TB_CLIEN_FK_CODIGO_TB_PERFI foreign key (TB__CODIGO_PERFIL)
       references TB_PERFILES (CODIGO_PERFIL)
 go
 
@@ -448,6 +491,11 @@ go
 alter table TB_PLANCUENTAS_SUBGRUPO
    add constraint FK_TB_PLANC_FK_CSUBGR_TB_PLANC foreign key (PLANCUENTASID)
       references TB_PLANCUENTAS_GRUPO (PLANCUENTASID)
+go
+
+alter table TB_TRANSACCION
+   add constraint FK_TB_TRANS_FK_TIPO_T_TB_TIPOT foreign key (TB__TIPO_TRANSACCION)
+      references TB_TIPOTRANSACCION (TIPO_TRANSACCION)
 go
 
 alter table TB_TRANSACCION

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedoresClientes));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDatosUserProve = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCedula = new System.Windows.Forms.Label();
@@ -46,68 +44,46 @@
             this.txtDirección = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnCrear = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lblLista = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.lblLista = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnProveedor = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.lblTipo2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDatosUserProve = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.lblDatosUserProve, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1095, 37);
-            this.tableLayoutPanel1.TabIndex = 63;
-            // 
-            // lblDatosUserProve
-            // 
-            this.lblDatosUserProve.AutoSize = true;
-            this.lblDatosUserProve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDatosUserProve.Font = new System.Drawing.Font("Century", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosUserProve.Location = new System.Drawing.Point(3, 0);
-            this.lblDatosUserProve.Name = "lblDatosUserProve";
-            this.lblDatosUserProve.Size = new System.Drawing.Size(1089, 37);
-            this.lblDatosUserProve.TabIndex = 46;
-            this.lblDatosUserProve.Text = "Cliente o proveedor";
-            this.lblDatosUserProve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -267,6 +243,8 @@
             this.txtNombre.Size = new System.Drawing.Size(398, 23);
             this.txtNombre.TabIndex = 59;
             this.txtNombre.Text = "Nombre";
+            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
+            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // txtApellido
             // 
@@ -279,6 +257,8 @@
             this.txtApellido.Size = new System.Drawing.Size(398, 23);
             this.txtApellido.TabIndex = 49;
             this.txtApellido.Text = "Apellido";
+            this.txtApellido.Enter += new System.EventHandler(this.txtApellido_Enter);
+            this.txtApellido.Leave += new System.EventHandler(this.txtApellido_Leave);
             // 
             // txtCorreo
             // 
@@ -291,6 +271,8 @@
             this.txtCorreo.Size = new System.Drawing.Size(398, 23);
             this.txtCorreo.TabIndex = 50;
             this.txtCorreo.Text = "Correo";
+            this.txtCorreo.Enter += new System.EventHandler(this.txtCorreo_Enter);
+            this.txtCorreo.Leave += new System.EventHandler(this.txtCorreo_Leave);
             // 
             // txtDirección
             // 
@@ -303,6 +285,8 @@
             this.txtDirección.Size = new System.Drawing.Size(398, 23);
             this.txtDirección.TabIndex = 53;
             this.txtDirección.Text = "Dirección";
+            this.txtDirección.Enter += new System.EventHandler(this.txtDirección_Enter);
+            this.txtDirección.Leave += new System.EventHandler(this.txtDirección_Leave);
             // 
             // txtCedula
             // 
@@ -315,6 +299,8 @@
             this.txtCedula.Size = new System.Drawing.Size(398, 23);
             this.txtCedula.TabIndex = 3;
             this.txtCedula.Text = "Cédula";
+            this.txtCedula.Enter += new System.EventHandler(this.txtCedula_Enter);
+            this.txtCedula.Leave += new System.EventHandler(this.txtCedula_Leave);
             // 
             // cmbTipo
             // 
@@ -326,43 +312,6 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(398, 31);
             this.cmbTipo.TabIndex = 60;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.dataGridView1, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 2);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 264);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 3;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.45015F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.86103F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.68882F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1095, 331);
-            this.tableLayoutPanel7.TabIndex = 65;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(170)))), ((int)(((byte)(103)))));
-            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(983, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCerrar.Size = new System.Drawing.Size(103, 30);
-            this.btnCerrar.TabIndex = 64;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -379,66 +328,6 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.542713F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(406, 199);
             this.tableLayoutPanel5.TabIndex = 2;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(47)))), ((int)(((byte)(30)))));
-            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(3, 132);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnEliminar.Size = new System.Drawing.Size(394, 40);
-            this.btnEliminar.TabIndex = 61;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(194)))), ((int)(((byte)(83)))));
-            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(3, 68);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnActualizar.Size = new System.Drawing.Size(394, 38);
-            this.btnActualizar.TabIndex = 60;
-            this.btnActualizar.TabStop = false;
-            this.btnActualizar.Text = "Editar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(130)))));
-            this.btnCrear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCrear.FlatAppearance.BorderSize = 0;
-            this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrear.ForeColor = System.Drawing.Color.White;
-            this.btnCrear.Image = ((System.Drawing.Image)(resources.GetObject("btnCrear.Image")));
-            this.btnCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCrear.Location = new System.Drawing.Point(3, 3);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCrear.Size = new System.Drawing.Size(394, 39);
-            this.btnCrear.TabIndex = 45;
-            this.btnCrear.TabStop = false;
-            this.btnCrear.Text = "Añadir";
-            this.btnCrear.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel6
             // 
@@ -460,24 +349,146 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(400, 175);
             this.tableLayoutPanel6.TabIndex = 58;
             // 
+            // btnCrear
+            // 
+            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(159)))), ((int)(((byte)(130)))));
+            this.btnCrear.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCrear.FlatAppearance.BorderSize = 0;
+            this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.ForeColor = System.Drawing.Color.White;
+            this.btnCrear.Image = ((System.Drawing.Image)(resources.GetObject("btnCrear.Image")));
+            this.btnCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCrear.Location = new System.Drawing.Point(3, 3);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCrear.Size = new System.Drawing.Size(310, 39);
+            this.btnCrear.TabIndex = 45;
+            this.btnCrear.TabStop = false;
+            this.btnCrear.Text = "Añadir";
+            this.btnCrear.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(194)))), ((int)(((byte)(83)))));
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(3, 68);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnActualizar.Size = new System.Drawing.Size(310, 38);
+            this.btnActualizar.TabIndex = 60;
+            this.btnActualizar.TabStop = false;
+            this.btnActualizar.Text = "Editar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(47)))), ((int)(((byte)(30)))));
+            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(3, 132);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnEliminar.Size = new System.Drawing.Size(310, 40);
+            this.btnEliminar.TabIndex = 61;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 264);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.10837F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.4335F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.19386F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1095, 406);
+            this.tableLayoutPanel7.TabIndex = 65;
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel8.Controls.Add(this.btnCerrar, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 292);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel13, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 330);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1089, 36);
-            this.tableLayoutPanel8.TabIndex = 65;
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1089, 73);
+            this.tableLayoutPanel8.TabIndex = 70;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.Controls.Add(this.btnCerrar, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(983, 3);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.83146F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.16854F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(103, 67);
+            this.tableLayoutPanel13.TabIndex = 66;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(170)))), ((int)(((byte)(103)))));
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(3, 26);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCerrar.Size = new System.Drawing.Size(97, 38);
+            this.btnCerrar.TabIndex = 65;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 109);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1089, 215);
+            this.dataGridView1.TabIndex = 68;
             // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 3;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel9.Controls.Add(this.lblLista, 1, 1);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 0, 0);
@@ -487,10 +498,22 @@
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.10169F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.8983F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1089, 65);
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1089, 100);
             this.tableLayoutPanel9.TabIndex = 66;
+            // 
+            // lblLista
+            // 
+            this.lblLista.AutoSize = true;
+            this.lblLista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLista.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLista.Location = new System.Drawing.Point(384, 54);
+            this.lblLista.Name = "lblLista";
+            this.lblLista.Size = new System.Drawing.Size(266, 46);
+            this.lblLista.TabIndex = 0;
+            this.lblLista.Text = "Lista";
+            this.lblLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel10
             // 
@@ -504,17 +527,17 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(320, 36);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(375, 48);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFiltro.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblFiltro.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltro.Location = new System.Drawing.Point(3, 0);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(58, 36);
+            this.lblFiltro.Size = new System.Drawing.Size(69, 20);
             this.lblFiltro.TabIndex = 0;
             this.lblFiltro.Text = "Filtro:";
             this.lblFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -525,9 +548,9 @@
             this.cmbFiltro.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltro.ForeColor = System.Drawing.Color.DarkGray;
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(67, 3);
+            this.cmbFiltro.Location = new System.Drawing.Point(78, 3);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(250, 31);
+            this.cmbFiltro.Size = new System.Drawing.Size(294, 31);
             this.cmbFiltro.TabIndex = 1;
             // 
             // tableLayoutPanel11
@@ -538,12 +561,30 @@
             this.tableLayoutPanel11.Controls.Add(this.btnBuscar, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.txtBuscar, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(655, 3);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(656, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(431, 36);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(430, 48);
             this.tableLayoutPanel11.TabIndex = 2;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
+            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(347, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnBuscar.Size = new System.Drawing.Size(80, 31);
+            this.btnBuscar.TabIndex = 62;
+            this.btnBuscar.TabStop = false;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // txtBuscar
             // 
@@ -556,117 +597,106 @@
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.Text = "Buscar";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(95)))), ((int)(((byte)(142)))));
-            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(347, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnBuscar.Size = new System.Drawing.Size(81, 30);
-            this.btnBuscar.TabIndex = 62;
-            this.btnBuscar.TabStop = false;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // lblLista
-            // 
-            this.lblLista.AutoSize = true;
-            this.lblLista.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLista.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLista.Location = new System.Drawing.Point(329, 42);
-            this.lblLista.Name = "lblLista";
-            this.lblLista.Size = new System.Drawing.Size(320, 23);
-            this.lblLista.TabIndex = 0;
-            this.lblLista.Text = "Lista";
-            this.lblLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 3;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel12.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel12.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel12.Controls.Add(this.btnProveedor, 2, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btnClientes, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.lblTipo2, 0, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(329, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(384, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(320, 36);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(266, 48);
             this.tableLayoutPanel12.TabIndex = 3;
             // 
-            // dataGridView1
+            // btnProveedor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1089, 212);
-            this.dataGridView1.TabIndex = 68;
+            this.btnProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(154)))), ((int)(((byte)(72)))));
+            this.btnProveedor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProveedor.FlatAppearance.BorderSize = 0;
+            this.btnProveedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedor.Location = new System.Drawing.Point(162, 3);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnProveedor.Size = new System.Drawing.Size(101, 31);
+            this.btnProveedor.TabIndex = 47;
+            this.btnProveedor.TabStop = false;
+            this.btnProveedor.Text = "Proveedor";
+            this.btnProveedor.UseVisualStyleBackColor = false;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(81)))), ((int)(((byte)(4)))));
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(69, 3);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnClientes.Size = new System.Drawing.Size(87, 31);
+            this.btnClientes.TabIndex = 46;
+            this.btnClientes.TabStop = false;
+            this.btnClientes.Text = "Cliente";
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // lblTipo2
             // 
             this.lblTipo2.AutoSize = true;
-            this.lblTipo2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTipo2.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTipo2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipo2.Location = new System.Drawing.Point(3, 0);
             this.lblTipo2.Name = "lblTipo2";
-            this.lblTipo2.Size = new System.Drawing.Size(90, 36);
+            this.lblTipo2.Size = new System.Drawing.Size(60, 20);
             this.lblTipo2.TabIndex = 0;
             this.lblTipo2.Text = "Elegir:";
             this.lblTipo2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // tableLayoutPanel1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(81)))), ((int)(((byte)(4)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(99, 3);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(106, 30);
-            this.button1.TabIndex = 46;
-            this.button1.TabStop = false;
-            this.button1.Text = "Cliente";
-            this.button1.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.lblDatosUserProve, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1095, 37);
+            this.tableLayoutPanel1.TabIndex = 63;
             // 
-            // button2
+            // lblDatosUserProve
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(154)))), ((int)(((byte)(72)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(211, 3);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(106, 30);
-            this.button2.TabIndex = 47;
-            this.button2.TabStop = false;
-            this.button2.Text = "Proveedor";
-            this.button2.UseVisualStyleBackColor = false;
+            this.lblDatosUserProve.AutoSize = true;
+            this.lblDatosUserProve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDatosUserProve.Font = new System.Drawing.Font("Century", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosUserProve.Location = new System.Drawing.Point(3, 0);
+            this.lblDatosUserProve.Name = "lblDatosUserProve";
+            this.lblDatosUserProve.Size = new System.Drawing.Size(1089, 37);
+            this.lblDatosUserProve.TabIndex = 46;
+            this.lblDatosUserProve.Text = "Cliente o proveedor";
+            this.lblDatosUserProve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formProveedoresClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 595);
+            this.ClientSize = new System.Drawing.Size(1095, 670);
             this.Controls.Add(this.tableLayoutPanel7);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -674,17 +704,17 @@
             this.Name = "formProveedoresClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formProveedoresClientes";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
@@ -693,15 +723,13 @@
             this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblDatosUserProve;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblCedula;
@@ -717,7 +745,6 @@
         private System.Windows.Forms.TextBox txtDirección;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -728,7 +755,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.ComboBox cmbFiltro;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Button btnBuscar;
@@ -736,8 +762,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblLista;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Label lblTipo2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblDatosUserProve;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
