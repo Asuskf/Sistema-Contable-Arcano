@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     7/7/2018 17:42:11                            */
+/* Created on:     7/7/2018 19:10:27                            */
 /*==============================================================*/
 
 
@@ -326,11 +326,11 @@ go
 /* Table: TB_PLANCUENTAS_ASIENTO                                */
 /*==============================================================*/
 create table TB_PLANCUENTAS_ASIENTO (
-   ASIENTOID2           int                  not null,
+   ASIENTOID            int                  not null,
    SUBGRUPOID           int                  null,
    NUMEROIASIENTO       char(10)             not null,
    NOMBREASIENTO        char(90)             null,
-   constraint PK_TB_PLANCUENTAS_ASIENTO primary key nonclustered (ASIENTOID2)
+   constraint PK_TB_PLANCUENTAS_ASIENTO primary key nonclustered (ASIENTOID)
 )
 go
 
@@ -358,7 +358,7 @@ go
 /*==============================================================*/
 create table TB_PLANCUENTAS_ITEM (
    ITEMID               int                  not null,
-   ASIENTOID2           int                  null,
+   ASIENTOID            int                  null,
    NUMEROITEM           char(14)             not null,
    NOMBREITEM           char(85)             not null,
    constraint PK_TB_PLANCUENTAS_ITEM primary key nonclustered (ITEMID)
@@ -369,7 +369,7 @@ go
 /* Index: FK_CITEM_CASIENTO_FK                                  */
 /*==============================================================*/
 create index FK_CITEM_CASIENTO_FK on TB_PLANCUENTAS_ITEM (
-ASIENTOID2 ASC
+ASIENTOID ASC
 )
 go
 
@@ -409,7 +409,7 @@ go
 create table TB_TRANSACCION (
    TRANSACCIONID        int                  not null,
    CLIENTEIPROVEEDORID  int                  null,
-   CLIENTEID3           int                  null,
+   USUARIOID            int                  null,
    TB__TIPO_TRANSACCION int                  null,
    DESCRIPCION          text                 not null,
    TIPO_TRANSACCION     int                  not null,
@@ -431,7 +431,7 @@ go
 /* Index: FK_USUARIO_TRANSACCION_FK                             */
 /*==============================================================*/
 create index FK_USUARIO_TRANSACCION_FK on TB_TRANSACCION (
-CLIENTEID3 ASC
+USUARIOID ASC
 )
 go
 
@@ -447,14 +447,14 @@ go
 /* Table: TB_USUARIO                                            */
 /*==============================================================*/
 create table TB_USUARIO (
-   CLIENTEID3           int                  not null,
+   USUARIOID            int                  not null,
    NOMBRE               varchar(50)          not null,
    APELLIDO             varchar(50)          not null,
    DIRECCION            text                 not null,
    CORREO               varchar(30)          not null,
    FOTO                 image                null,
    NOMBRE_USUARIO       varchar(20)          null,
-   constraint PK_TB_USUARIO primary key nonclustered (CLIENTEID3)
+   constraint PK_TB_USUARIO primary key nonclustered (USUARIOID)
 )
 go
 
@@ -484,8 +484,8 @@ alter table TB_PLANCUENTAS_ASIENTO
 go
 
 alter table TB_PLANCUENTAS_ITEM
-   add constraint FK_TB_PLANC_FK_CITEM__TB_PLANC foreign key (ASIENTOID2)
-      references TB_PLANCUENTAS_ASIENTO (ASIENTOID2)
+   add constraint FK_TB_PLANC_FK_CITEM__TB_PLANC foreign key (ASIENTOID)
+      references TB_PLANCUENTAS_ASIENTO (ASIENTOID)
 go
 
 alter table TB_PLANCUENTAS_SUBGRUPO
@@ -504,7 +504,7 @@ alter table TB_TRANSACCION
 go
 
 alter table TB_TRANSACCION
-   add constraint FK_TB_TRANS_FK_USUARI_TB_USUAR foreign key (CLIENTEID3)
-      references TB_USUARIO (CLIENTEID3)
+   add constraint FK_TB_TRANS_FK_USUARI_TB_USUAR foreign key (USUARIOID)
+      references TB_USUARIO (USUARIOID)
 go
 
