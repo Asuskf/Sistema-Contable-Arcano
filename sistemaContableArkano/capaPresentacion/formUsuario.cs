@@ -115,5 +115,10 @@ namespace capaPresentacion
         {
             controladores.cuadrosSinTextoMouse(txtCorreo, lblCorreo.Text);
         }
+
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

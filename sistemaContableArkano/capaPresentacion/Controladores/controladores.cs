@@ -45,6 +45,18 @@ namespace capaPresentacion.Controladores
             lblLista.Text = lista;
         }
 
+        public void abrirFormularioPanel(Panel panelContenedor, object formHijo)
+        {
+            if (panelContenedor.Controls.Count > 0)
+                panelContenedor.Controls.RemoveAt(0);
+            Form formulario = formHijo as Form;
+            formulario.TopLevel = false;
+            formulario.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(formulario);
+            panelContenedor.Tag = formulario;
+            formulario.Show();
+        }
+
     }
 }
 

@@ -289,6 +289,7 @@
             this.btnCrearUsuario.TabStop = false;
             this.btnCrearUsuario.Text = "Añadir usuario";
             this.btnCrearUsuario.UseVisualStyleBackColor = false;
+            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click);
             // 
             // btnActualizarUsuario
             // 
