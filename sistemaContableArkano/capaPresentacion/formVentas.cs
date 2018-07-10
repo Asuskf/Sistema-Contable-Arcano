@@ -21,7 +21,7 @@ namespace capaPresentacion
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedorVentas, new formClientes());
+            controladores.abrirFormularioPanel(panelContenedorVentas, new formListaClientes());
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
@@ -32,6 +32,11 @@ namespace capaPresentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnIngresoVentas_Click(object sender, EventArgs e)
+        {
+            controladores.abrirFormularioPanel(panelContenedorVentas, new formIngresoVentas());
         }
     }
 }

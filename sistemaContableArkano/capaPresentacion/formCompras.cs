@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace capaPresentacion
 {
-    public partial class formReporteVentas : Form
+    public partial class formCompras : Form
     {
-        public formReporteVentas()
+        public formCompras()
         {
             InitializeComponent();
-        }
-        
-        private void btnCerrar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

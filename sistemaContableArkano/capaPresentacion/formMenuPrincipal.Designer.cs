@@ -33,7 +33,7 @@
             this.menuVertical = new System.Windows.Forms.Panel();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnProveedorCliente = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -64,7 +64,7 @@
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
             this.menuVertical.Controls.Add(this.btnUsuario);
             this.menuVertical.Controls.Add(this.btnCompras);
-            this.menuVertical.Controls.Add(this.btnClientes);
+            this.menuVertical.Controls.Add(this.btnProveedorCliente);
             this.menuVertical.Controls.Add(this.btnVentas);
             this.menuVertical.Controls.Add(this.lblNombre);
             this.menuVertical.Controls.Add(this.imgLogo);
@@ -109,23 +109,23 @@
             this.btnCompras.UseVisualStyleBackColor = true;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
-            // btnClientes
+            // btnProveedorCliente
             // 
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.ForeColor = System.Drawing.Color.White;
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(1, 297);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(209, 54);
-            this.btnClientes.TabIndex = 5;
-            this.btnClientes.Text = "Proveedores Clientes";
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            this.btnProveedorCliente.FlatAppearance.BorderSize = 0;
+            this.btnProveedorCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnProveedorCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedorCliente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedorCliente.ForeColor = System.Drawing.Color.White;
+            this.btnProveedorCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedorCliente.Image")));
+            this.btnProveedorCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedorCliente.Location = new System.Drawing.Point(1, 297);
+            this.btnProveedorCliente.Name = "btnProveedorCliente";
+            this.btnProveedorCliente.Size = new System.Drawing.Size(209, 54);
+            this.btnProveedorCliente.TabIndex = 5;
+            this.btnProveedorCliente.Text = "Proveedores Clientes";
+            this.btnProveedorCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProveedorCliente.UseVisualStyleBackColor = true;
+            this.btnProveedorCliente.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnVentas
             // 
@@ -336,6 +336,6 @@
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnProveedorCliente;
     }
 }
