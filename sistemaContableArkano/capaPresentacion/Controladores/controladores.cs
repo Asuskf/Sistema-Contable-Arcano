@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Security.Cryptography;
 
 namespace capaPresentacion.Controladores
 {
@@ -47,13 +48,13 @@ namespace capaPresentacion.Controladores
 
         public void abrirFormularioPanel(Panel panelContenedor, object formHijo)
         {
-            if (panelContenedor.Controls.Count > 0)
-                panelContenedor.Controls.RemoveAt(0);
+            //if (panelContenedor.Controls.Count > 0)
+            //    panelContenedor.Controls.RemoveAt(0);
             Form formulario = formHijo as Form;
-            formulario.TopLevel = false;
-            formulario.Dock = DockStyle.Fill;
-            panelContenedor.Controls.Add(formulario);
-            panelContenedor.Tag = formulario;
+            //formulario.TopLevel = false;
+            //formulario.Dock = DockStyle.Fill;
+            //panelContenedor.Controls.Add(formulario);
+            //panelContenedor.Tag = formulario;
             formulario.Show();
         }
 

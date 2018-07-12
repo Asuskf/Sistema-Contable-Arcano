@@ -37,6 +37,7 @@ namespace capaPresentacion
         private void btnIngresoVentas_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelContenedorVentas, new formIngresoVentas());
+            //////////comentariossssssssssssssss
         }
     }
 }

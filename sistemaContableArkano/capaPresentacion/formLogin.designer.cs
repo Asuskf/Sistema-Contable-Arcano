@@ -33,9 +33,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnAcceder = new System.Windows.Forms.Button();
@@ -71,7 +68,6 @@
             this.lblFecha.Size = new System.Drawing.Size(44, 16);
             this.lblFecha.TabIndex = 2;
             this.lblFecha.Text = "Fecha";
-            this.lblFecha.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblNombre
             // 
@@ -83,7 +79,6 @@
             this.lblNombre.Size = new System.Drawing.Size(236, 23);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Sistema Contable Arcano";
-            this.lblNombre.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureLogo
             // 
@@ -94,39 +89,6 @@
             this.pictureLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLogo.TabIndex = 0;
             this.pictureLogo.TabStop = false;
-            this.pictureLogo.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2,
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(780, 330);
-            this.shapeContainer1.TabIndex = 1;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.Gray;
-            this.lineShape2.Enabled = false;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 298;
-            this.lineShape2.X2 = 736;
-            this.lineShape2.Y1 = 179;
-            this.lineShape2.Y2 = 179;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.Gray;
-            this.lineShape1.Enabled = false;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 300;
-            this.lineShape1.X2 = 738;
-            this.lineShape1.Y1 = 114;
-            this.lineShape1.Y2 = 114;
             // 
             // txtPassword
             // 
@@ -152,7 +114,6 @@
             this.lblLogin.Size = new System.Drawing.Size(146, 25);
             this.lblLogin.TabIndex = 4;
             this.lblLogin.Text = "Iniciar sesión";
-            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // btnAcceder
             // 
@@ -169,6 +130,7 @@
             this.btnAcceder.TabIndex = 3;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = false;
+            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
             // linkRecPassword
             // 
@@ -235,13 +197,11 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formLogin";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -256,9 +216,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        //private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnAcceder;

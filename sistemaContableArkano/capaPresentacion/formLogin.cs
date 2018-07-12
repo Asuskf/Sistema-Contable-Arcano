@@ -8,43 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using capaDatos;
+using System.Security.Cryptography;
 
 namespace capaPresentacion
 {
     public partial class formLogin : Form
     {
+        ConexionBD conectar = new ConexionBD();   //instanciamos la clase donde se realiza la conexion a la base de datos 
+        
         public formLogin()
         {
             InitializeComponent();
             
         }
         //Arrastrar con mouse para mover la ventana 
-        
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtUsuario_Enter_1(object sender, EventArgs e)
         {
@@ -99,5 +78,68 @@ namespace capaPresentacion
            Controladores.controladores.moverCuadro.mover(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void btnAcceder_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text != "" && txtPassword.Text != "")
+            {
+                string desencrip2 = txtPassword.Text;
+                byte[] inputbytes = System.Text.Encoding.Unicode.GetBytes(desencrip2);
+                desencrip2 = Convert.ToBase64String(inputbytes);
+
+                iniciarSesion(this.txtUsuario.Text, desencrip2);
+            }
+            else
+            {
+                if (txtUsuario.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre de usuario");
+                    txtUsuario.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una contraseña");
+                    txtPassword.Focus();
+                }
+
+            }
+        }
+
+        /////Metodo que me permitira verificar si el Nombre de usuario y contraseña del usuario existe
+        public void iniciarSesion(string nomUsuario, string contraUsuario)  //Funcion para iniciar sesion y comprobar si existe el usuario  (7)
+        {
+            try
+            {
+                conectar.cnn.Open();
+                SqlCommand consulUsuario = new SqlCommand("select usuNombreUsuario from TB_USUARIO where usuNombreUsuario=@usuario and usuContrasena=@contrasena", conectar.cnn);
+                consulUsuario.Parameters.AddWithValue("usuario", nomUsuario);
+                consulUsuario.Parameters.AddWithValue("contrasena", contraUsuario);
+                SqlDataAdapter adap = new SqlDataAdapter(consulUsuario);
+                DataTable dt3 = new DataTable();
+                adap.Fill(dt3);
+                conectar.cnn.Close();
+                if (dt3.Rows.Count == 1)  //preguntara si en el datatable existe algun registro
+                {
+                    this.Hide();
+                    string sBienveNombre = dt3.Rows[0][0].ToString();
+                    MessageBox.Show("Bienvenid@ " + sBienveNombre);
+
+                    formMenuPrincipal pantPrincipal = new formMenuPrincipal(); //instancio el formulario de la pantalla principal
+
+                    this.Hide();
+                    pantPrincipal.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o Contraseña incorrecta");
+                    txtPassword.Text = "";
+                    txtUsuario.Focus();
+                    txtUsuario.Text = "";
+                }
+            }
+            catch (Exception e)
+            {
+                //e.Message;
+            }
+        }
     }
 }

@@ -196,12 +196,16 @@
             // 
             // dgvListaUsuarios
             // 
+            this.dgvListaUsuarios.AllowUserToAddRows = false;
+            this.dgvListaUsuarios.AllowUserToDeleteRows = false;
             this.dgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvListaUsuarios.Location = new System.Drawing.Point(3, 27);
             this.dgvListaUsuarios.Name = "dgvListaUsuarios";
+            this.dgvListaUsuarios.ReadOnly = true;
             this.dgvListaUsuarios.Size = new System.Drawing.Size(1083, 162);
             this.dgvListaUsuarios.TabIndex = 2;
+            this.dgvListaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaUsuarios_CellClick);
             // 
             // tableLayoutPanel5
             // 
@@ -310,6 +314,7 @@
             this.btnActualizarUsuario.TabStop = false;
             this.btnActualizarUsuario.Text = "Editar Usuario";
             this.btnActualizarUsuario.UseVisualStyleBackColor = false;
+            this.btnActualizarUsuario.Click += new System.EventHandler(this.btnActualizarUsuario_Click);
             // 
             // btnEliminarUsuario
             // 
@@ -330,6 +335,7 @@
             this.btnEliminarUsuario.TabStop = false;
             this.btnEliminarUsuario.Text = "Eliminar  Usuario";
             this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // tableLayoutPanel3
             // 
