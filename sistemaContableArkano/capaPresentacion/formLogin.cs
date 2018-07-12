@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using capaDatos;
 using System.Security.Cryptography;
-
+//
 namespace capaPresentacion
 {
     public partial class formLogin : Form
