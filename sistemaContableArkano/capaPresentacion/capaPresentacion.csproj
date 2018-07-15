@@ -79,6 +79,12 @@
     <Compile Include="formListaProveedores.Designer.cs">
       <DependentUpon>formListaProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="formMenuInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMenuInicio.Designer.cs">
+      <DependentUpon>formMenuInicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="formReporteCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formListaProveedores.resx">
       <DependentUpon>formListaProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMenuInicio.resx">
+      <DependentUpon>formMenuInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formReporteCompras.resx">
       <DependentUpon>formReporteCompras.cs</DependentUpon>

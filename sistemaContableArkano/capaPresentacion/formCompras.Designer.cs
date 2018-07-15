@@ -189,6 +189,7 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // panelCompras
             // 

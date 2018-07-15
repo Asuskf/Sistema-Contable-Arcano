@@ -328,7 +328,7 @@ namespace capaPresentacion
                 }
             }
             catch(Exception ex) {
-                MessageBox.Show("No se pudo cargar la imagen revise que la imagen tenga el formato correcto ");
+                MessageBox.Show("No se pudo cargar la imagen ");
             }
         }
 

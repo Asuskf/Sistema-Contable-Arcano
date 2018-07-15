@@ -357,5 +357,17 @@ namespace capaPresentacion
                     llenarGridProveedor();
             }
         }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            controladores.cuadrosTextoMouse(txtBuscar, lblBuscar.Text);
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            controladores.cuadrosSinTextoMouse(txtBuscar, lblBuscar.Text);
+
+        }
+    
     }
 }

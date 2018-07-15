@@ -16,6 +16,7 @@ namespace capaPresentacion
         public formMenuPrincipal()
         {
             InitializeComponent();
+            mostrarInicio();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -76,34 +77,44 @@ namespace capaPresentacion
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedor, new formUsuario());
+            formUsuario frmU = new formUsuario();
+            frmU.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
+            controladores.abrirFormularioPanel(panelContenedor, frmU);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblReloj.Text = DateTime.Now.ToLongTimeString();
-        }
-
         
-
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedor, new formCompras());
+            formCompras frmC = new formCompras();
+            frmC.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
+            controladores.abrirFormularioPanel(panelContenedor, frmC);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedor, new formProveedoresClientes());
+            formProveedoresClientes frmP = new formProveedoresClientes();
+            frmP.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
+            controladores.abrirFormularioPanel(panelContenedor, frmP);
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedor, new formVentas());
+            formVentas frmV = new formVentas();
+            frmV.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
+            controladores.abrirFormularioPanel(panelContenedor, frmV);
+        }
+        private void mostrarInicio()
+        {
+            controladores.abrirFormularioPanel(panelContenedor, new formMenuInicio());
+        }
+        private void mostrarInicioCerrar(object sender, FormClosedEventArgs e)
+        {
+            mostrarInicio();
+
         }
 
     }

@@ -39,5 +39,10 @@ namespace capaPresentacion
         {
             controladores.abrirFormularioPanel(panelCompras, new formReporteCompras());
         }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
