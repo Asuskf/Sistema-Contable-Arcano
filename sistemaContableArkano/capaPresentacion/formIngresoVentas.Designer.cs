@@ -59,11 +59,11 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDetalleVenta = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.btnEliminarVenta = new System.Windows.Forms.Button();
             this.btnEditarVenta = new System.Windows.Forms.Button();
             this.btnAniadirVenta = new System.Windows.Forms.Button();
-            this.lblDetalleVenta = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
@@ -477,6 +477,18 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(788, 73);
             this.tableLayoutPanel12.TabIndex = 4;
             // 
+            // lblDetalleVenta
+            // 
+            this.lblDetalleVenta.AutoSize = true;
+            this.lblDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDetalleVenta.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleVenta.Location = new System.Drawing.Point(3, 45);
+            this.lblDetalleVenta.Name = "lblDetalleVenta";
+            this.lblDetalleVenta.Size = new System.Drawing.Size(782, 28);
+            this.lblDetalleVenta.TabIndex = 48;
+            this.lblDetalleVenta.Text = "Detalle venta";
+            this.lblDetalleVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 3;
@@ -491,7 +503,7 @@
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(782, 39);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
@@ -551,18 +563,6 @@
             this.btnAniadirVenta.TabStop = false;
             this.btnAniadirVenta.Text = "Añadir venta";
             this.btnAniadirVenta.UseVisualStyleBackColor = false;
-            // 
-            // lblDetalleVenta
-            // 
-            this.lblDetalleVenta.AutoSize = true;
-            this.lblDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDetalleVenta.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleVenta.Location = new System.Drawing.Point(3, 45);
-            this.lblDetalleVenta.Name = "lblDetalleVenta";
-            this.lblDetalleVenta.Size = new System.Drawing.Size(782, 28);
-            this.lblDetalleVenta.TabIndex = 48;
-            this.lblDetalleVenta.Text = "Detalle venta";
-            this.lblDetalleVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel14
             // 

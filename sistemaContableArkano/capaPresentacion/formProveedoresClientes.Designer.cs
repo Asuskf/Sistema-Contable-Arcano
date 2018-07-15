@@ -60,6 +60,7 @@
             this.lblFiltro = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDatosUserProve = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -573,6 +573,18 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(430, 48);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBuscar.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtBuscar.Location = new System.Drawing.Point(3, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(415, 30);
+            this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.Text = "Buscar";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 3;
@@ -667,18 +679,6 @@
             this.lblDatosUserProve.TabIndex = 46;
             this.lblDatosUserProve.Text = "Cliente o proveedor";
             this.lblDatosUserProve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBuscar.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtBuscar.Location = new System.Drawing.Point(3, 3);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(415, 30);
-            this.txtBuscar.TabIndex = 2;
-            this.txtBuscar.Text = "Buscar";
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // formProveedoresClientes
             // 

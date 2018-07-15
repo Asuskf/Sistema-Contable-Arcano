@@ -44,7 +44,6 @@
             this.dateTimeFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnExportarExcel = new System.Windows.Forms.Button();
             this.btnExportarPDF = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -264,7 +263,6 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.33503F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.33503F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04568F));
-            this.tableLayoutPanel10.Controls.Add(this.btnExportarExcel, 3, 0);
             this.tableLayoutPanel10.Controls.Add(this.btnExportarPDF, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 39);
@@ -273,26 +271,6 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(788, 44);
             this.tableLayoutPanel10.TabIndex = 1;
-            // 
-            // btnExportarExcel
-            // 
-            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(115)))), ((int)(((byte)(70)))));
-            this.btnExportarExcel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExportarExcel.FlatAppearance.BorderSize = 0;
-            this.btnExportarExcel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportarExcel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportarExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExportarExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExportarExcel.Image")));
-            this.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportarExcel.Location = new System.Drawing.Point(569, 3);
-            this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnExportarExcel.Size = new System.Drawing.Size(216, 38);
-            this.btnExportarExcel.TabIndex = 46;
-            this.btnExportarExcel.TabStop = false;
-            this.btnExportarExcel.Text = "Exportar Excel";
-            this.btnExportarExcel.UseVisualStyleBackColor = false;
             // 
             // btnExportarPDF
             // 
@@ -397,7 +375,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button btnExportarExcel;
         private System.Windows.Forms.Button btnExportarPDF;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblNumeroTotal;

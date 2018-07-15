@@ -12,7 +12,7 @@ namespace capaPresentacion
 {
     public partial class formMenuPrincipal : Form
     {
-        //Controladores.controladores controladores = new Controladores.controladores();
+        Controladores.controladores controladores = new Controladores.controladores();
         public formMenuPrincipal()
         {
             InitializeComponent();
@@ -72,21 +72,11 @@ namespace capaPresentacion
             btnRestaurar.Visible = true;
         }
 
-        private void abrirFormularioPanel(object formHijo)
-        {
-            if (this.panelContenedor.Controls.Count > 0)
-                this.panelContenedor.Controls.RemoveAt(0);
-            Form formulario = formHijo as Form;
-            formulario.TopLevel = false;
-            formulario.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(formulario);
-            this.panelContenedor.Tag = formulario;
-            formulario.Show();
-        }
+        
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            abrirFormularioPanel(new formUsuario());
+            controladores.abrirFormularioPanel(panelContenedor, new formUsuario());
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -103,17 +93,17 @@ namespace capaPresentacion
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            
+            controladores.abrirFormularioPanel(panelContenedor, new formCompras());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            abrirFormularioPanel(new formProveedoresClientes());
+            controladores.abrirFormularioPanel(panelContenedor, new formProveedoresClientes());
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            abrirFormularioPanel(new formVentas());
+            controladores.abrirFormularioPanel(panelContenedor, new formVentas());
         }
 
     }

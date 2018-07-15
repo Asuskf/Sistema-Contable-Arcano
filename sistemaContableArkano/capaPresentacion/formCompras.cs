@@ -12,9 +12,32 @@ namespace capaPresentacion
 {
     public partial class formCompras : Form
     {
+        Controladores.controladores controladores = new Controladores.controladores();
+
         public formCompras()
         {
             InitializeComponent();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            controladores.abrirFormularioPanel(panelCompras, new formListaProveedores());
+        }
+
+        private void btnIngresoCompras_Click(object sender, EventArgs e)
+        {
+            controladores.abrirFormularioPanel(panelCompras, new formIngresoCompras());
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            controladores.abrirFormularioPanel(panelCompras, new formReporteCompras());
         }
     }
 }

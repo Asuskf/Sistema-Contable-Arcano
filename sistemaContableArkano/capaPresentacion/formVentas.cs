@@ -21,23 +21,22 @@ namespace capaPresentacion
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedorVentas, new formListaClientes());
+            controladores.abrirFormularioPanel(panelVentas, new formListaClientes());
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
+        private void btnIngresoVentas_Click(object sender, EventArgs e)
         {
-            controladores.abrirFormularioPanel(panelContenedorVentas, new formReporteVentas());
+            controladores.abrirFormularioPanel(panelVentas, new formReporteVentas());
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            controladores.abrirFormularioPanel(panelVentas, new formIngresoVentas());
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnIngresoVentas_Click(object sender, EventArgs e)
-        {
-            controladores.abrirFormularioPanel(panelContenedorVentas, new formIngresoVentas());
-            //////////comentariossssssssssssssss
         }
     }
 }

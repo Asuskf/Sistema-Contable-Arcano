@@ -65,6 +65,7 @@ namespace capaPresentacion
 
         private void btnCerrar_Click_3(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -181,18 +182,18 @@ namespace capaPresentacion
                                         encrip2 = Convert.ToBase64String(inputbytes);
 
                                         string sInsertarUsuario = "insert into TB_USUARIO (usuNombre,usuApellido,usuDireccion,usuCorreo,usuNombreUsuario,usuContrasena) values ('" + this.txtNombre.Text + "', '" + this.txtApellido.Text + "', '" + this.txtDireccion.Text + "', '" + this.txtCorreo.Text + "', '" + this.txtNombreUsuario.Text + "',  '" + encrip2 + "')"; //sentencia para ingresar los datos a la BD
-
+                                        
                                         if (ingresarUsuario.insertar(sInsertarUsuario))
                                         {
                                             MessageBox.Show("Cuenta creada correctamente");
+                                            
                                         }
                                         else
                                         {
                                             MessageBox.Show("Error al insertar los datos");
                                         }
 
-                                        Application.Restart();//para que la aplicacion se reinicie y verificar que se ingreso correctamente
-                                        this.Close();
+                                       
                                     }
                                 }
                             }
@@ -288,6 +289,7 @@ namespace capaPresentacion
             txtDireccion.Text = Convert.ToString(dgvListaUsuarios.CurrentRow.Cells[3].Value);
             txtCorreo.Text = Convert.ToString(dgvListaUsuarios.CurrentRow.Cells[4].Value);
             txtNombreUsuario.Text = Convert.ToString(dgvListaUsuarios.CurrentRow.Cells[5].Value);
+            ingresarUsuario.verImagen(pbIconoUsuario,IDUsuarioModif);
 
             string decrip = Convert.ToString(dgvListaUsuarios.CurrentRow.Cells[6].Value);
             byte[] desencriptar = Convert.FromBase64String(decrip);
@@ -312,6 +314,28 @@ namespace capaPresentacion
                     MessageBox.Show("Ocurrio un error al eliminar el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnCambiarUsuario_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                this.openFileDialog1.ShowDialog();
+                if (this.openFileDialog1.FileName.Equals("") == false) {
+                    pbIconoUsuario.Load(this.openFileDialog1.FileName);
+                    btnGuarIcoUsuario.Enabled = true;
+                }
+            }
+            catch(Exception ex) {
+                MessageBox.Show("No se pudo cargar la imagen revise que la imagen tenga el formato correcto ");
+            }
+        }
+
+        private void btnGuardarImagen_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show(ingresarUsuario.guardarImagen(pbIconoUsuario, Convert.ToInt32(dgvListaUsuarios.CurrentRow.Cells[0].Value)));
         }
     }
 }

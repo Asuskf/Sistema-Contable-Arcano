@@ -118,27 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnExportarExcel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAdCAYAAAC9pNwMAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAAd0SU1FB+IHCg4iObjsz38AAAOCSURBVEhLtZdJaxRBGIaDoGDcEFExMQoqBhUh
-        LmhEE3ABL6KCFxXxpP4AQfDirtGQSLyIB0HwoqCCy0nUg0uUmLigqIjbQRMTNc70zPSW3sbn61SGIcv0
-        kLTv8NBVX31db3V1Vc1MSZSy2ewYmApzYRVshoNwFwwQvVDpIxMdLYfT0AafoQsy4MJgalO3Fi9u2gGH
-        4Qa0w3D0BdbCliLYBHPEOA7p0AzPi+AlfI/F2Av8Z2oCI5U0U5ODIEjEYuwH/kfbcxY7vldruz2zEro2
-        gXJNj++tzuE688XYcuwKjJNxTXU2UB+e/mzKMmT152Ly8YPgzn8x7hNPfz5jmTWqmhPm96KMfTBBFkxO
-        JL+Gx4z8pwrl5Pleq3QaJVKHNib4ybCN8pSpTwt6twkd+8/VvSUybf3FPWm4Dy0MYo9m6gsot8JDxRNm
-        4rDcX3CqHc+tlSQ6aZK663tbpc71QphQQEHg16cts1pVc8LshvRR0JjRvZUko8eqpJpmRU63XXcKzzro
-        AUNHHoNNgEPuoaSeWkZZYpoiA5cijUW201MtiXRUF149Z7dqGiAG2iI5USI12pjG8PylGN5EvbdhaMmi
-        lEHUs536plpiYZy1cV36iTTGuV23zImSrNtmlYpGCuOGlGWG+zhfmN0sypiT56AkdutahVx5R7dU0wCx
-        xTpMxzpApye5rutOJcoo18ERxVHTsbdJP5SHNqZBkyTNykzlCd5J2fEc+T6W/T1AGH/gqKxiPdSyNmYn
-        DG08a6KWuhyVwhrbdSqln4LGju9ulyS20wmpso/ndWgdoyg/DRMKiIE29h2Z+eId3ypoTPCjJPzWkqMp
-        /5AY+3e/xDgYFoVJg0ktPgZ7KmUaK8KKxELCAV2VPoY0JuErT3jF9d3rKiSDMTQjPZ+2UqbtogrnxFS/
-        +dD5bWzSypRrZmZie+rXaMozYQaUCZqZnlzQeDiio04GdZwBNDE7GzGvoHyOWL2igYfZGbtxvjA5k7eP
-        c8LsWvxPnA0yvJoHvN8WVv++hJ5ZSLkVHimaWbDHYjdmWov6WhQp43h++niB9/7br/Z5XVr3ks4C0L70
-        r57cgHFajJ3e20ckDxKgFYHkXRZjOYfXQx28heHolUwj13FFUBrOOYXwmi9is2EXNMJteA/yXdz3l6W/
-        4vkL0190LMflJJDzeiXsBfnnIb+//sB9lVqkSkr+ATRJmk8N0ih2AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnExportarPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAhCAYAAADOHBvaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
