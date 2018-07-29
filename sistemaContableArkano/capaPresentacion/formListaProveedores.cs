@@ -1,4 +1,5 @@
-﻿using System;
+﻿using capaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace capaPresentacion
 {
     public partial class formListaProveedores : Form
     {
+        ConexionBD capaDatos = new ConexionBD();
         public formListaProveedores()
         {
             InitializeComponent();
@@ -21,6 +23,14 @@ namespace capaPresentacion
         {
             
             this.Close();
+        }
+
+        
+        private void formListaProveedores_Load(object sender, EventArgs e)
+        {
+            string tipoCliente = "Proveedor";
+            capaDatos.verClientes(dgvListaProveedores, tipoCliente);
+
         }
     }
 }

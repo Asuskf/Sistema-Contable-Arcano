@@ -58,6 +58,8 @@ namespace capaPresentacion.Controladores
             formulario.Show();
         }
 
+        
+
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.fechaLogin = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -63,7 +65,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(3, 288);
+            this.lblFecha.Location = new System.Drawing.Point(12, 278);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(44, 16);
             this.lblFecha.TabIndex = 2;
@@ -183,6 +185,11 @@
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter_1);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave_1);
             // 
+            // fechaLogin
+            // 
+            this.fechaLogin.Enabled = true;
+            this.fechaLogin.Tick += new System.EventHandler(this.fechaLogin_Tick);
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +236,7 @@
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Timer fechaLogin;
     }
 }
 

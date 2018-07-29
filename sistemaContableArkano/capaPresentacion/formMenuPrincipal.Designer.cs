@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMenuPrincipal));
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.pbIconoUsuario = new PictureBoxAbouAmmar.صورة_دائرة();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnProveedorCliente = new System.Windows.Forms.Button();
@@ -43,7 +44,11 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.lblNombre2 = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
             this.menuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
@@ -56,6 +61,10 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.menuVertical.Controls.Add(this.lblApellido);
+            this.menuVertical.Controls.Add(this.lblNombre2);
+            this.menuVertical.Controls.Add(this.lblNombreUsuario);
+            this.menuVertical.Controls.Add(this.pbIconoUsuario);
             this.menuVertical.Controls.Add(this.btnUsuario);
             this.menuVertical.Controls.Add(this.btnCompras);
             this.menuVertical.Controls.Add(this.btnProveedorCliente);
@@ -67,6 +76,18 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(210, 650);
             this.menuVertical.TabIndex = 0;
+            // 
+            // pbIconoUsuario
+            // 
+            this.pbIconoUsuario.BackColor = System.Drawing.Color.DarkGray;
+            this.pbIconoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pbIconoUsuario.Image")));
+            this.pbIconoUsuario.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbIconoUsuario.InitialImage")));
+            this.pbIconoUsuario.Location = new System.Drawing.Point(3, 574);
+            this.pbIconoUsuario.Name = "pbIconoUsuario";
+            this.pbIconoUsuario.Size = new System.Drawing.Size(52, 58);
+            this.pbIconoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIconoUsuario.TabIndex = 61;
+            this.pbIconoUsuario.TabStop = false;
             // 
             // btnUsuario
             // 
@@ -249,6 +270,39 @@
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelContenedor_MouseDown);
             // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(61, 574);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(131, 20);
+            this.lblNombreUsuario.TabIndex = 0;
+            this.lblNombreUsuario.Text = "Nombre Usuario";
+            // 
+            // lblNombre2
+            // 
+            this.lblNombre2.AutoSize = true;
+            this.lblNombre2.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre2.ForeColor = System.Drawing.Color.White;
+            this.lblNombre2.Location = new System.Drawing.Point(61, 594);
+            this.lblNombre2.Name = "lblNombre2";
+            this.lblNombre2.Size = new System.Drawing.Size(64, 18);
+            this.lblNombre2.TabIndex = 62;
+            this.lblNombre2.Text = "Nombre";
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.White;
+            this.lblApellido.Location = new System.Drawing.Point(61, 614);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(68, 18);
+            this.lblApellido.TabIndex = 63;
+            this.lblApellido.Text = "Apellido";
+            // 
             // formMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +316,7 @@
             this.Text = "formMenuPrincipal";
             this.menuVertical.ResumeLayout(false);
             this.menuVertical.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.barraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
@@ -289,5 +344,9 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnProveedorCliente;
+        private PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblNombre2;
+        private System.Windows.Forms.Label lblNombreUsuario;
     }
 }

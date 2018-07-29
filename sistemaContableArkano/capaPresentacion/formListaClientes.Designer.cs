@@ -81,6 +81,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formListaClientes";
             this.Text = "formClientes";
+            this.Load += new System.EventHandler(this.formListaClientes_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCliente)).EndInit();

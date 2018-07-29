@@ -81,6 +81,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formListaProveedores";
             this.Text = "formListaProveedores";
+            this.Load += new System.EventHandler(this.formListaProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProveedores)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

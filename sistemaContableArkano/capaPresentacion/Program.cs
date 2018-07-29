@@ -8,6 +8,10 @@ namespace capaPresentacion
 {
     static class Program
     {
+
+        public static string nombreUsuario;
+        public static string nombre;
+        public static string apellido;
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -17,7 +21,7 @@ namespace capaPresentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new formMenuPrincipal());
-            Application.Run(new formMenuPrincipal());
+            Application.Run(new formLogin());
         }
     }
 }

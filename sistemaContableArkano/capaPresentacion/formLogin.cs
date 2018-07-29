@@ -110,7 +110,7 @@ namespace capaPresentacion
             try
             {
                 conectar.cnn.Open();
-                SqlCommand consulUsuario = new SqlCommand("select usuNombreUsuario from TB_USUARIO where usuNombreUsuario=@usuario and usuContrasena=@contrasena", conectar.cnn);
+                SqlCommand consulUsuario = new SqlCommand("select usuNombreUsuario,usuNombre,usuApellido from TB_USUARIO where usuNombreUsuario=@usuario and usuContrasena=@contrasena", conectar.cnn);
                 consulUsuario.Parameters.AddWithValue("usuario", nomUsuario);
                 consulUsuario.Parameters.AddWithValue("contrasena", contraUsuario);
                 SqlDataAdapter adap = new SqlDataAdapter(consulUsuario);
@@ -122,7 +122,9 @@ namespace capaPresentacion
                     this.Hide();
                     string sBienveNombre = dt3.Rows[0][0].ToString();
                     MessageBox.Show("Bienvenid@ " + sBienveNombre);
-
+                    Program.nombreUsuario = sBienveNombre;
+                    Program.nombre = dt3.Rows[0][1].ToString();
+                    Program.apellido = dt3.Rows[0][2].ToString();
                     formMenuPrincipal pantPrincipal = new formMenuPrincipal(); //instancio el formulario de la pantalla principal
 
                     this.Hide();
@@ -140,6 +142,11 @@ namespace capaPresentacion
             {
                 //e.Message;
             }
+        }
+
+        private void fechaLogin_Tick(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

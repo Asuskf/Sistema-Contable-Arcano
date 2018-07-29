@@ -21,5 +21,7 @@ namespace capaPresentacion
         {
             lblReloj.Text = DateTime.Now.ToLongTimeString();
         }
+
+
     }
 }

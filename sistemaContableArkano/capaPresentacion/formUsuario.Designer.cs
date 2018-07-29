@@ -39,14 +39,15 @@
             this.lblListaUsuarios = new System.Windows.Forms.Label();
             this.dgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.pbIconoUsuario = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
             this.btnActualizarUsuario = new System.Windows.Forms.Button();
             this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.صورة_دائرة1 = new PictureBoxAbouAmmar.صورة_دائرة();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGuarIcoUsuario = new System.Windows.Forms.Button();
             this.btnCambIcoUsuario = new System.Windows.Forms.Button();
+            this.pbIconoUsuario = new PictureBoxAbouAmmar.صورة_دائرة();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -70,9 +71,10 @@
             this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.صورة_دائرة1)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -217,9 +219,9 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.5F));
-            this.tableLayoutPanel5.Controls.Add(this.pbIconoUsuario, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel10, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.pbIconoUsuario, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(550, 30);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -229,17 +231,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(542, 239);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // pbIconoUsuario
-            // 
-            this.pbIconoUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIconoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pbIconoUsuario.Image")));
-            this.pbIconoUsuario.Location = new System.Drawing.Point(16, 3);
-            this.pbIconoUsuario.Name = "pbIconoUsuario";
-            this.pbIconoUsuario.Size = new System.Drawing.Size(265, 185);
-            this.pbIconoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIconoUsuario.TabIndex = 56;
-            this.pbIconoUsuario.TabStop = false;
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -248,6 +239,7 @@
             this.tableLayoutPanel6.Controls.Add(this.btnCrearUsuario, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnActualizarUsuario, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.btnEliminarUsuario, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.صورة_دائرة1, 0, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(287, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -323,6 +315,16 @@
             this.btnEliminarUsuario.UseVisualStyleBackColor = false;
             this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
+            // صورة_دائرة1
+            // 
+            this.صورة_دائرة1.BackColor = System.Drawing.Color.DarkGray;
+            this.صورة_دائرة1.Location = new System.Drawing.Point(3, 71);
+            this.صورة_دائرة1.Name = "صورة_دائرة1";
+            this.صورة_دائرة1.Size = new System.Drawing.Size(1, 42);
+            this.صورة_دائرة1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.صورة_دائرة1.TabIndex = 62;
+            this.صورة_دائرة1.TabStop = false;
+            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
@@ -356,7 +358,7 @@
             this.btnGuarIcoUsuario.TabIndex = 58;
             this.btnGuarIcoUsuario.Text = "Guardar";
             this.btnGuarIcoUsuario.UseVisualStyleBackColor = false;
-            this.btnGuarIcoUsuario.Click += new System.EventHandler(this.btnGuardarImagen_Click);
+            this.btnGuarIcoUsuario.Click += new System.EventHandler(this.btnGuarIcoUsuario_Click);
             // 
             // btnCambIcoUsuario
             // 
@@ -375,6 +377,18 @@
             this.btnCambIcoUsuario.Text = "Editar";
             this.btnCambIcoUsuario.UseVisualStyleBackColor = false;
             this.btnCambIcoUsuario.Click += new System.EventHandler(this.btnCambiarUsuario_Click);
+            // 
+            // pbIconoUsuario
+            // 
+            this.pbIconoUsuario.BackColor = System.Drawing.Color.DarkGray;
+            this.pbIconoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("pbIconoUsuario.Image")));
+            this.pbIconoUsuario.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbIconoUsuario.InitialImage")));
+            this.pbIconoUsuario.Location = new System.Drawing.Point(16, 3);
+            this.pbIconoUsuario.Name = "pbIconoUsuario";
+            this.pbIconoUsuario.Size = new System.Drawing.Size(265, 185);
+            this.pbIconoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIconoUsuario.TabIndex = 60;
+            this.pbIconoUsuario.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -632,9 +646,10 @@
             this.tableLayoutPanel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaUsuarios)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.صورة_دائرة1)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -655,7 +670,6 @@
         private System.Windows.Forms.Label lblListaUsuarios;
         private System.Windows.Forms.DataGridView dgvListaUsuarios;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.PictureBox pbIconoUsuario;
         private System.Windows.Forms.Button btnCambIcoUsuario;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btnCrearUsuario;
@@ -679,5 +693,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Button btnGuarIcoUsuario;
+        private PictureBoxAbouAmmar.صورة_دائرة صورة_دائرة1;
+        private PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
     }
 }
