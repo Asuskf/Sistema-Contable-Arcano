@@ -100,7 +100,8 @@ namespace capaDatos
 
         public string insertarUsuario(string usuNombre, string usuApellido, string usuDireccion, string usuCorreo, string usuNombreUsuario, string usuContrasena) {
             string mensaje = "Usuario creado con exito";
-            cnn.Open();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
             try
             {
                 comando = new SqlCommand("insert into TB_USUARIO (usuNombre,usuApellido,usuDireccion,usuCorreo,usuNombreUsuario,usuContrasena) values ('" + usuNombre + "', '" + usuApellido + "', '" + usuDireccion + "', " +
@@ -118,7 +119,8 @@ namespace capaDatos
 
         public void LLenarGrid(DataGridView grid, string sql5)
         {
-            cnn.Open();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
             comando = new SqlCommand(sql5, cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
@@ -130,6 +132,8 @@ namespace capaDatos
        
         public void verImagen(PictureBox pbIconoUsuario, string usuNombreUsuario) {
             try {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
                 adapt = new SqlDataAdapter("Select usuFoto from TB_USUARIO where usuNombreUsuario = '" + usuNombreUsuario + "' ", cnn);
                 ds = new DataSet();
                 adapt.Fill(ds, "TB_USUARIO");
@@ -143,11 +147,13 @@ namespace capaDatos
 
                 pbIconoUsuario.Image = pbIconoUsuario.InitialImage;
             }
+            cnn.Close();
         }
 
         public void verClientes(DataGridView grid, String tipoUsuario) {
 
-            cnn.Open();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
             comando = new SqlCommand("select dt.detperID as 'Codigo Cliente', dt.detperCedulaRuc as 'Cedula/Ruc', dt.detperNombre as 'Nombre', dt.detperApellido as 'Apellido', dt.detperDireccion as 'Dirección', dt.detperCorreo as 'Correo'  from TB_PERFILES p left join TB_DETALLE_PERFIL dt on p.perID = dt.perID where perDescripcion = '" + tipoUsuario + "' ; ", cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
@@ -162,7 +168,8 @@ namespace capaDatos
             string mensaje = "Tu foto de perfil se actualizo";
             try
             {
-                cnn.Open();
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
                 comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuNombreUsuario = '" + usuNombreUsuario + "'", cnn);
                 comando.Parameters.Add("@usuImagen", SqlDbType.Image);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -178,6 +185,78 @@ namespace capaDatos
             return mensaje;
         }
 
+        public void buscarComboboxUsuario(ComboBox comboBox, int tipoPerfil) {
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            comando = new SqlCommand("select detperID , CONCAT(detperNombre, ' ', detperApellido) as Nombre from TB_DETALLE_PERFIL  where perID = '" + tipoPerfil + "'", cnn);
+            adapt = new SqlDataAdapter(comando);
+            dt1 = new DataTable();
+            adapt.Fill(dt1);
+            comboBox.ValueMember = "detperID";
+            comboBox.DisplayMember = "Nombre";
+            comboBox.DataSource = dt1;
+
+            AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
+            foreach (DataRow row in dt1.Rows) {
+                coleccion.Add(Convert.ToString(row["Nombre"]));
+            }
+            comboBox.AutoCompleteCustomSource = coleccion;
+            comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cnn.Close();
+        }
+
+        public void cargarDatos(ComboBox comboBox, TextBox cedula, TextBox correo)
+        {
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            comando = new SqlCommand("select detperCedulaRuc, detperCorreo from TB_DETALLE_PERFIL  where detperID = '" + comboBox.SelectedValue + "'", cnn);
+            adapt = new SqlDataAdapter(comando);
+            DataTable dt2 = new DataTable();
+            adapt.Fill(dt2);
+            foreach (DataRow dr in dt2.Rows) {
+
+                cedula.Text = Convert.ToString(dr["detperCedulaRuc"]);
+                correo.Text = Convert.ToString(dr["detperCorreo"]);
+            }
+            cnn.Close();
+        }
+
+        public static int usuariologeado;
+
+        public string IngresarCompraVenta(ComboBox usuID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento) {
+            string mensaje = "Registro guarado con exito";
+
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            try
+            {
+            comando = new SqlCommand("Insert into TB_TRANSACCION (detperID, usuID, tiptranID,tranDescripcion,tranFecha,tranAutorizacion,tranFechaVencimiento) values ('" + usuID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "','" + tranDescripcion + "', '" + tranFecha + "' , '" + tranAutorizacion + "' ,'" + tranFechaVencimiento + "' )", cnn);
+            comando.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+
+                mensaje = "Se registro un error al ingresar el registro";
+            }
+            cnn.Close();
+            return mensaje;
+        }
+
+        public string actualizarCompraVenta(int tranID, ComboBox detperID, TextBox tranDescripcion, string tranFecha, TextBox tranAutorizacion, string tranFechaVencimiento) {
+            string mensaje = "Registro actualizado";
+            try
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+                comando = new SqlCommand("update TB_TRANSACCION set detperID = '" + detperID.SelectedValue + "', tranDescripcion =  '" + tranDescripcion.Text + "', tranFecha = '" + tranFecha + "', tranAutorizacion = '" + tranAutorizacion.Text + "', tranFechaVencimiento = '" + tranFechaVencimiento + "' where tranID = '" + tranID + "'", cnn);
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException) {
+                mensaje = "Se registro un error al ingresar el registro";
+            }
+                return mensaje;
+        }
 
         
     }

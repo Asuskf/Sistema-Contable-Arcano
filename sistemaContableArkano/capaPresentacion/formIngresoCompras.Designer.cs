@@ -46,7 +46,10 @@
             this.txtProveedorCI_RUC = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNombreProveedor = new System.Windows.Forms.Label();
-            this.txtNombreProveedor = new System.Windows.Forms.TextBox();
+            this.cmbNombre = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.DetalleCompra2 = new System.Windows.Forms.Label();
@@ -73,6 +76,7 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -218,7 +222,9 @@
             // 
             // dateTimeFecha
             // 
+            this.dateTimeFecha.CustomFormat = "";
             this.dateTimeFecha.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeFecha.Location = new System.Drawing.Point(63, 3);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(197, 20);
@@ -226,7 +232,9 @@
             // 
             // dateTimeFechaVencimiento
             // 
+            this.dateTimeFechaVencimiento.CustomFormat = "";
             this.dateTimeFechaVencimiento.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dateTimeFechaVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeFechaVencimiento.Location = new System.Drawing.Point(593, 3);
             this.dateTimeFechaVencimiento.Name = "dateTimeFechaVencimiento";
             this.dateTimeFechaVencimiento.Size = new System.Drawing.Size(192, 20);
@@ -242,17 +250,18 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel15, 2, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 78);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(788, 31);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
@@ -264,11 +273,11 @@
             this.tableLayoutPanel8.Controls.Add(this.lblProveedorCI_RUC, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtProveedorCI_RUC, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(397, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(278, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(388, 25);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(269, 25);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // lblProveedorCI_RUC
@@ -276,7 +285,7 @@
             this.lblProveedorCI_RUC.AutoSize = true;
             this.lblProveedorCI_RUC.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblProveedorCI_RUC.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedorCI_RUC.Location = new System.Drawing.Point(46, 0);
+            this.lblProveedorCI_RUC.Location = new System.Drawing.Point(10, 0);
             this.lblProveedorCI_RUC.Name = "lblProveedorCI_RUC";
             this.lblProveedorCI_RUC.Size = new System.Drawing.Size(67, 25);
             this.lblProveedorCI_RUC.TabIndex = 2;
@@ -285,9 +294,9 @@
             // txtProveedorCI_RUC
             // 
             this.txtProveedorCI_RUC.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtProveedorCI_RUC.Location = new System.Drawing.Point(119, 3);
+            this.txtProveedorCI_RUC.Location = new System.Drawing.Point(83, 3);
             this.txtProveedorCI_RUC.Name = "txtProveedorCI_RUC";
-            this.txtProveedorCI_RUC.Size = new System.Drawing.Size(266, 20);
+            this.txtProveedorCI_RUC.Size = new System.Drawing.Size(183, 20);
             this.txtProveedorCI_RUC.TabIndex = 3;
             // 
             // tableLayoutPanel7
@@ -296,13 +305,13 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel7.Controls.Add(this.lblNombreProveedor, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.txtNombreProveedor, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.cmbNombre, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(388, 25);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(269, 25);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // lblNombreProveedor
@@ -310,19 +319,56 @@
             this.lblNombreProveedor.AutoSize = true;
             this.lblNombreProveedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblNombreProveedor.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProveedor.Location = new System.Drawing.Point(45, 0);
+            this.lblNombreProveedor.Location = new System.Drawing.Point(9, 0);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
             this.lblNombreProveedor.Size = new System.Drawing.Size(68, 25);
             this.lblNombreProveedor.TabIndex = 2;
             this.lblNombreProveedor.Text = "Nombre:";
             // 
-            // txtNombreProveedor
+            // cmbNombre
             // 
-            this.txtNombreProveedor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtNombreProveedor.Location = new System.Drawing.Point(119, 3);
-            this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(266, 20);
-            this.txtNombreProveedor.TabIndex = 3;
+            this.cmbNombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbNombre.FormattingEnabled = true;
+            this.cmbNombre.Location = new System.Drawing.Point(83, 3);
+            this.cmbNombre.Name = "cmbNombre";
+            this.cmbNombre.Size = new System.Drawing.Size(183, 21);
+            this.cmbNombre.TabIndex = 3;
+            this.cmbNombre.SelectedIndexChanged += new System.EventHandler(this.cmbNombre_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.31034F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.68965F));
+            this.tableLayoutPanel15.Controls.Add(this.lblCodigo, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.txtCorreo, 1, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(553, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(232, 25);
+            this.tableLayoutPanel15.TabIndex = 2;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblCodigo.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(61, 25);
+            this.lblCodigo.TabIndex = 3;
+            this.lblCodigo.Text = "Correo:";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCorreo.Location = new System.Drawing.Point(70, 3);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(159, 20);
+            this.txtCorreo.TabIndex = 4;
             // 
             // tableLayoutPanel9
             // 
@@ -415,13 +461,13 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblPrecio.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(228, 0);
+            this.lblPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPrecio.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(197, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(60, 29);
+            this.lblPrecio.Size = new System.Drawing.Size(91, 29);
             this.lblPrecio.TabIndex = 2;
-            this.lblPrecio.Text = "Precio: $";
+            this.lblPrecio.Text = "Precio sin IVA: $";
             // 
             // txtCantidadCompra
             // 
@@ -514,6 +560,7 @@
             this.btnEditarCompra.TabStop = false;
             this.btnEditarCompra.Text = "Editar compra";
             this.btnEditarCompra.UseVisualStyleBackColor = false;
+            this.btnEditarCompra.Click += new System.EventHandler(this.btnEditarCompra_Click);
             // 
             // btnAniadirCompra
             // 
@@ -533,6 +580,7 @@
             this.btnAniadirCompra.TabStop = false;
             this.btnAniadirCompra.Text = "Añadir compra";
             this.btnAniadirCompra.UseVisualStyleBackColor = false;
+            this.btnAniadirCompra.Click += new System.EventHandler(this.btnAniadirCompra_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -606,6 +654,8 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
@@ -642,7 +692,6 @@
         private System.Windows.Forms.TextBox txtProveedorCI_RUC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label lblNombreProveedor;
-        private System.Windows.Forms.TextBox txtNombreProveedor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label DetalleCompra2;
@@ -662,5 +711,9 @@
         private System.Windows.Forms.Label lblIngresoCompras;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.DataGridView dgvDetalleCompra;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.ComboBox cmbNombre;
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace capaNegocio
 {
-    public class Class1
+    class Transacciones
     {
+        public string crearCompra() { }
     }
 }

@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMenuPrincipal));
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre2 = new System.Windows.Forms.Label();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.pbIconoUsuario = new PictureBoxAbouAmmar.صورة_دائرة();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
@@ -44,9 +47,6 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblNombre2 = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -76,6 +76,39 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(210, 650);
             this.menuVertical.TabIndex = 0;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.White;
+            this.lblApellido.Location = new System.Drawing.Point(61, 614);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(68, 18);
+            this.lblApellido.TabIndex = 63;
+            this.lblApellido.Text = "Apellido";
+            // 
+            // lblNombre2
+            // 
+            this.lblNombre2.AutoSize = true;
+            this.lblNombre2.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre2.ForeColor = System.Drawing.Color.White;
+            this.lblNombre2.Location = new System.Drawing.Point(61, 594);
+            this.lblNombre2.Name = "lblNombre2";
+            this.lblNombre2.Size = new System.Drawing.Size(64, 18);
+            this.lblNombre2.TabIndex = 62;
+            this.lblNombre2.Text = "Nombre";
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(61, 574);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(131, 20);
+            this.lblNombreUsuario.TabIndex = 0;
+            this.lblNombreUsuario.Text = "Nombre Usuario";
             // 
             // pbIconoUsuario
             // 
@@ -137,7 +170,7 @@
             this.btnProveedorCliente.Name = "btnProveedorCliente";
             this.btnProveedorCliente.Size = new System.Drawing.Size(209, 54);
             this.btnProveedorCliente.TabIndex = 5;
-            this.btnProveedorCliente.Text = "Proveedores Clientes";
+            this.btnProveedorCliente.Text = "    Proveedores Clientes";
             this.btnProveedorCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProveedorCliente.UseVisualStyleBackColor = true;
             this.btnProveedorCliente.Click += new System.EventHandler(this.btnClientes_Click);
@@ -269,39 +302,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1090, 600);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelContenedor_MouseDown);
-            // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(61, 574);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(131, 20);
-            this.lblNombreUsuario.TabIndex = 0;
-            this.lblNombreUsuario.Text = "Nombre Usuario";
-            // 
-            // lblNombre2
-            // 
-            this.lblNombre2.AutoSize = true;
-            this.lblNombre2.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre2.ForeColor = System.Drawing.Color.White;
-            this.lblNombre2.Location = new System.Drawing.Point(61, 594);
-            this.lblNombre2.Name = "lblNombre2";
-            this.lblNombre2.Size = new System.Drawing.Size(64, 18);
-            this.lblNombre2.TabIndex = 62;
-            this.lblNombre2.Text = "Nombre";
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(61, 614);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(68, 18);
-            this.lblApellido.TabIndex = 63;
-            this.lblApellido.Text = "Apellido";
             // 
             // formMenuPrincipal
             // 
