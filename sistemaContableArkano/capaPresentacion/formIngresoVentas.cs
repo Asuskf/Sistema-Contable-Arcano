@@ -35,5 +35,11 @@ namespace capaPresentacion
         {
             capaDatos.cargarDatos(cmbNombre, txtCI_RUCProveedor, txtCorreo);
         }
+
+        private void formIngresoVentas_Load(object sender, EventArgs e)
+        {
+            capaDatos.verCompraVenta(dgvDetalleVenta, 2);
+
+        }
     }
 }

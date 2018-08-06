@@ -35,22 +35,21 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.btnEditarAsiento = new System.Windows.Forms.Button();
             this.btnGuardarAsiento = new System.Windows.Forms.Button();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblDebe = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHaber = new System.Windows.Forms.Label();
+            this.lblDebe = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblNumeroTransacciòn = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -159,30 +158,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(800, 291);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 5;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel4.Controls.Add(this.lblNumeroTransacciòn, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblHaber, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblDebe, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblDescripcion, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblCodigo, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 4;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(794, 218);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 2;
@@ -237,65 +212,76 @@
             this.btnGuardarAsiento.Text = "Guardar asiento";
             this.btnGuardarAsiento.UseVisualStyleBackColor = false;
             // 
-            // lblDescripcion
+            // tableLayoutPanel4
             // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDescripcion.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(240, 0);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(311, 33);
-            this.lblDescripcion.TabIndex = 1;
-            this.lblDescripcion.Text = "Descripción";
-            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDebe
-            // 
-            this.lblDebe.AutoSize = true;
-            this.lblDebe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDebe.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDebe.Location = new System.Drawing.Point(557, 0);
-            this.lblDebe.Name = "lblDebe";
-            this.lblDebe.Size = new System.Drawing.Size(113, 33);
-            this.lblDebe.TabIndex = 2;
-            this.lblDebe.Text = "Debe";
-            this.lblDebe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.44444F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.lblHaber, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblDebe, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblDescripcion, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblCodigo, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.28283F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(794, 218);
+            this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lblHaber
             // 
             this.lblHaber.AutoSize = true;
             this.lblHaber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblHaber.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHaber.Location = new System.Drawing.Point(676, 0);
+            this.lblHaber.Location = new System.Drawing.Point(663, 0);
             this.lblHaber.Name = "lblHaber";
-            this.lblHaber.Size = new System.Drawing.Size(115, 33);
+            this.lblHaber.Size = new System.Drawing.Size(128, 33);
             this.lblHaber.TabIndex = 3;
             this.lblHaber.Text = "Haber";
             this.lblHaber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDebe
+            // 
+            this.lblDebe.AutoSize = true;
+            this.lblDebe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDebe.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebe.Location = new System.Drawing.Point(531, 0);
+            this.lblDebe.Name = "lblDebe";
+            this.lblDebe.Size = new System.Drawing.Size(126, 33);
+            this.lblDebe.TabIndex = 2;
+            this.lblDebe.Text = "Debe";
+            this.lblDebe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDescripcion.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(179, 0);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(346, 33);
+            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.Text = "Descripción";
+            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCodigo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(82, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(152, 33);
+            this.lblCodigo.Size = new System.Drawing.Size(170, 33);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Còdigo";
             this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblNumeroTransacciòn
-            // 
-            this.lblNumeroTransacciòn.AutoSize = true;
-            this.lblNumeroTransacciòn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNumeroTransacciòn.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroTransacciòn.Location = new System.Drawing.Point(3, 0);
-            this.lblNumeroTransacciòn.Name = "lblNumeroTransacciòn";
-            this.lblNumeroTransacciòn.Size = new System.Drawing.Size(73, 33);
-            this.lblNumeroTransacciòn.TabIndex = 4;
-            this.lblNumeroTransacciòn.Text = "No ";
-            this.lblNumeroTransacciòn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formAsiento
             // 
@@ -315,9 +301,9 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,7 +321,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Button btnEditarAsiento;
         private System.Windows.Forms.Button btnGuardarAsiento;
-        private System.Windows.Forms.Label lblNumeroTransacciòn;
         private System.Windows.Forms.Label lblHaber;
         private System.Windows.Forms.Label lblDebe;
         private System.Windows.Forms.Label lblDescripcion;

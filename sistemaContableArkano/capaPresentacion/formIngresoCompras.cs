@@ -40,7 +40,14 @@ namespace capaPresentacion
 
         private void btnEditarCompra_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(capaDatos.actualizarCompra(2,cmbNombre, txtDescripcionCompra, dateTimeFecha.Text, txtAutorizacionCompra, dateTimeFechaVencimiento.Text));
+            MessageBox.Show(capaDatos.actualizarCompraVenta(2,cmbNombre, txtDescripcionCompra, dateTimeFecha.Text, txtAutorizacionCompra, dateTimeFechaVencimiento.Text));
+        }
+
+        private void formIngresoCompras_Load(object sender, EventArgs e)
+        {
+           
+            capaDatos.verCompraVenta(dgvDetalleCompra, 1);
+
         }
     }
 }

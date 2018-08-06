@@ -643,6 +643,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formIngresoCompras";
             this.Text = "formIngresoCompras";
+            this.Load += new System.EventHandler(this.formIngresoCompras_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);

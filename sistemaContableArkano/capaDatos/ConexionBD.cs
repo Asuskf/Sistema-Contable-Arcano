@@ -258,6 +258,20 @@ namespace capaDatos
                 return mensaje;
         }
 
-        
+        public void verCompraVenta(DataGridView grid, int tipoTransaccion)
+        {
+
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            comando = new SqlCommand("select dp.detperCedulaRuc as 'Cédula/RUC', CONCAT(dp.detperApellido,' ',dp.detperNombre) as 'Apellido Nombre', t.tranDescripcion as 'Descripción', dt.detranCantidad as 'Cantidad', dt.detranPrecioUnitario as 'Precio Unitario', (dt.detranPrecioUnitario * dt.detranCantidad) as 'Valor', cast(dt.detranPrecioUnitario * 0.12 as decimal(10, 2)) as 'IVA', cast(dt.detranPrecioUnitario * 1.12 as decimal(10, 2)) as 'Total', u.usuNombre as 'Creado por' from TB_DETALLE_PERFIL dp left join TB_TRANSACCION t on dp.detperID = t.detperID right join TB_USUARIO u on t.usuID = u.usuID inner join TB_DETALLES_TRANSACCION dt on t.tranID = dt.tranID where t.tiptranID = '" + tipoTransaccion + "' ; ", cnn);
+            adapt = new SqlDataAdapter(comando);
+            dt1 = new DataTable();
+            adapt.Fill(dt1);
+            grid.DataSource = dt1;
+            cnn.Close();
+
+        }
+
+
     }
 }
