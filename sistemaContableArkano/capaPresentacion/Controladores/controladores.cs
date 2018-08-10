@@ -12,6 +12,7 @@ namespace capaPresentacion.Controladores
 {
     class controladores
     {
+        capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
         //Permite mover los formularios y arrastrarlos con mantener presionado el clic izquierdo del mouse
         public static class moverCuadro {
             [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -57,7 +58,7 @@ namespace capaPresentacion.Controladores
             panelContenedor.Tag = formulario;
             formulario.Show();
         }
-
+        
 
     }
 }

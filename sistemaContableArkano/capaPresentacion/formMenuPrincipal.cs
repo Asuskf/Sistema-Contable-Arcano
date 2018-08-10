@@ -12,20 +12,23 @@ namespace capaPresentacion
 {
     public partial class formMenuPrincipal : Form
     {
-        capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
+        
         Controladores.controladores controladores = new Controladores.controladores();
+        capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
+
+
         public formMenuPrincipal()
         {
             InitializeComponent();
             mostrarInicio();
-            capaDatos.verImagen(pbIconoUsuario, Program.nombreUsuario);
+
+            verFotoPerfil();
+
             lblNombreUsuario.Text = Program.nombreUsuario;
             lblNombre2.Text = Program.nombre;
             lblApellido.Text = Program.apellido;
 
         }
-
-
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -117,6 +120,13 @@ namespace capaPresentacion
         private void mostrarInicioCerrar(object sender, FormClosedEventArgs e)
         {
             mostrarInicio();
+
+        }
+
+        public void verFotoPerfil()
+        {
+
+            capaDatos.verImagen(pbIconoUsuario, Program.nombreUsuario);
 
         }
 

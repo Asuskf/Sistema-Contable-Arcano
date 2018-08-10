@@ -163,14 +163,12 @@ namespace capaDatos
 
         }
 
-        public string guardarImagen(PictureBox usuImagen, string usuNombreUsuario)
-        {
+        public string guardarImagen(PictureBox usuImagen, int usuID) {
             string mensaje = "Tu foto de perfil se actualizo";
             try
             {
-                if (cnn.State == ConnectionState.Closed)
-                    cnn.Open();
-                comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuNombreUsuario = '" + usuNombreUsuario + "'", cnn);
+                cnn.Open();
+                comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuID = '" + usuID + "'", cnn);
                 comando.Parameters.Add("@usuImagen", SqlDbType.Image);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 usuImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);

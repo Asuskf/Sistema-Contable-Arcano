@@ -12,10 +12,12 @@ using System.Security.Cryptography;
 
 namespace capaPresentacion
 {
+    
     public partial class formUsuario : Form
     {
         Controladores.controladores controladores = new Controladores.controladores();
         ConexionBD ingresarUsuario = new ConexionBD();  //instanciamos la clase conexion para ingresar un nuevo usuario
+        formMenuPrincipal FormMenuPrincipal = new formMenuPrincipal.actualizarImage();
         int IDUsuarioModif;
         private string contrasenia = null;
 
@@ -328,7 +330,8 @@ namespace capaPresentacion
 
         private void btnGuarIcoUsuario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ingresarUsuario.guardarImagen(pbIconoUsuario, Convert.ToString(dgvListaUsuarios.CurrentRow.Cells[4].Value)));
+            MessageBox.Show(ingresarUsuario.guardarImagen(pbIconoUsuario, Convert.ToInt32(dgvListaUsuarios.CurrentRow.Cells[0].Value)));
+            
         }
     }
 }
