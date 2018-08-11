@@ -45,6 +45,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblNumeroTotal = new System.Windows.Forms.Label();
+            this.btnMostrarReporteVentas = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteVentas)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -89,10 +90,13 @@
             // 
             // dgvReporteVentas
             // 
+            this.dgvReporteVentas.AllowUserToAddRows = false;
+            this.dgvReporteVentas.AllowUserToDeleteRows = false;
             this.dgvReporteVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReporteVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReporteVentas.Location = new System.Drawing.Point(3, 79);
             this.dgvReporteVentas.Name = "dgvReporteVentas";
+            this.dgvReporteVentas.ReadOnly = true;
             this.dgvReporteVentas.Size = new System.Drawing.Size(794, 217);
             this.dgvReporteVentas.TabIndex = 74;
             // 
@@ -102,6 +106,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.Controls.Add(this.btnMostrarReporteVentas, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -109,8 +114,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 33);
             this.tableLayoutPanel2.TabIndex = 76;
             // 
@@ -126,7 +131,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(311, 27);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -162,7 +167,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(313, 27);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
@@ -275,6 +280,16 @@
             this.lblNumeroTotal.TabIndex = 1;
             this.lblNumeroTotal.Text = "0,00";
             // 
+            // btnMostrarReporteVentas
+            // 
+            this.btnMostrarReporteVentas.Location = new System.Drawing.Point(320, 3);
+            this.btnMostrarReporteVentas.Name = "btnMostrarReporteVentas";
+            this.btnMostrarReporteVentas.Size = new System.Drawing.Size(152, 23);
+            this.btnMostrarReporteVentas.TabIndex = 3;
+            this.btnMostrarReporteVentas.Text = "Mostrar reporte";
+            this.btnMostrarReporteVentas.UseVisualStyleBackColor = true;
+            this.btnMostrarReporteVentas.Click += new System.EventHandler(this.btnMostrarReporteVentas_Click);
+            // 
             // formReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +333,6 @@
         private System.Windows.Forms.Button btnExportarPDF;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblNumeroTotal;
+        private System.Windows.Forms.Button btnMostrarReporteVentas;
     }
 }

@@ -12,9 +12,11 @@ namespace capaDatos
 {
     public class ConexionBD
     {
+
         //cadena de conexion
-        private string cadenaBD = "Data Source=DESKTOP-A4GPQL3;Initial Catalog=SistemaContableArcano2;Integrated Security=True";
-        //private string cadenaBD = "Data Source=DESKTOP-TL8NQ49\\ALEXGD;Initial Catalog=SistemaContableArcano; Persist Security Info= True; Integrated Security=True";
+        //private string cadenaBD = "Data Source=DESKTOP-A4GPQL3;Initial Catalog=SistemaContableArcano2;Integrated Security=True";
+        //private string cadenaBD = "Data Source=SMLAB304PC21_17;Initial Catalog=SistemaContableArcano2;User ID=SA;Password=Uisrael2018"; 
+        private string cadenaBD = "Data Source=DESKTOP-TL8NQ49\\ALEXGD;Initial Catalog=SistemaContableArcano2; Persist Security Info= True; Integrated Security=True";
         public SqlConnection cnn;
         private SqlCommandBuilder cmb;
         public DataSet ds = new DataSet();  //el data set guarda varias tablas llamadas Datatable que nos servira para mostrar los datos
@@ -40,7 +42,6 @@ namespace capaDatos
         {
             try
             {
-                //codigo que posiblemente puede fallar
                 ds.Tables.Clear();
                 adapt = new SqlDataAdapter(sql, cnn);
                 cmb = new SqlCommandBuilder(adapt);
@@ -48,8 +49,6 @@ namespace capaDatos
             }
             catch (Exception ex)
             {
-                //codigo que se ejecutara si hay el fallo
-
             }
         }
 
@@ -111,7 +110,7 @@ namespace capaDatos
             }
             catch (SqlException){
                  
-               mensaje = "Este nombre de usuario ya está tomado. Porfavor cabielo y vuelva a intentarlo";
+               mensaje = "Este nombre de usuario ya está tomado. Porfavor cambielo y vuelva a intentarlo";
             }
             cnn.Close();
             return mensaje;
@@ -154,7 +153,7 @@ namespace capaDatos
 
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
-            comando = new SqlCommand("select dt.detperID as 'Codigo Cliente', dt.detperCedulaRuc as 'Cedula/Ruc', dt.detperNombre as 'Nombre', dt.detperApellido as 'Apellido', dt.detperDireccion as 'Dirección', dt.detperCorreo as 'Correo'  from TB_PERFILES p left join TB_DETALLE_PERFIL dt on p.perID = dt.perID where perDescripcion = '" + tipoUsuario + "' ; ", cnn);
+            comando = new SqlCommand("select dt.detperID, dt.detperCedulaRuc, dt.detperNombre, dt.detperApellido, dt.detperDireccion, dt.detperCorreo from TB_PERFILES p left join TB_DETALLE_PERFIL dt on p.perID = dt.perID where perDescripcion = '" + tipoUsuario + "';", cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
             adapt.Fill(dt1);
@@ -168,8 +167,8 @@ namespace capaDatos
             string mensaje = "Tu foto de perfil se actualizo";
             try
             {
-                if (cnn.State == ConnectionState.Closed)
-                    cnn.Open();
+                
+                cnn.Open();
                 comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuNombreUsuario = '" + usuNombreUsuario + "'", cnn);
                 comando.Parameters.Add("@usuImagen", SqlDbType.Image);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
@@ -224,36 +223,36 @@ namespace capaDatos
 
         public static int usuariologeado;
 
-        public string IngresarCompraVenta(ComboBox usuID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento) {
-            string mensaje = "Registro guarado con exito";
-
+        public string IngresarCompraVenta(ComboBox usuID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento, string detranDescripcion, string detranPrecioUnitario, int detranCantidad) {
+            string mensaje = "Registro guardado con exito";
+                    
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
             try
             {
-            comando = new SqlCommand("Insert into TB_TRANSACCION (detperID, usuID, tiptranID,tranDescripcion,tranFecha,tranAutorizacion,tranFechaVencimiento) values ('" + usuID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "','" + tranDescripcion + "', '" + tranFecha + "' , '" + tranAutorizacion + "' ,'" + tranFechaVencimiento + "' )", cnn);
+            comando = new SqlCommand("exec SP_ingreoCompraVenta '" + usuID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "','" + tranDescripcion + "', '" + Convert.ToDateTime(tranFecha).ToString("yyyy-MM-dd") + "' , '" + tranAutorizacion + "' ,'" + Convert.ToDateTime(tranFechaVencimiento).ToString("yyyy-MM-dd") + "', '" + detranDescripcion + "' , '" + detranPrecioUnitario + "' ,'" + detranCantidad + "' ", cnn);
             comando.ExecuteNonQuery();
             }
             catch (SqlException)
             {
 
-                mensaje = "Se registro un error al ingresar el registro";
+                mensaje = "Ocurrió un error al ingresar el registro";
             }
             cnn.Close();
             return mensaje;
         }
-
-        public string actualizarCompraVenta(int tranID, ComboBox detperID, TextBox tranDescripcion, string tranFecha, TextBox tranAutorizacion, string tranFechaVencimiento) {
-            string mensaje = "Registro actualizado";
+        
+        public string actualizarCompraVenta(ComboBox detperID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento, string detranDescripcion, string detranPrecioUnitario, int detranCantidad, int tranID) {
+            string mensaje = "Registro actualizado correctamente";
             try
             {
                 if (cnn.State == ConnectionState.Closed)
                     cnn.Open();
-                comando = new SqlCommand("update TB_TRANSACCION set detperID = '" + detperID.SelectedValue + "', tranDescripcion =  '" + tranDescripcion.Text + "', tranFecha = '" + tranFecha + "', tranAutorizacion = '" + tranAutorizacion.Text + "', tranFechaVencimiento = '" + tranFechaVencimiento + "' where tranID = '" + tranID + "'", cnn);
+                comando = new SqlCommand("exec SP_editarCompraVenta '" + detperID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "', '" + tranDescripcion + "', '" + tranFecha + "', '" + tranAutorizacion + "', '" + tranFechaVencimiento + "', '" + detranDescripcion + "', '" + detranPrecioUnitario + "', '" + detranCantidad + "', '" + tranID + "' ", cnn);
                 comando.ExecuteNonQuery();
             }
             catch (SqlException) {
-                mensaje = "Se registro un error al ingresar el registro";
+                mensaje = "Ocurrió un error al editar el registro";
             }
                 return mensaje;
         }
@@ -263,7 +262,7 @@ namespace capaDatos
 
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
-            comando = new SqlCommand("select dp.detperCedulaRuc as 'Cédula/RUC', CONCAT(dp.detperApellido,' ',dp.detperNombre) as 'Apellido Nombre', t.tranDescripcion as 'Descripción', dt.detranCantidad as 'Cantidad', dt.detranPrecioUnitario as 'Precio Unitario', (dt.detranPrecioUnitario * dt.detranCantidad) as 'Valor', cast(dt.detranPrecioUnitario * 0.12 as decimal(10, 2)) as 'IVA', cast(dt.detranPrecioUnitario * 1.12 as decimal(10, 2)) as 'Total', u.usuNombre as 'Creado por' from TB_DETALLE_PERFIL dp left join TB_TRANSACCION t on dp.detperID = t.detperID right join TB_USUARIO u on t.usuID = u.usuID inner join TB_DETALLES_TRANSACCION dt on t.tranID = dt.tranID where t.tiptranID = '" + tipoTransaccion + "' ; ", cnn);
+            comando = new SqlCommand("select t.tranID,dp.detperCedulaRuc, CONCAT(dp.detperApellido,' ',dp.detperNombre) as Apellido_Nombre,t.tranAutorizacion,dt.detranDescripcion, t.tranDescripcion, dt.detranCantidad, dt.detranPrecioUnitario,t.tranFecha,t.tranFechaVencimiento, (dt.detranPrecioUnitario * dt.detranCantidad) as Total from TB_DETALLE_PERFIL dp left join TB_TRANSACCION t on dp.detperID = t.detperID  inner join TB_DETALLES_TRANSACCION dt on t.tranID = dt.tranID where t.tiptranID = '" + tipoTransaccion + "' ; ", cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
             adapt.Fill(dt1);
@@ -272,6 +271,21 @@ namespace capaDatos
 
         }
 
-
+        public string eliminarCompraVenta(int tranID)
+        {
+            string mensaje = "Registro eliminado correctamente";
+            try
+            {
+                if (cnn.State == ConnectionState.Closed)
+                    cnn.Open();
+                comando = new SqlCommand("exec SP_eliminarCompraVenta '" + tranID + "' ", cnn);
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                mensaje = "Ocurrió un error al eliminar el registro";
+            }
+            return mensaje;
+        }
     }
 }

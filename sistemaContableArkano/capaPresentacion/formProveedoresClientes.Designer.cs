@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedoresClientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCedula = new System.Windows.Forms.Label();
@@ -54,6 +61,13 @@
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dgvClienProveedor = new System.Windows.Forms.DataGridView();
+            this.clmClieProverID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCedulaRuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLista = new System.Windows.Forms.Label();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -479,6 +493,14 @@
             this.dgvClienProveedor.AllowUserToAddRows = false;
             this.dgvClienProveedor.AllowUserToDeleteRows = false;
             this.dgvClienProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClienProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmClieProverID,
+            this.clmDescripcion,
+            this.clmCedulaRuc,
+            this.clmNombre,
+            this.clmApellido,
+            this.clmCorreo,
+            this.clmDireccion});
             this.dgvClienProveedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClienProveedor.Location = new System.Drawing.Point(3, 109);
             this.dgvClienProveedor.Name = "dgvClienProveedor";
@@ -486,6 +508,75 @@
             this.dgvClienProveedor.Size = new System.Drawing.Size(1089, 215);
             this.dgvClienProveedor.TabIndex = 68;
             this.dgvClienProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClienProveedor_CellClick);
+            // 
+            // clmClieProverID
+            // 
+            this.clmClieProverID.DataPropertyName = "detperID";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmClieProverID.DefaultCellStyle = dataGridViewCellStyle8;
+            this.clmClieProverID.HeaderText = "PersonaID";
+            this.clmClieProverID.Name = "clmClieProverID";
+            this.clmClieProverID.ReadOnly = true;
+            this.clmClieProverID.Width = 50;
+            // 
+            // clmDescripcion
+            // 
+            this.clmDescripcion.DataPropertyName = "perDescripcion";
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmDescripcion.DefaultCellStyle = dataGridViewCellStyle9;
+            this.clmDescripcion.HeaderText = "Descripción";
+            this.clmDescripcion.Name = "clmDescripcion";
+            this.clmDescripcion.ReadOnly = true;
+            // 
+            // clmCedulaRuc
+            // 
+            this.clmCedulaRuc.DataPropertyName = "detperCedulaRuc";
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmCedulaRuc.DefaultCellStyle = dataGridViewCellStyle10;
+            this.clmCedulaRuc.HeaderText = "Cédula/Ruc";
+            this.clmCedulaRuc.Name = "clmCedulaRuc";
+            this.clmCedulaRuc.ReadOnly = true;
+            this.clmCedulaRuc.Width = 130;
+            // 
+            // clmNombre
+            // 
+            this.clmNombre.DataPropertyName = "detperNombre";
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmNombre.DefaultCellStyle = dataGridViewCellStyle11;
+            this.clmNombre.HeaderText = "Nombre";
+            this.clmNombre.Name = "clmNombre";
+            this.clmNombre.ReadOnly = true;
+            this.clmNombre.Width = 200;
+            // 
+            // clmApellido
+            // 
+            this.clmApellido.DataPropertyName = "detperApellido";
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmApellido.DefaultCellStyle = dataGridViewCellStyle12;
+            this.clmApellido.HeaderText = "Apellido";
+            this.clmApellido.Name = "clmApellido";
+            this.clmApellido.ReadOnly = true;
+            this.clmApellido.Width = 200;
+            // 
+            // clmCorreo
+            // 
+            this.clmCorreo.DataPropertyName = "detperCorreo";
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmCorreo.DefaultCellStyle = dataGridViewCellStyle13;
+            this.clmCorreo.HeaderText = "Correo";
+            this.clmCorreo.Name = "clmCorreo";
+            this.clmCorreo.ReadOnly = true;
+            this.clmCorreo.Width = 250;
+            // 
+            // clmDireccion
+            // 
+            this.clmDireccion.DataPropertyName = "detperDireccion";
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmDireccion.DefaultCellStyle = dataGridViewCellStyle14;
+            this.clmDireccion.HeaderText = "Dirección";
+            this.clmDireccion.Name = "clmDireccion";
+            this.clmDireccion.ReadOnly = true;
+            this.clmDireccion.Width = 250;
             // 
             // tableLayoutPanel9
             // 
@@ -542,6 +633,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(526, 30);
             this.txtBuscar.TabIndex = 3;
             this.txtBuscar.Text = "Buscar";
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged_1);
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
@@ -725,5 +817,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmClieProverID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCedulaRuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCorreo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDireccion;
     }
 }

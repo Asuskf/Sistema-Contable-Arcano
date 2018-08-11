@@ -58,7 +58,75 @@ namespace capaPresentacion.Controladores
             formulario.Show();
         }
 
+        public void validarNumerosEnteros(TextBox cajaTexto)
+        {
+            int numero;
+            try
+            {
 
+                if (cajaTexto.Text == "")
+                {
+                    numero = 0;
+                }
+                else
+                {
+                    numero = Convert.ToInt32(cajaTexto.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (cajaTexto.Text.Length == 10)
+                {
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Solo se permiten números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cajaTexto.Text = "0";
+                    cajaTexto.Select(0, cajaTexto.Text.Length);
+                }
+
+            }
+        }
+        public void validarMoneda(TextBox cajaTexto)
+        {
+            string moneda = string.Empty;
+            double valor = 0;
+            try
+            {
+                moneda = cajaTexto.Text.Replace(".", "").Replace(",", "");
+                if (moneda.Equals(""))
+                    moneda = "";
+
+                moneda = moneda.PadLeft(3, '0');
+                if (moneda.Length > 3 & moneda.Substring(0, 1) == "0")
+                    moneda = moneda.Substring(1, moneda.Length - 1);
+
+                valor = Convert.ToDouble(moneda) / 100;
+                cajaTexto.Text = string.Format("{0:N}", valor);
+                cajaTexto.SelectionStart = cajaTexto.Text.Length;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Solo se permiten números con punto decimal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cajaTexto.Text = "0,00";
+            }
+        }
+
+        public string valorMoneda2(string cajaTexto2)
+        {
+            for (int i = 0; i < cajaTexto2.Length; i++)
+            {
+                if (cajaTexto2.Substring(i, 1) == ",")
+                {
+                    cajaTexto2 = cajaTexto2.Replace(',', '.');
+                }
+
+            }
+            string valorMoneda = cajaTexto2;
+            return valorMoneda;
+        }
     }
 }
 

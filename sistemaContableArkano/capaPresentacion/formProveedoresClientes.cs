@@ -87,6 +87,7 @@ namespace capaPresentacion
             controladores.colorBotones(btnClientes, btnProveedor, 218, 154, 72,lblLista,"Lista Clientes");
             llenarGridCliente();
             presionado = 1;
+            txtBuscar.Text = "";
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
@@ -94,6 +95,7 @@ namespace capaPresentacion
             controladores.colorBotones(btnProveedor,btnClientes,142,81,4,lblLista,"Lista Proveedores");
             llenarGridProveedor();
             presionado = 2;
+            txtBuscar.Text = "";
         }
 
         //////Funcion que llenara el comboBox del tipo de perfil
@@ -328,8 +330,19 @@ namespace capaPresentacion
             txtDirección.Text = Convert.ToString(dgvClienProveedor.CurrentRow.Cells[6].Value);
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-      {
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            controladores.cuadrosTextoMouse(txtBuscar, lblBuscar.Text);
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            controladores.cuadrosSinTextoMouse(txtBuscar, lblBuscar.Text);
+
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
             if (txtBuscar.Text != "")
             {
                 dgvClienProveedor.CurrentCell = null;
@@ -357,17 +370,5 @@ namespace capaPresentacion
                     llenarGridProveedor();
             }
         }
-
-        private void txtBuscar_Enter(object sender, EventArgs e)
-        {
-            controladores.cuadrosTextoMouse(txtBuscar, lblBuscar.Text);
-        }
-
-        private void txtBuscar_Leave(object sender, EventArgs e)
-        {
-            controladores.cuadrosSinTextoMouse(txtBuscar, lblBuscar.Text);
-
-        }
-    
     }
 }

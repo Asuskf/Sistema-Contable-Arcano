@@ -33,8 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.12\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PictureBoxAbouAmmar">
-      <HintPath>..\..\..\..\..\Downloads\PictureBoxAbouAmmar.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\Universidad\7 semestre\Plataformas de desarrollo\Proyecto\PictureBoxAbouAmmar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

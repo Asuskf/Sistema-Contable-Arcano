@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -69,6 +74,17 @@
             this.lblIngresoCompras = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDetalleCompra = new System.Windows.Forms.DataGridView();
+            this.clmTransaccionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCedulaRuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescripDetaTrans = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -150,11 +166,11 @@
             this.lblDescripcionCompra.AutoSize = true;
             this.lblDescripcionCompra.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblDescripcionCompra.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionCompra.Location = new System.Drawing.Point(135, 0);
+            this.lblDescripcionCompra.Location = new System.Drawing.Point(38, 0);
             this.lblDescripcionCompra.Name = "lblDescripcionCompra";
-            this.lblDescripcionCompra.Size = new System.Drawing.Size(98, 22);
+            this.lblDescripcionCompra.Size = new System.Drawing.Size(195, 22);
             this.lblDescripcionCompra.TabIndex = 0;
-            this.lblDescripcionCompra.Text = "Descripción:";
+            this.lblDescripcionCompra.Text = "Descripción de la compra:";
             // 
             // txtDescripcionCompra
             // 
@@ -294,10 +310,13 @@
             // txtProveedorCI_RUC
             // 
             this.txtProveedorCI_RUC.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtProveedorCI_RUC.Enabled = false;
             this.txtProveedorCI_RUC.Location = new System.Drawing.Point(83, 3);
             this.txtProveedorCI_RUC.Name = "txtProveedorCI_RUC";
             this.txtProveedorCI_RUC.Size = new System.Drawing.Size(183, 20);
             this.txtProveedorCI_RUC.TabIndex = 3;
+            this.txtProveedorCI_RUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtProveedorCI_RUC.TextChanged += new System.EventHandler(this.txtProveedorCI_RUC_TextChanged);
             // 
             // tableLayoutPanel7
             // 
@@ -365,6 +384,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCorreo.Enabled = false;
             this.txtCorreo.Location = new System.Drawing.Point(70, 3);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(159, 20);
@@ -388,8 +408,8 @@
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.05155F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.94846F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.75258F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.24742F));
             this.tableLayoutPanel10.Controls.Add(this.DetalleCompra2, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.txtDescripcionCompra2, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -405,18 +425,18 @@
             this.DetalleCompra2.AutoSize = true;
             this.DetalleCompra2.Dock = System.Windows.Forms.DockStyle.Right;
             this.DetalleCompra2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetalleCompra2.Location = new System.Drawing.Point(3, 0);
+            this.DetalleCompra2.Location = new System.Drawing.Point(8, 0);
             this.DetalleCompra2.Name = "DetalleCompra2";
-            this.DetalleCompra2.Size = new System.Drawing.Size(130, 29);
+            this.DetalleCompra2.Size = new System.Drawing.Size(151, 29);
             this.DetalleCompra2.TabIndex = 0;
-            this.DetalleCompra2.Text = "Descripción servicio:";
+            this.DetalleCompra2.Text = "Descripción del servicio:";
             // 
             // txtDescripcionCompra2
             // 
             this.txtDescripcionCompra2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtDescripcionCompra2.Location = new System.Drawing.Point(139, 3);
+            this.txtDescripcionCompra2.Location = new System.Drawing.Point(165, 3);
             this.txtDescripcionCompra2.Name = "txtDescripcionCompra2";
-            this.txtDescripcionCompra2.Size = new System.Drawing.Size(246, 20);
+            this.txtDescripcionCompra2.Size = new System.Drawing.Size(220, 20);
             this.txtDescripcionCompra2.TabIndex = 1;
             // 
             // tableLayoutPanel11
@@ -424,8 +444,8 @@
             this.tableLayoutPanel11.ColumnCount = 4;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.28866F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.71134F));
             this.tableLayoutPanel11.Controls.Add(this.txtPrecio, 3, 0);
             this.tableLayoutPanel11.Controls.Add(this.lblCantidad, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.lblPrecio, 2, 0);
@@ -442,10 +462,13 @@
             // txtPrecio
             // 
             this.txtPrecio.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtPrecio.Location = new System.Drawing.Point(294, 3);
+            this.txtPrecio.Location = new System.Drawing.Point(299, 3);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(91, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(86, 20);
             this.txtPrecio.TabIndex = 4;
+            this.txtPrecio.Text = "0.00";
+            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // lblCantidad
             // 
@@ -465,9 +488,9 @@
             this.lblPrecio.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.Location = new System.Drawing.Point(197, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(91, 29);
+            this.lblPrecio.Size = new System.Drawing.Size(96, 29);
             this.lblPrecio.TabIndex = 2;
-            this.lblPrecio.Text = "Precio sin IVA: $";
+            this.lblPrecio.Text = "Precio unitario:";
             // 
             // txtCantidadCompra
             // 
@@ -476,6 +499,9 @@
             this.txtCantidadCompra.Name = "txtCantidadCompra";
             this.txtCantidadCompra.Size = new System.Drawing.Size(91, 20);
             this.txtCantidadCompra.TabIndex = 3;
+            this.txtCantidadCompra.Text = "0";
+            this.txtCantidadCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCantidadCompra.TextChanged += new System.EventHandler(this.txtCantidadCompra_TextChanged);
             // 
             // tableLayoutPanel12
             // 
@@ -541,6 +567,7 @@
             this.btnEliminarCompra.TabStop = false;
             this.btnEliminarCompra.Text = "Eliminar compra";
             this.btnEliminarCompra.UseVisualStyleBackColor = false;
+            this.btnEliminarCompra.Click += new System.EventHandler(this.btnEliminarCompra_Click);
             // 
             // btnEditarCompra
             // 
@@ -625,12 +652,140 @@
             // 
             // dgvDetalleCompra
             // 
+            this.dgvDetalleCompra.AllowUserToAddRows = false;
+            this.dgvDetalleCompra.AllowUserToDeleteRows = false;
+            this.dgvDetalleCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetalleCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmTransaccionID,
+            this.clmCedulaRuc,
+            this.clmNombre,
+            this.clmAutorizacion,
+            this.clmDescripDetaTrans,
+            this.clmDescripcion,
+            this.clmCantidad,
+            this.clmPrecioUnitario,
+            this.clmTotal,
+            this.clmFechaInicio,
+            this.clmFechaFin});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetalleCompra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetalleCompra.EnableHeadersVisualStyles = false;
+            this.dgvDetalleCompra.GridColor = System.Drawing.Color.PowderBlue;
             this.dgvDetalleCompra.Location = new System.Drawing.Point(3, 3);
             this.dgvDetalleCompra.Name = "dgvDetalleCompra";
+            this.dgvDetalleCompra.ReadOnly = true;
+            this.dgvDetalleCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleCompra.Size = new System.Drawing.Size(794, 250);
             this.dgvDetalleCompra.TabIndex = 74;
+            this.dgvDetalleCompra.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleCompra_CellDoubleClick);
+            // 
+            // clmTransaccionID
+            // 
+            this.clmTransaccionID.DataPropertyName = "tranID";
+            this.clmTransaccionID.HeaderText = "TransacciónID";
+            this.clmTransaccionID.Name = "clmTransaccionID";
+            this.clmTransaccionID.ReadOnly = true;
+            this.clmTransaccionID.Visible = false;
+            // 
+            // clmCedulaRuc
+            // 
+            this.clmCedulaRuc.DataPropertyName = "detperCedulaRuc";
+            this.clmCedulaRuc.HeaderText = "Cédula/Ruc";
+            this.clmCedulaRuc.Name = "clmCedulaRuc";
+            this.clmCedulaRuc.ReadOnly = true;
+            this.clmCedulaRuc.Width = 150;
+            // 
+            // clmNombre
+            // 
+            this.clmNombre.DataPropertyName = "Apellido_Nombre";
+            this.clmNombre.HeaderText = "Nombre Apellido";
+            this.clmNombre.Name = "clmNombre";
+            this.clmNombre.ReadOnly = true;
+            this.clmNombre.Width = 210;
+            // 
+            // clmAutorizacion
+            // 
+            this.clmAutorizacion.DataPropertyName = "tranAutorizacion";
+            this.clmAutorizacion.HeaderText = "Autorización";
+            this.clmAutorizacion.Name = "clmAutorizacion";
+            this.clmAutorizacion.ReadOnly = true;
+            // 
+            // clmDescripDetaTrans
+            // 
+            this.clmDescripDetaTrans.DataPropertyName = "detranDescripcion";
+            this.clmDescripDetaTrans.HeaderText = "Descripción compra";
+            this.clmDescripDetaTrans.Name = "clmDescripDetaTrans";
+            this.clmDescripDetaTrans.ReadOnly = true;
+            this.clmDescripDetaTrans.Visible = false;
+            // 
+            // clmDescripcion
+            // 
+            this.clmDescripcion.DataPropertyName = "tranDescripcion";
+            this.clmDescripcion.HeaderText = "Descripción servicio";
+            this.clmDescripcion.Name = "clmDescripcion";
+            this.clmDescripcion.ReadOnly = true;
+            this.clmDescripcion.Width = 270;
+            // 
+            // clmCantidad
+            // 
+            this.clmCantidad.DataPropertyName = "detranCantidad";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clmCantidad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmCantidad.HeaderText = "Cantidad";
+            this.clmCantidad.Name = "clmCantidad";
+            this.clmCantidad.ReadOnly = true;
+            // 
+            // clmPrecioUnitario
+            // 
+            this.clmPrecioUnitario.DataPropertyName = "detranPrecioUnitario";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clmPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clmPrecioUnitario.HeaderText = "Precio Unitario";
+            this.clmPrecioUnitario.Name = "clmPrecioUnitario";
+            this.clmPrecioUnitario.ReadOnly = true;
+            this.clmPrecioUnitario.Width = 150;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.DataPropertyName = "Total";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clmTotal.DefaultCellStyle = dataGridViewCellStyle4;
+            this.clmTotal.HeaderText = "Total";
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            this.clmTotal.Width = 150;
+            // 
+            // clmFechaInicio
+            // 
+            this.clmFechaInicio.DataPropertyName = "tranFecha";
+            this.clmFechaInicio.HeaderText = "Fecha Inicio";
+            this.clmFechaInicio.Name = "clmFechaInicio";
+            this.clmFechaInicio.ReadOnly = true;
+            this.clmFechaInicio.Visible = false;
+            // 
+            // clmFechaFin
+            // 
+            this.clmFechaFin.DataPropertyName = "tranFechaVencimiento";
+            this.clmFechaFin.HeaderText = "Fecha fin";
+            this.clmFechaFin.Name = "clmFechaFin";
+            this.clmFechaFin.ReadOnly = true;
+            this.clmFechaFin.Visible = false;
             // 
             // formIngresoCompras
             // 
@@ -716,5 +871,16 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.ComboBox cmbNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTransaccionID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCedulaRuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmAutorizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripDetaTrans;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaFin;
     }
 }
