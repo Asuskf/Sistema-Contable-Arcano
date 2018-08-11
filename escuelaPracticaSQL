@@ -1,0 +1,33 @@
+--create database prueba 
+--use prueba
+
+create table Estudiante(
+	IdEstudiante int not null,
+	Cedula nchar(10) not null,
+	Nombre varchar(20) not null,
+	Apellido varchar(20) not null,
+	FechaNacimietno date not null,
+	Direcciones nchar(50)
+	primary key (IdEstudiante)
+)
+
+create table Materia(
+	IdMateria nchar(5) not null,
+	Nombre nchar(10) not null,
+	descripcion nvarchar(10),
+	Activa text not null
+	primary key (IdMateria)
+)
+
+create table Notas (
+	IdNotas bigint not null,
+	IdEstudiante int not null,
+	IdMateria nchar(5) not null,
+	NumNota tinyint not null,
+	ValNota decimal(2,1) not null,
+	AsiNota decimal (2,1) not null,
+	EstNota varchar(15) not null
+	primary key (IdNotas)
+	constraint FK_estudianteNotas foreign key (IdEstudiante) references Estudiante(IdEstudiante),
+	constraint FK_materiaNota foreign key (IdMateria) references materia(IdMateria)
+)

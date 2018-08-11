@@ -344,9 +344,9 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnProveedorCliente;
-        private PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre2;
         private System.Windows.Forms.Label lblNombreUsuario;
+        public PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
     }
 }

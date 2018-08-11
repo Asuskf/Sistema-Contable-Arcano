@@ -8,7 +8,7 @@ namespace capaPresentacion
 {
     static class Program
     {
-
+        public static int idUsuario;
         public static string nombreUsuario;
         public static string nombre;
         public static string apellido;

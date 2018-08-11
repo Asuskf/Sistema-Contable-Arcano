@@ -12,20 +12,22 @@ namespace capaPresentacion
 {
     public partial class formMenuPrincipal : Form
     {
-        capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
+        
         Controladores.controladores controladores = new Controladores.controladores();
+        capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
+
         public formMenuPrincipal()
         {
             InitializeComponent();
             mostrarInicio();
+
             capaDatos.verImagen(pbIconoUsuario, Program.nombreUsuario);
+
             lblNombreUsuario.Text = Program.nombreUsuario;
             lblNombre2.Text = Program.nombre;
             lblApellido.Text = Program.apellido;
 
         }
-
-
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -80,9 +82,11 @@ namespace capaPresentacion
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            formUsuario frmU = new formUsuario();
-            frmU.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
-            controladores.abrirFormularioPanel(panelContenedor, frmU);
+            formUsuario frmUsu = new formUsuario();
+            frmUsu.iconoPasado += new formUsuario.pasarIcono(ejecutar);
+            frmUsu.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
+            controladores.abrirFormularioPanel(panelContenedor, frmUsu);
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -119,6 +123,14 @@ namespace capaPresentacion
             mostrarInicio();
 
         }
+
+        public void ejecutar(Image iconoUsuario)
+        {
+
+            this.pbIconoUsuario.Image = iconoUsuario;
+        }
+
+        
 
     }
 }
