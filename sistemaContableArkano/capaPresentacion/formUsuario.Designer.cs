@@ -694,6 +694,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Button btnGuarIcoUsuario;
         private PictureBoxAbouAmmar.صورة_دائرة صورة_دائرة1;
-        private PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
+        public PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
     }
 }

@@ -17,20 +17,26 @@ namespace capaPresentacion
     {
         Controladores.controladores controladores = new Controladores.controladores();
         ConexionBD ingresarUsuario = new ConexionBD();  //instanciamos la clase conexion para ingresar un nuevo usuario
-        formMenuPrincipal FormMenuPrincipal = new formMenuPrincipal.actualizarImage();
         int IDUsuarioModif;
+
         private string contrasenia = null;
 
+
+        public delegate void pasarIcono(Image pbIconoUsuario);
+        public event pasarIcono iconoPasado;
 
         public formUsuario()
         {
             InitializeComponent();
             llenarGrid();
         }
+      
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            
+
         }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
@@ -319,19 +325,34 @@ namespace capaPresentacion
                 {
                     pbIconoUsuario.Load(this.openFileDialog1.FileName);
                     btnGuarIcoUsuario.Enabled = true;
+                   
                 }
             }
             catch (System.IO.FileNotFoundException)
             {
                 
             }
+            
         }
-
 
         private void btnGuarIcoUsuario_Click(object sender, EventArgs e)
         {
             MessageBox.Show(ingresarUsuario.guardarImagen(pbIconoUsuario, Convert.ToInt32(dgvListaUsuarios.CurrentRow.Cells[0].Value)));
-            
+            try
+            {
+                if (Convert.ToInt32(dgvListaUsuarios.CurrentRow.Cells[0].Value) == Program.idUsuario)
+                    iconoPasado(pbIconoUsuario.Image);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error" + ex);
+            }
+           
+
         }
+
+
+
     }
 }

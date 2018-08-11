@@ -123,6 +123,7 @@ namespace capaPresentacion
                     string sBienveNombre = dt3.Rows[0][0].ToString();
                     MessageBox.Show("Bienvenid@ " + sBienveNombre);
                     ConexionBD.usuariologeado = Convert.ToInt32(dt3.Rows[0][3].ToString());
+                    Program.idUsuario = Convert.ToInt32(dt3.Rows[0][3]);
                     Program.nombreUsuario = sBienveNombre;
                     Program.nombre = dt3.Rows[0][1].ToString();
                     Program.apellido = dt3.Rows[0][2].ToString();

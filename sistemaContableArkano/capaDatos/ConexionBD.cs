@@ -174,6 +174,7 @@ namespace capaDatos
                 usuImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 comando.Parameters["@usuImagen"].Value = ms.GetBuffer();
                 comando.ExecuteNonQuery();
+               
                 cnn.Close();
             }
             catch (Exception ex)
