@@ -47,6 +47,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnAsientoa = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -61,6 +62,7 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(204)))));
+            this.menuVertical.Controls.Add(this.btnAsientoa);
             this.menuVertical.Controls.Add(this.lblApellido);
             this.menuVertical.Controls.Add(this.lblNombre2);
             this.menuVertical.Controls.Add(this.lblNombreUsuario);
@@ -303,6 +305,24 @@
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelContenedor_MouseDown);
             // 
+            // btnAsientoa
+            // 
+            this.btnAsientoa.FlatAppearance.BorderSize = 0;
+            this.btnAsientoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAsientoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsientoa.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsientoa.ForeColor = System.Drawing.Color.White;
+            this.btnAsientoa.Image = ((System.Drawing.Image)(resources.GetObject("btnAsientoa.Image")));
+            this.btnAsientoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsientoa.Location = new System.Drawing.Point(4, 428);
+            this.btnAsientoa.Name = "btnAsientoa";
+            this.btnAsientoa.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAsientoa.Size = new System.Drawing.Size(209, 45);
+            this.btnAsientoa.TabIndex = 64;
+            this.btnAsientoa.Text = "Asientos";
+            this.btnAsientoa.UseVisualStyleBackColor = true;
+            this.btnAsientoa.Click += new System.EventHandler(this.btnAsientoa_Click);
+            // 
             // formMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,5 +368,6 @@
         private System.Windows.Forms.Label lblNombre2;
         private System.Windows.Forms.Label lblNombreUsuario;
         public PictureBoxAbouAmmar.صورة_دائرة pbIconoUsuario;
+        private System.Windows.Forms.Button btnAsientoa;
     }
 }

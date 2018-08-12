@@ -13,7 +13,7 @@ namespace capaPresentacion
     public partial class formIngresoCompras : Form
     {
         capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
-        capaPresentacion.Controladores.controladores validarDatos = new capaPresentacion.Controladores.controladores();
+        Controladores.controladores validarDatos = new Controladores.controladores();
 
         public formIngresoCompras()
         {

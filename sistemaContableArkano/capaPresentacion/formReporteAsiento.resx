@@ -117,40 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="clmTransaccionID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="usuNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmCedulaRuc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmNombreApellido.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmAutorizacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDescripcionCompra.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDescripcionServicio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmCantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmPrecioUnitario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmFechaInicio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmFechaFin.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnExportarPDF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAhCAYAAADOHBvaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAAd0SU1FB+IHCg4jK1JOj3YAAALASURBVFhH3ZZLiE5hGMe/mUwaZMq45k6sUMyO
+        wsKUDMlC2CCxIBsrKRsxcr9uplFkZ+OWJCFKVqwpNqyQXJKN6/H7v+d5Tuc755vznQ8f5Ve/znue93mf
+        Z84355z3VJwoimz0F/knTR2ad+JBvIwXG/ASHsNNON7KlYdFO1CcwaOoYvU8gufwNYq3uBPL/4ok7scf
+        2G6h0rBmCD5Cpx9bbboYEvfhVxxloYZgXTemuY4taBkDQMIeVOMOC5XCC3Ocj1n6w2QtmLyNN/G5MuEB
+        3sK7eM+OytHY1fkdXGFlVGcB1kK18lcepmIe4i7sw++ou3UvXkBxCnUfaP6LArDdyhQ1FrphB1lqTBwP
+        HEfd2RtQj9QaPIn6373BqairfYffUGyzMqozBfUr+C+XRTUHY7LAOY36Py1ENViL13AzvsJpuBR1Lzih
+        MUevpZ90LM5C1dmIh/AZflYsJApOHF3danwczuKx/oD1+BKn4338hE5yxbVg3o/rQnYU9YSAsIA4j3op
+        OL24GLeEsyhagk/iYUJhY4e8VXF6dWO9NKRuKB9nz7NzUmy1MoWQV7PxsJTDcWgmVmSblSmEvHxjh6Ae
+        pRfYaaFSkG+jgSGnsLGeUTHaQn8MahY2/q13dRHU/M8asyY5YmtKjzfvilmnu/wE3kBtibLP5praeC7q
+        ec+id/zKeNicxjPwI2aZhE1tPBn1zVWFzTX1p56I2j6rsLn8JuEQbLgxuTYK4w7M7cU2NwL1guoOyWkI
+        /tIVkz/T1h7GD5hGHw278QB2WX5Yl0DAG4+0UCnI922zHrV3Mia0/4pFqC+IOXWcjV3YjmexiF5rk4fJ
+        Hnwf0hrjqq2/Ep/m0BdsG7aERmkISr3i5uFyXNaAytcerr3cP5scfRonX5eMbZSiZrBBqKFHym+wpzgG
+        bbZJeAOOE1BfmOPS8WoqlZ85LaZVpUeAzAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

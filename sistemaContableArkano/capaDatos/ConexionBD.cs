@@ -16,7 +16,7 @@ namespace capaDatos
         //cadena de conexion
         //private string cadenaBD = "Data Source=DESKTOP-A4GPQL3;Initial Catalog=SistemaContableArcano2;Integrated Security=True";
         //private string cadenaBD = "Data Source=SMLAB304PC21_17;Initial Catalog=SistemaContableArcano2;User ID=SA;Password=Uisrael2018"; 
-        private string cadenaBD = "Data Source=DESKTOP-TL8NQ49\\ALEXGD;Initial Catalog=SistemaContableArcano2; Persist Security Info= True; Integrated Security=True";
+        private string cadenaBD = "Data Source=DESKTOP-A4GPQL3;Initial Catalog=SistemaContableArcano2;Integrated Security=True";
         public SqlConnection cnn;
         private SqlCommandBuilder cmb;
         public DataSet ds = new DataSet();  //el data set guarda varias tablas llamadas Datatable que nos servira para mostrar los datos
@@ -162,14 +162,14 @@ namespace capaDatos
 
         }
 
-        public string guardarImagen(PictureBox usuImagen, string usuNombreUsuario)
+        public string guardarImagen(PictureBox usuImagen, int IDUsuario)
         {
             string mensaje = "Tu foto de perfil se actualizo";
             try
             {
                 
                 cnn.Open();
-                comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuNombreUsuario = '" + usuNombreUsuario + "'", cnn);
+                comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuID = '" + IDUsuario + "'", cnn);
                 comando.Parameters.Add("@usuImagen", SqlDbType.Image);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 usuImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
@@ -287,5 +287,46 @@ namespace capaDatos
             }
             return mensaje;
         }
+
+        public void buscarComboboxItemAsiento(ComboBox comboBox)
+        {
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            comando = new SqlCommand("select plaindID, plaindNumero from TB_PLANCUENTAS_INDICE", cnn);
+            adapt = new SqlDataAdapter(comando);
+            dt1 = new DataTable();
+            adapt.Fill(dt1);
+            comboBox.ValueMember = "plaindID";
+            comboBox.DisplayMember = "plaindNumero";
+            comboBox.DataSource = dt1;
+
+            AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
+            foreach (DataRow row in dt1.Rows)
+            {
+                coleccion.Add(Convert.ToString(row["plaindNumero"]));
+            }
+            comboBox.AutoCompleteCustomSource = coleccion;
+            comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cnn.Close();
+        }
+        public void cargarDatosAsientos(ComboBox comboBox, Label descripcion)
+        {
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            comando = new SqlCommand("select plaindNombre from TB_PLANCUENTAS_INDICE where plaindID = '" + comboBox.SelectedValue + "'", cnn);
+            adapt = new SqlDataAdapter(comando);
+            DataTable dt2 = new DataTable();
+            adapt.Fill(dt2);
+            foreach (DataRow dr in dt2.Rows)
+            {
+
+                descripcion.Text = Convert.ToString(dr["plaindNombre"]);
+                
+            }
+            cnn.Close();
+        }
+
+
     }
 }

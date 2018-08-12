@@ -811,7 +811,6 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Label lblTipo2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblDatosUserProve;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
@@ -824,5 +823,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCorreo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDireccion;
+        private System.Windows.Forms.Label lblDatosUserProve;
     }
 }

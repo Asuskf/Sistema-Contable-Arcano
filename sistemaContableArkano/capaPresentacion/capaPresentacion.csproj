@@ -55,11 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controladores\controladores.cs" />
-    <Compile Include="formAsiento.cs">
+    <Compile Include="formAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formAsiento.Designer.cs">
-      <DependentUpon>formAsiento.cs</DependentUpon>
+    <Compile Include="formAsientos.Designer.cs">
+      <DependentUpon>formAsientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formIngresoAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formIngresoAsiento.Designer.cs">
+      <DependentUpon>formIngresoAsiento.cs</DependentUpon>
     </Compile>
     <Compile Include="formIngresoCompras.cs">
       <SubType>Form</SubType>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="formMenuInicio.Designer.cs">
       <DependentUpon>formMenuInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formReporteAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formReporteAsiento.Designer.cs">
+      <DependentUpon>formReporteAsiento.cs</DependentUpon>
     </Compile>
     <Compile Include="formReporteCompras.cs">
       <SubType>Form</SubType>
@@ -146,8 +158,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaContableArcano2DataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formAsiento.resx">
-      <DependentUpon>formAsiento.cs</DependentUpon>
+    <EmbeddedResource Include="formAsientos.resx">
+      <DependentUpon>formAsientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formIngresoAsiento.resx">
+      <DependentUpon>formIngresoAsiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formIngresoCompras.resx">
       <DependentUpon>formIngresoCompras.cs</DependentUpon>
@@ -166,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMenuInicio.resx">
       <DependentUpon>formMenuInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formReporteAsiento.resx">
+      <DependentUpon>formReporteAsiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formReporteCompras.resx">
       <DependentUpon>formReporteCompras.cs</DependentUpon>

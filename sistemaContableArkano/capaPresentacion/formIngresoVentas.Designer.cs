@@ -72,6 +72,7 @@
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
             this.clmTransaccionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCedulaRuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -658,6 +659,7 @@
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmTransaccionID,
+            this.usuNombre,
             this.clmCedulaRuc,
             this.clmNombreApellido,
             this.clmAutorizacion,
@@ -682,6 +684,7 @@
             this.dgvDetalleVenta.Location = new System.Drawing.Point(3, 3);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.ReadOnly = true;
+            this.dgvDetalleVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleVenta.Size = new System.Drawing.Size(794, 257);
             this.dgvDetalleVenta.TabIndex = 73;
@@ -694,6 +697,13 @@
             this.clmTransaccionID.Name = "clmTransaccionID";
             this.clmTransaccionID.ReadOnly = true;
             this.clmTransaccionID.Visible = false;
+            // 
+            // usuNombre
+            // 
+            this.usuNombre.DataPropertyName = "usuNombre";
+            this.usuNombre.HeaderText = "usuNombre";
+            this.usuNombre.Name = "usuNombre";
+            this.usuNombre.ReadOnly = true;
             // 
             // clmCedulaRuc
             // 
@@ -858,6 +868,7 @@
         private System.Windows.Forms.TextBox txtCI_RUCProveedor;
         private System.Windows.Forms.ComboBox cmbNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTransaccionID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCedulaRuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAutorizacion;

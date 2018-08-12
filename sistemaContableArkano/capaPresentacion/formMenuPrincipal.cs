@@ -130,7 +130,11 @@ namespace capaPresentacion
             this.pbIconoUsuario.Image = iconoUsuario;
         }
 
-        
-
+        private void btnAsientoa_Click(object sender, EventArgs e)
+        {
+            formAsientos frmA = new formAsientos();
+            frmA.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
+            controladores.abrirFormularioPanel(panelContenedor, frmA);
+        }
     }
 }
