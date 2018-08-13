@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -81,7 +80,7 @@
             this.clmDescripDetaTrans = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrecioUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -672,18 +671,18 @@
             this.clmDescripDetaTrans,
             this.clmDescripcion,
             this.clmCantidad,
-            this.clmPrecioUnitario,
+            this.clmPrecioUnit,
             this.clmTotal,
             this.clmFechaInicio,
             this.clmFechaFin});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalleCompra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDetalleCompra.EnableHeadersVisualStyles = false;
             this.dgvDetalleCompra.GridColor = System.Drawing.Color.PowderBlue;
@@ -751,21 +750,19 @@
             this.clmCantidad.Name = "clmCantidad";
             this.clmCantidad.ReadOnly = true;
             // 
-            // clmPrecioUnitario
+            // clmPrecioUnit
             // 
-            this.clmPrecioUnitario.DataPropertyName = "detranPrecioUnitario";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clmPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle3;
-            this.clmPrecioUnitario.HeaderText = "Precio Unitario";
-            this.clmPrecioUnitario.Name = "clmPrecioUnitario";
-            this.clmPrecioUnitario.ReadOnly = true;
-            this.clmPrecioUnitario.Width = 150;
+            this.clmPrecioUnit.DataPropertyName = "Precio_Unitario";
+            this.clmPrecioUnit.HeaderText = "Precio Unitario";
+            this.clmPrecioUnit.Name = "clmPrecioUnit";
+            this.clmPrecioUnit.ReadOnly = true;
+            this.clmPrecioUnit.Width = 150;
             // 
             // clmTotal
             // 
             this.clmTotal.DataPropertyName = "Total";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.clmTotal.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.clmTotal.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmTotal.HeaderText = "Total";
             this.clmTotal.Name = "clmTotal";
             this.clmTotal.ReadOnly = true;
@@ -878,7 +875,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripDetaTrans;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaFin;

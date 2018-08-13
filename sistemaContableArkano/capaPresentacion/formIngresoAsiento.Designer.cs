@@ -39,11 +39,11 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.dateTimeFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtmDesde = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFechaFin = new System.Windows.Forms.Label();
-            this.dateTimeFechaFinal = new System.Windows.Forms.DateTimePicker();
-            this.btnMostrarReporte = new System.Windows.Forms.Button();
+            this.dtmHasta = new System.Windows.Forms.DateTimePicker();
+            this.btnBusAsiento = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAsiSinIngresar = new System.Windows.Forms.Button();
             this.btnAsiIngresados = new System.Windows.Forms.Button();
@@ -54,36 +54,31 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDesTransaccion = new System.Windows.Forms.Label();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDesCodigo = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblDebe = new System.Windows.Forms.Label();
-            this.lblHaber = new System.Windows.Forms.Label();
-            this.cmbValor = new System.Windows.Forms.ComboBox();
-            this.cmbIva = new System.Windows.Forms.ComboBox();
-            this.cmbTotal = new System.Windows.Forms.ComboBox();
-            this.lblDesIva = new System.Windows.Forms.Label();
-            this.lblDesTotal = new System.Windows.Forms.Label();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.lblLista = new System.Windows.Forms.Label();
-            this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.clmTransaccionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCedulaRuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDescripcionCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDescripcionServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAsientos = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblIva = new System.Windows.Forms.Label();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblDesTotal = new System.Windows.Forms.Label();
+            this.lblDesIva = new System.Windows.Forms.Label();
+            this.cmbTotal = new System.Windows.Forms.ComboBox();
+            this.cmbIva = new System.Windows.Forms.ComboBox();
+            this.cmbValor = new System.Windows.Forms.ComboBox();
+            this.lblHaber = new System.Windows.Forms.Label();
+            this.lblDebe = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblDesCodigo = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDesTransaccion = new System.Windows.Forms.Label();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmAsientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTranFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTiptranDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
@@ -96,10 +91,10 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAsientos)).BeginInit();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel7
@@ -114,8 +109,8 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 3;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.51625F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.85714F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.78571F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.64286F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1024, 560);
             this.tableLayoutPanel7.TabIndex = 67;
@@ -127,11 +122,11 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel13, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 496);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 506);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1018, 61);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1018, 51);
             this.tableLayoutPanel8.TabIndex = 73;
             // 
             // tableLayoutPanel13
@@ -146,7 +141,7 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.60465F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.39535F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(96, 55);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(96, 45);
             this.tableLayoutPanel13.TabIndex = 66;
             // 
             // btnCerrar
@@ -159,7 +154,7 @@
             this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(3, 13);
+            this.btnCerrar.Location = new System.Drawing.Point(3, 11);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCerrar.Size = new System.Drawing.Size(90, 26);
@@ -192,7 +187,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel11, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnMostrarReporte, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnBusAsiento, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(394, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -209,7 +204,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel10.Controls.Add(this.lblFechaInicio, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.dateTimeFechaInicio, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.dtmDesde, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -231,13 +226,16 @@
             this.lblFechaInicio.Text = "Desde:";
             this.lblFechaInicio.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dateTimeFechaInicio
+            // dtmDesde
             // 
-            this.dateTimeFechaInicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimeFechaInicio.Location = new System.Drawing.Point(99, 3);
-            this.dateTimeFechaInicio.Name = "dateTimeFechaInicio";
-            this.dateTimeFechaInicio.Size = new System.Drawing.Size(140, 20);
-            this.dateTimeFechaInicio.TabIndex = 1;
+            this.dtmDesde.Checked = false;
+            this.dtmDesde.CustomFormat = "dd/mm/yy";
+            this.dtmDesde.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtmDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmDesde.Location = new System.Drawing.Point(99, 3);
+            this.dtmDesde.Name = "dtmDesde";
+            this.dtmDesde.Size = new System.Drawing.Size(140, 20);
+            this.dtmDesde.TabIndex = 1;
             // 
             // tableLayoutPanel11
             // 
@@ -245,7 +243,7 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel11.Controls.Add(this.lblFechaFin, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.dateTimeFechaFinal, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.dtmHasta, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(375, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -267,21 +265,24 @@
             this.lblFechaFin.Text = "Hasta:";
             this.lblFechaFin.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dateTimeFechaFinal
+            // dtmHasta
             // 
-            this.dateTimeFechaFinal.Location = new System.Drawing.Point(100, 3);
-            this.dateTimeFechaFinal.Name = "dateTimeFechaFinal";
-            this.dateTimeFechaFinal.Size = new System.Drawing.Size(140, 20);
-            this.dateTimeFechaFinal.TabIndex = 1;
+            this.dtmHasta.CustomFormat = "dd/mm/yy";
+            this.dtmHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmHasta.Location = new System.Drawing.Point(100, 3);
+            this.dtmHasta.Name = "dtmHasta";
+            this.dtmHasta.Size = new System.Drawing.Size(140, 20);
+            this.dtmHasta.TabIndex = 1;
             // 
-            // btnMostrarReporte
+            // btnBusAsiento
             // 
-            this.btnMostrarReporte.Location = new System.Drawing.Point(251, 3);
-            this.btnMostrarReporte.Name = "btnMostrarReporte";
-            this.btnMostrarReporte.Size = new System.Drawing.Size(118, 23);
-            this.btnMostrarReporte.TabIndex = 2;
-            this.btnMostrarReporte.Text = "Mostrar reporte";
-            this.btnMostrarReporte.UseVisualStyleBackColor = true;
+            this.btnBusAsiento.Location = new System.Drawing.Point(251, 3);
+            this.btnBusAsiento.Name = "btnBusAsiento";
+            this.btnBusAsiento.Size = new System.Drawing.Size(118, 23);
+            this.btnBusAsiento.TabIndex = 2;
+            this.btnBusAsiento.Text = "Buscar asiento";
+            this.btnBusAsiento.UseVisualStyleBackColor = true;
+            this.btnBusAsiento.Click += new System.EventHandler(this.btnBusAsiento_Click);
             // 
             // tableLayoutPanel12
             // 
@@ -318,6 +319,7 @@
             this.btnAsiSinIngresar.TabStop = false;
             this.btnAsiSinIngresar.Text = "Sin ingresar";
             this.btnAsiSinIngresar.UseVisualStyleBackColor = false;
+            this.btnAsiSinIngresar.Click += new System.EventHandler(this.btnAsiSinIngresar_Click);
             // 
             // btnAsiIngresados
             // 
@@ -337,6 +339,7 @@
             this.btnAsiIngresados.TabStop = false;
             this.btnAsiIngresados.Text = "Ingresados";
             this.btnAsiIngresados.UseVisualStyleBackColor = false;
+            this.btnAsiIngresados.Click += new System.EventHandler(this.btnAsiIngresados_Click);
             // 
             // lblTipo2
             // 
@@ -361,10 +364,10 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 61);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.35828F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.64172F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.2369F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.7631F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 429);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1018, 439);
             this.tableLayoutPanel3.TabIndex = 71;
             // 
             // tableLayoutPanel2
@@ -375,12 +378,12 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 270);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 284);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1012, 156);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1012, 152);
             this.tableLayoutPanel2.TabIndex = 66;
             // 
             // tableLayoutPanel5
@@ -396,7 +399,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.62842F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.371585F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(231, 150);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(231, 146);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -413,7 +416,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(225, 137);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(225, 133);
             this.tableLayoutPanel6.TabIndex = 58;
             // 
             // btnCrear
@@ -430,7 +433,7 @@
             this.btnCrear.Location = new System.Drawing.Point(3, 3);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCrear.Size = new System.Drawing.Size(219, 50);
+            this.btnCrear.Size = new System.Drawing.Size(219, 48);
             this.btnCrear.TabIndex = 45;
             this.btnCrear.TabStop = false;
             this.btnCrear.Text = "Añadir";
@@ -447,42 +450,83 @@
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(3, 83);
+            this.btnActualizar.Location = new System.Drawing.Point(3, 81);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnActualizar.Size = new System.Drawing.Size(219, 51);
+            this.btnActualizar.Size = new System.Drawing.Size(219, 49);
             this.btnActualizar.TabIndex = 60;
             this.btnActualizar.TabStop = false;
             this.btnActualizar.Text = "Editar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel14
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.lblDesTransaccion, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.23377F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.76623F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(769, 150);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.Controls.Add(this.dgvAsientos, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.lblLista, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 2;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.955224F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.04478F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(1012, 275);
+            this.tableLayoutPanel14.TabIndex = 67;
             // 
-            // lblDesTransaccion
+            // lblLista
             // 
-            this.lblDesTransaccion.AutoSize = true;
-            this.lblDesTransaccion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDesTransaccion.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesTransaccion.Location = new System.Drawing.Point(3, 0);
-            this.lblDesTransaccion.Name = "lblDesTransaccion";
-            this.lblDesTransaccion.Size = new System.Drawing.Size(763, 24);
-            this.lblDesTransaccion.TabIndex = 71;
-            this.lblDesTransaccion.Text = "Transacción";
-            this.lblDesTransaccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLista.AutoSize = true;
+            this.lblLista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLista.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLista.Location = new System.Drawing.Point(3, 0);
+            this.lblLista.Name = "lblLista";
+            this.lblLista.Size = new System.Drawing.Size(1006, 24);
+            this.lblLista.TabIndex = 70;
+            this.lblLista.Text = "Lista";
+            this.lblLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgvAsientos
+            // 
+            this.dgvAsientos.AllowUserToAddRows = false;
+            this.dgvAsientos.AllowUserToDeleteRows = false;
+            this.dgvAsientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAsientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAsientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmID,
+            this.Descripción,
+            this.clmPrecioUnitario,
+            this.clmAsientos,
+            this.clmTranFecha,
+            this.clmTiptranDescripcion});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsientos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAsientos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAsientos.EnableHeadersVisualStyles = false;
+            this.dgvAsientos.GridColor = System.Drawing.Color.PowderBlue;
+            this.dgvAsientos.Location = new System.Drawing.Point(3, 27);
+            this.dgvAsientos.Name = "dgvAsientos";
+            this.dgvAsientos.ReadOnly = true;
+            this.dgvAsientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvAsientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAsientos.Size = new System.Drawing.Size(1006, 245);
+            this.dgvAsientos.TabIndex = 74;
+            this.dgvAsientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsientos_CellClick);
             // 
             // tableLayoutPanel15
             // 
@@ -502,66 +546,108 @@
             this.tableLayoutPanel15.Controls.Add(this.lblDesIva, 1, 2);
             this.tableLayoutPanel15.Controls.Add(this.lblDesTotal, 1, 3);
             this.tableLayoutPanel15.Controls.Add(this.lblValor, 3, 1);
-            this.tableLayoutPanel15.Controls.Add(this.label1, 3, 2);
-            this.tableLayoutPanel15.Controls.Add(this.label4, 2, 3);
+            this.tableLayoutPanel15.Controls.Add(this.lblIva, 3, 2);
+            this.tableLayoutPanel15.Controls.Add(this.lblTotal, 2, 3);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 27);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 39);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 4;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.16667F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.5F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.83333F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(763, 120);
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.03846F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.03846F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.96154F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(763, 104);
             this.tableLayoutPanel15.TabIndex = 72;
             // 
-            // lblDesCodigo
+            // lblTotal
             // 
-            this.lblDesCodigo.AutoSize = true;
-            this.lblDesCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDesCodigo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesCodigo.Location = new System.Drawing.Point(193, 23);
-            this.lblDesCodigo.Name = "lblDesCodigo";
-            this.lblDesCodigo.Size = new System.Drawing.Size(304, 33);
-            this.lblDesCodigo.TabIndex = 73;
-            this.lblDesCodigo.Text = "Descripción código";
-            this.lblDesCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotal.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(503, 77);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(123, 27);
+            this.lblTotal.TabIndex = 86;
+            this.lblTotal.Text = "Total";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCodigo
+            // lblIva
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCodigo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(184, 23);
-            this.lblCodigo.TabIndex = 72;
-            this.lblCodigo.Text = "Código";
-            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIva.AutoSize = true;
+            this.lblIva.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblIva.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIva.Location = new System.Drawing.Point(632, 50);
+            this.lblIva.Name = "lblIva";
+            this.lblIva.Size = new System.Drawing.Size(128, 27);
+            this.lblIva.TabIndex = 85;
+            this.lblIva.Text = "Iva";
+            this.lblIva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDescripcion
+            // lblValor
             // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDescripcion.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(193, 0);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(304, 23);
-            this.lblDescripcion.TabIndex = 73;
-            this.lblDescripcion.Text = "Descripción";
-            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblValor.AutoSize = true;
+            this.lblValor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblValor.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(632, 25);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(128, 25);
+            this.lblValor.TabIndex = 84;
+            this.lblValor.Text = "Valor";
+            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDebe
+            // lblDesTotal
             // 
-            this.lblDebe.AutoSize = true;
-            this.lblDebe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDebe.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDebe.Location = new System.Drawing.Point(503, 0);
-            this.lblDebe.Name = "lblDebe";
-            this.lblDebe.Size = new System.Drawing.Size(123, 23);
-            this.lblDebe.TabIndex = 74;
-            this.lblDebe.Text = "Debe";
-            this.lblDebe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDesTotal.AutoSize = true;
+            this.lblDesTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDesTotal.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesTotal.Location = new System.Drawing.Point(193, 77);
+            this.lblDesTotal.Name = "lblDesTotal";
+            this.lblDesTotal.Size = new System.Drawing.Size(304, 27);
+            this.lblDesTotal.TabIndex = 80;
+            this.lblDesTotal.Text = "Descripción código";
+            this.lblDesTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDesIva
+            // 
+            this.lblDesIva.AutoSize = true;
+            this.lblDesIva.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDesIva.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesIva.Location = new System.Drawing.Point(193, 50);
+            this.lblDesIva.Name = "lblDesIva";
+            this.lblDesIva.Size = new System.Drawing.Size(304, 27);
+            this.lblDesIva.TabIndex = 79;
+            this.lblDesIva.Text = "Descripción código";
+            this.lblDesIva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbTotal
+            // 
+            this.cmbTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTotal.FormattingEnabled = true;
+            this.cmbTotal.Location = new System.Drawing.Point(3, 80);
+            this.cmbTotal.Name = "cmbTotal";
+            this.cmbTotal.Size = new System.Drawing.Size(184, 21);
+            this.cmbTotal.TabIndex = 78;
+            this.cmbTotal.SelectedIndexChanged += new System.EventHandler(this.cmbTotal_SelectedIndexChanged);
+            // 
+            // cmbIva
+            // 
+            this.cmbIva.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbIva.FormattingEnabled = true;
+            this.cmbIva.Location = new System.Drawing.Point(3, 53);
+            this.cmbIva.Name = "cmbIva";
+            this.cmbIva.Size = new System.Drawing.Size(184, 21);
+            this.cmbIva.TabIndex = 77;
+            this.cmbIva.SelectedIndexChanged += new System.EventHandler(this.cmbIva_SelectedIndexChanged);
+            // 
+            // cmbValor
+            // 
+            this.cmbValor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbValor.FormattingEnabled = true;
+            this.cmbValor.Location = new System.Drawing.Point(3, 28);
+            this.cmbValor.Name = "cmbValor";
+            this.cmbValor.Size = new System.Drawing.Size(184, 21);
+            this.cmbValor.TabIndex = 76;
+            this.cmbValor.SelectedIndexChanged += new System.EventHandler(this.cmbValor_SelectedIndexChanged);
             // 
             // lblHaber
             // 
@@ -570,259 +656,131 @@
             this.lblHaber.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHaber.Location = new System.Drawing.Point(632, 0);
             this.lblHaber.Name = "lblHaber";
-            this.lblHaber.Size = new System.Drawing.Size(128, 23);
+            this.lblHaber.Size = new System.Drawing.Size(128, 25);
             this.lblHaber.TabIndex = 75;
             this.lblHaber.Text = "Haber";
             this.lblHaber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbValor
+            // lblDebe
             // 
-            this.cmbValor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbValor.FormattingEnabled = true;
-            this.cmbValor.Location = new System.Drawing.Point(3, 26);
-            this.cmbValor.Name = "cmbValor";
-            this.cmbValor.Size = new System.Drawing.Size(184, 21);
-            this.cmbValor.TabIndex = 76;
-            this.cmbValor.SelectedIndexChanged += new System.EventHandler(this.cmbValor_SelectedIndexChanged);
+            this.lblDebe.AutoSize = true;
+            this.lblDebe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDebe.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDebe.Location = new System.Drawing.Point(503, 0);
+            this.lblDebe.Name = "lblDebe";
+            this.lblDebe.Size = new System.Drawing.Size(123, 25);
+            this.lblDebe.TabIndex = 74;
+            this.lblDebe.Text = "Debe";
+            this.lblDebe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbIva
+            // lblDescripcion
             // 
-            this.cmbIva.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbIva.FormattingEnabled = true;
-            this.cmbIva.Location = new System.Drawing.Point(3, 59);
-            this.cmbIva.Name = "cmbIva";
-            this.cmbIva.Size = new System.Drawing.Size(184, 21);
-            this.cmbIva.TabIndex = 77;
-            this.cmbIva.SelectedIndexChanged += new System.EventHandler(this.cmbIva_SelectedIndexChanged);
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDescripcion.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(193, 0);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(304, 25);
+            this.lblDescripcion.TabIndex = 73;
+            this.lblDescripcion.Text = "Descripción";
+            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbTotal
+            // lblCodigo
             // 
-            this.cmbTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbTotal.FormattingEnabled = true;
-            this.cmbTotal.Location = new System.Drawing.Point(3, 90);
-            this.cmbTotal.Name = "cmbTotal";
-            this.cmbTotal.Size = new System.Drawing.Size(184, 21);
-            this.cmbTotal.TabIndex = 78;
-            this.cmbTotal.SelectedIndexChanged += new System.EventHandler(this.cmbTotal_SelectedIndexChanged);
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCodigo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(3, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(184, 25);
+            this.lblCodigo.TabIndex = 72;
+            this.lblCodigo.Text = "Código";
+            this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDesIva
+            // lblDesCodigo
             // 
-            this.lblDesIva.AutoSize = true;
-            this.lblDesIva.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDesIva.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesIva.Location = new System.Drawing.Point(193, 56);
-            this.lblDesIva.Name = "lblDesIva";
-            this.lblDesIva.Size = new System.Drawing.Size(304, 31);
-            this.lblDesIva.TabIndex = 79;
-            this.lblDesIva.Text = "Descripción código";
-            this.lblDesIva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDesCodigo.AutoSize = true;
+            this.lblDesCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDesCodigo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesCodigo.Location = new System.Drawing.Point(193, 25);
+            this.lblDesCodigo.Name = "lblDesCodigo";
+            this.lblDesCodigo.Size = new System.Drawing.Size(304, 25);
+            this.lblDesCodigo.TabIndex = 73;
+            this.lblDesCodigo.Text = "Descripción código";
+            this.lblDesCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDesTotal
+            // tableLayoutPanel1
             // 
-            this.lblDesTotal.AutoSize = true;
-            this.lblDesTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDesTotal.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesTotal.Location = new System.Drawing.Point(193, 87);
-            this.lblDesTotal.Name = "lblDesTotal";
-            this.lblDesTotal.Size = new System.Drawing.Size(304, 33);
-            this.lblDesTotal.TabIndex = 80;
-            this.lblDesTotal.Text = "Descripción código";
-            this.lblDesTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.lblDesTransaccion, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.33334F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(769, 146);
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // lblValor
+            // lblDesTransaccion
             // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblValor.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(632, 23);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(128, 33);
-            this.lblValor.TabIndex = 84;
-            this.lblValor.Text = "Valor";
-            this.lblValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDesTransaccion.AutoSize = true;
+            this.lblDesTransaccion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDesTransaccion.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesTransaccion.Location = new System.Drawing.Point(3, 0);
+            this.lblDesTransaccion.Name = "lblDesTransaccion";
+            this.lblDesTransaccion.Size = new System.Drawing.Size(763, 36);
+            this.lblDesTransaccion.TabIndex = 71;
+            this.lblDesTransaccion.Text = "Transacción";
+            this.lblDesTransaccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // clmID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(632, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 31);
-            this.label1.TabIndex = 85;
-            this.label1.Text = "Iva";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clmID.DataPropertyName = "ID";
+            this.clmID.HeaderText = "ID";
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
             // 
-            // label4
+            // Descripción
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(503, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 33);
-            this.label4.TabIndex = 86;
-            this.label4.Text = "Total";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 1;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Controls.Add(this.dgvDetalleVenta, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.lblLista, 0, 0);
-            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 2;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.955224F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.04478F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(1012, 261);
-            this.tableLayoutPanel14.TabIndex = 67;
-            // 
-            // lblLista
-            // 
-            this.lblLista.AutoSize = true;
-            this.lblLista.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLista.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLista.Location = new System.Drawing.Point(3, 0);
-            this.lblLista.Name = "lblLista";
-            this.lblLista.Size = new System.Drawing.Size(1006, 23);
-            this.lblLista.TabIndex = 70;
-            this.lblLista.Text = "Lista";
-            this.lblLista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvDetalleVenta
-            // 
-            this.dgvDetalleVenta.AllowUserToAddRows = false;
-            this.dgvDetalleVenta.AllowUserToDeleteRows = false;
-            this.dgvDetalleVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmTransaccionID,
-            this.clmCedulaRuc,
-            this.clmNombreApellido,
-            this.clmAutorizacion,
-            this.clmDescripcionCompra,
-            this.clmDescripcionServicio,
-            this.clmCantidad,
-            this.clmPrecioUnitario,
-            this.clmTotal,
-            this.clmFechaInicio,
-            this.clmFechaFin});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleVenta.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDetalleVenta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetalleVenta.EnableHeadersVisualStyles = false;
-            this.dgvDetalleVenta.GridColor = System.Drawing.Color.PowderBlue;
-            this.dgvDetalleVenta.Location = new System.Drawing.Point(3, 26);
-            this.dgvDetalleVenta.Name = "dgvDetalleVenta";
-            this.dgvDetalleVenta.ReadOnly = true;
-            this.dgvDetalleVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleVenta.Size = new System.Drawing.Size(1006, 232);
-            this.dgvDetalleVenta.TabIndex = 74;
-            // 
-            // clmTransaccionID
-            // 
-            this.clmTransaccionID.DataPropertyName = "tranID";
-            this.clmTransaccionID.HeaderText = "TransacciónID";
-            this.clmTransaccionID.Name = "clmTransaccionID";
-            this.clmTransaccionID.ReadOnly = true;
-            this.clmTransaccionID.Visible = false;
-            // 
-            // clmCedulaRuc
-            // 
-            this.clmCedulaRuc.DataPropertyName = "detperCedulaRuc";
-            this.clmCedulaRuc.HeaderText = "Cédula/Ruc";
-            this.clmCedulaRuc.Name = "clmCedulaRuc";
-            this.clmCedulaRuc.ReadOnly = true;
-            this.clmCedulaRuc.Width = 150;
-            // 
-            // clmNombreApellido
-            // 
-            this.clmNombreApellido.DataPropertyName = "Apellido_Nombre";
-            this.clmNombreApellido.HeaderText = "Nombre Apellido";
-            this.clmNombreApellido.Name = "clmNombreApellido";
-            this.clmNombreApellido.ReadOnly = true;
-            this.clmNombreApellido.Width = 210;
-            // 
-            // clmAutorizacion
-            // 
-            this.clmAutorizacion.DataPropertyName = "tranAutorizacion";
-            this.clmAutorizacion.HeaderText = "Autorización";
-            this.clmAutorizacion.Name = "clmAutorizacion";
-            this.clmAutorizacion.ReadOnly = true;
-            // 
-            // clmDescripcionCompra
-            // 
-            this.clmDescripcionCompra.DataPropertyName = "detranDescripcion";
-            this.clmDescripcionCompra.HeaderText = "Descripción compra";
-            this.clmDescripcionCompra.Name = "clmDescripcionCompra";
-            this.clmDescripcionCompra.ReadOnly = true;
-            this.clmDescripcionCompra.Visible = false;
-            // 
-            // clmDescripcionServicio
-            // 
-            this.clmDescripcionServicio.DataPropertyName = "tranDescripcion";
-            this.clmDescripcionServicio.HeaderText = "Descripción Servicio";
-            this.clmDescripcionServicio.Name = "clmDescripcionServicio";
-            this.clmDescripcionServicio.ReadOnly = true;
-            this.clmDescripcionServicio.Width = 270;
-            // 
-            // clmCantidad
-            // 
-            this.clmCantidad.DataPropertyName = "detranCantidad";
-            this.clmCantidad.HeaderText = "Cantidad";
-            this.clmCantidad.Name = "clmCantidad";
-            this.clmCantidad.ReadOnly = true;
+            this.Descripción.DataPropertyName = "Descripción";
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 200;
             // 
             // clmPrecioUnitario
             // 
-            this.clmPrecioUnitario.DataPropertyName = "detranPrecioUnitario";
+            this.clmPrecioUnitario.DataPropertyName = "Precio Unitario";
             this.clmPrecioUnitario.HeaderText = "Precio Unitario";
             this.clmPrecioUnitario.Name = "clmPrecioUnitario";
             this.clmPrecioUnitario.ReadOnly = true;
             this.clmPrecioUnitario.Width = 150;
             // 
-            // clmTotal
+            // clmAsientos
             // 
-            this.clmTotal.DataPropertyName = "Total";
-            this.clmTotal.HeaderText = "Total";
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            this.clmTotal.Width = 150;
+            this.clmAsientos.DataPropertyName = "Asientos";
+            this.clmAsientos.HeaderText = "Asientos";
+            this.clmAsientos.Name = "clmAsientos";
+            this.clmAsientos.ReadOnly = true;
             // 
-            // clmFechaInicio
+            // clmTranFecha
             // 
-            this.clmFechaInicio.DataPropertyName = "tranFecha";
-            this.clmFechaInicio.HeaderText = "Fecha Inicio";
-            this.clmFechaInicio.Name = "clmFechaInicio";
-            this.clmFechaInicio.ReadOnly = true;
-            this.clmFechaInicio.Visible = false;
+            this.clmTranFecha.DataPropertyName = "fecha";
+            this.clmTranFecha.HeaderText = "Fecha";
+            this.clmTranFecha.Name = "clmTranFecha";
+            this.clmTranFecha.ReadOnly = true;
+            this.clmTranFecha.Width = 120;
             // 
-            // clmFechaFin
+            // clmTiptranDescripcion
             // 
-            this.clmFechaFin.DataPropertyName = "tranFechaVencimiento";
-            this.clmFechaFin.HeaderText = "Fecha Fin";
-            this.clmFechaFin.Name = "clmFechaFin";
-            this.clmFechaFin.ReadOnly = true;
-            this.clmFechaFin.Visible = false;
+            this.clmTiptranDescripcion.DataPropertyName = "tiptranDescripcion";
+            this.clmTiptranDescripcion.HeaderText = "Tipo";
+            this.clmTiptranDescripcion.Name = "clmTiptranDescripcion";
+            this.clmTiptranDescripcion.ReadOnly = true;
             // 
             // formIngresoAsiento
             // 
@@ -849,13 +807,13 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAsientos)).EndInit();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -867,11 +825,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label lblFechaInicio;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaInicio;
+        private System.Windows.Forms.DateTimePicker dtmDesde;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaFinal;
-        private System.Windows.Forms.Button btnMostrarReporte;
+        private System.Windows.Forms.DateTimePicker dtmHasta;
+        private System.Windows.Forms.Button btnBusAsiento;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Button btnAsiSinIngresar;
         private System.Windows.Forms.Button btnAsiIngresados;
@@ -887,9 +845,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblLista;
+        private System.Windows.Forms.DataGridView dgvAsientos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblDesTransaccion;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label lblDesCodigo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblDebe;
@@ -897,23 +857,16 @@
         private System.Windows.Forms.ComboBox cmbValor;
         private System.Windows.Forms.ComboBox cmbIva;
         private System.Windows.Forms.ComboBox cmbTotal;
-        private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblDesCodigo;
         private System.Windows.Forms.Label lblDesIva;
         private System.Windows.Forms.Label lblDesTotal;
-        private System.Windows.Forms.DataGridView dgvDetalleVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTransaccionID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCedulaRuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmAutorizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcionCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcionServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblIva;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmAsientos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTranFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTiptranDescripcion;
     }
 }

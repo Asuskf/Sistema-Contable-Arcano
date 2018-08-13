@@ -97,7 +97,8 @@ namespace capaDatos
 
         }
 
-        public string insertarUsuario(string usuNombre, string usuApellido, string usuDireccion, string usuCorreo, string usuNombreUsuario, string usuContrasena) {
+        public string insertarUsuario(string usuNombre, string usuApellido, string usuDireccion, string usuCorreo, string usuNombreUsuario, string usuContrasena)
+        {
             string mensaje = "Usuario creado con exito";
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
@@ -106,11 +107,12 @@ namespace capaDatos
                 comando = new SqlCommand("insert into TB_USUARIO (usuNombre,usuApellido,usuDireccion,usuCorreo,usuNombreUsuario,usuContrasena) values ('" + usuNombre + "', '" + usuApellido + "', '" + usuDireccion + "', " +
                     "'" + usuCorreo + "', '" + usuNombreUsuario + "',  '" + usuContrasena + "')", cnn);
                 comando.ExecuteNonQuery();
-                
+
             }
-            catch (SqlException){
-                 
-               mensaje = "Este nombre de usuario ya está tomado. Porfavor cambielo y vuelva a intentarlo";
+            catch (SqlException)
+            {
+
+                mensaje = "Este nombre de usuario ya está tomado. Porfavor cambielo y vuelva a intentarlo";
             }
             cnn.Close();
             return mensaje;
@@ -128,9 +130,11 @@ namespace capaDatos
             cnn.Close();
         }
 
-       
-        public void verImagen(PictureBox pbIconoUsuario, string usuNombreUsuario) {
-            try {
+
+        public void verImagen(PictureBox pbIconoUsuario, string usuNombreUsuario)
+        {
+            try
+            {
                 if (cnn.State == ConnectionState.Closed)
                     cnn.Open();
                 adapt = new SqlDataAdapter("Select usuFoto from TB_USUARIO where usuNombreUsuario = '" + usuNombreUsuario + "' ", cnn);
@@ -142,14 +146,16 @@ namespace capaDatos
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(datos);
                 pbIconoUsuario.Image = System.Drawing.Bitmap.FromStream(ms);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
 
                 pbIconoUsuario.Image = pbIconoUsuario.InitialImage;
             }
             cnn.Close();
         }
 
-        public void verClientes(DataGridView grid, String tipoUsuario) {
+        public void verClientes(DataGridView grid, String tipoUsuario)
+        {
 
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
@@ -162,14 +168,14 @@ namespace capaDatos
 
         }
 
-        public string guardarImagen(PictureBox usuImagen, int IDUsuario)
+        public string guardarImagen(PictureBox usuImagen, int USUID)
         {
             string mensaje = "Tu foto de perfil se actualizo";
             try
             {
-                
+
                 cnn.Open();
-                comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuID = '" + IDUsuario + "'", cnn);
+                comando = new SqlCommand("update TB_USUARIO set usuFoto = @usuImagen where  usuID = '" + USUID + "'", cnn);
                 comando.Parameters.Add("@usuImagen", SqlDbType.Image);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 usuImagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
@@ -184,7 +190,8 @@ namespace capaDatos
             return mensaje;
         }
 
-        public void buscarComboboxUsuario(ComboBox comboBox, int tipoPerfil) {
+        public void buscarComboboxUsuario(ComboBox comboBox, int tipoPerfil)
+        {
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
             comando = new SqlCommand("select detperID , CONCAT(detperNombre, ' ', detperApellido) as Nombre from TB_DETALLE_PERFIL  where perID = '" + tipoPerfil + "'", cnn);
@@ -196,7 +203,8 @@ namespace capaDatos
             comboBox.DataSource = dt1;
 
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
-            foreach (DataRow row in dt1.Rows) {
+            foreach (DataRow row in dt1.Rows)
+            {
                 coleccion.Add(Convert.ToString(row["Nombre"]));
             }
             comboBox.AutoCompleteCustomSource = coleccion;
@@ -213,7 +221,8 @@ namespace capaDatos
             adapt = new SqlDataAdapter(comando);
             DataTable dt2 = new DataTable();
             adapt.Fill(dt2);
-            foreach (DataRow dr in dt2.Rows) {
+            foreach (DataRow dr in dt2.Rows)
+            {
 
                 cedula.Text = Convert.ToString(dr["detperCedulaRuc"]);
                 correo.Text = Convert.ToString(dr["detperCorreo"]);
@@ -223,17 +232,18 @@ namespace capaDatos
 
         public static int usuariologeado;
 
-        public string IngresarCompraVenta(ComboBox usuID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento, string detranDescripcion, string detranPrecioUnitario, int detranCantidad) {
+        public string IngresarCompraVenta(ComboBox usuID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento, string detranDescripcion, string detranPrecioUnitario, int detranCantidad)
+        {
             string mensaje = "Registro guardado con exito";
-                    
+
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
             try
             {
-            comando = new SqlCommand("exec SP_ingreoCompraVenta '" + usuID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "','" + tranDescripcion + "', '" + Convert.ToDateTime(tranFecha).ToString("yyyy-MM-dd") + "' , '" + tranAutorizacion + "' ,'" + Convert.ToDateTime(tranFechaVencimiento).ToString("yyyy-MM-dd") + "', '" + detranDescripcion + "' , '" + detranPrecioUnitario + "' ,'" + detranCantidad + "' ", cnn);
-            comando.ExecuteNonQuery();
+                comando = new SqlCommand("exec SP_ingreoCompraVenta '" + usuID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "','" + tranDescripcion + "', '" + Convert.ToDateTime(tranFecha).ToString("yyyy-MM-dd") + "' , '" + tranAutorizacion + "' ,'" + Convert.ToDateTime(tranFechaVencimiento).ToString("yyyy-MM-dd") + "', '" + detranDescripcion + "' , '" + detranPrecioUnitario + "' ,'" + detranCantidad + "' ", cnn);
+                comando.ExecuteNonQuery();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
 
                 mensaje = "Ocurrió un error al ingresar el registro";
@@ -241,8 +251,9 @@ namespace capaDatos
             cnn.Close();
             return mensaje;
         }
-        
-        public string actualizarCompraVenta(ComboBox detperID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento, string detranDescripcion, string detranPrecioUnitario, int detranCantidad, int tranID) {
+
+        public string actualizarCompraVenta(ComboBox detperID, int tiptranID, string tranDescripcion, string tranFecha, string tranAutorizacion, string tranFechaVencimiento, string detranDescripcion, string detranPrecioUnitario, int detranCantidad, int tranID)
+        {
             string mensaje = "Registro actualizado correctamente";
             try
             {
@@ -251,10 +262,11 @@ namespace capaDatos
                 comando = new SqlCommand("exec SP_editarCompraVenta '" + detperID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "', '" + tranDescripcion + "', '" + tranFecha + "', '" + tranAutorizacion + "', '" + tranFechaVencimiento + "', '" + detranDescripcion + "', '" + detranPrecioUnitario + "', '" + detranCantidad + "', '" + tranID + "' ", cnn);
                 comando.ExecuteNonQuery();
             }
-            catch (SqlException) {
+            catch (SqlException)
+            {
                 mensaje = "Ocurrió un error al editar el registro";
             }
-                return mensaje;
+            return mensaje;
         }
 
         public void verCompraVenta(DataGridView grid, int tipoTransaccion)
@@ -262,7 +274,7 @@ namespace capaDatos
 
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
-            comando = new SqlCommand("select t.tranID,dp.detperCedulaRuc, CONCAT(dp.detperApellido,' ',dp.detperNombre) as Apellido_Nombre,t.tranAutorizacion,dt.detranDescripcion, t.tranDescripcion, dt.detranCantidad, dt.detranPrecioUnitario,t.tranFecha,t.tranFechaVencimiento, (dt.detranPrecioUnitario * dt.detranCantidad) as Total from TB_DETALLE_PERFIL dp left join TB_TRANSACCION t on dp.detperID = t.detperID  inner join TB_DETALLES_TRANSACCION dt on t.tranID = dt.tranID where t.tiptranID = '" + tipoTransaccion + "' ; ", cnn);
+            comando = new SqlCommand("select t.tranID,dp.detperCedulaRuc, CONCAT(dp.detperApellido,' ',dp.detperNombre) as Apellido_Nombre,t.tranAutorizacion,dt.detranDescripcion, t.tranDescripcion, dt.detranCantidad, cast( dt.detranPrecioUnitario as decimal(10,2)) as 'Precio_Unitario',t.tranFecha,t.tranFechaVencimiento, cast( (dt.detranPrecioUnitario * dt.detranCantidad) as decimal(10,2)) as Total from TB_DETALLE_PERFIL dp left join TB_TRANSACCION t on dp.detperID = t.detperID  inner join TB_DETALLES_TRANSACCION dt on t.tranID = dt.tranID where t.tiptranID = '" + tipoTransaccion + "' ; ", cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
             adapt.Fill(dt1);
@@ -310,6 +322,7 @@ namespace capaDatos
             comboBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cnn.Close();
         }
+
         public void cargarDatosAsientos(ComboBox comboBox, Label descripcion)
         {
             if (cnn.State == ConnectionState.Closed)
@@ -327,6 +340,43 @@ namespace capaDatos
             cnn.Close();
         }
 
+        public void verAsientos(DataGridView grid, int verificacionAsiento)
+        {
+            string consulta = " ";
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            switch (verificacionAsiento) {
+                case 0:
+                    consulta = "select dt.detranID as 'ID', dt.detranDescripcion as 'Descripción',cast(dt.detranPrecioUnitario as decimal(10,2)) as 'Precio Unitario', count(it.itemtraID) as 'Asientos', tra.tranFecha as fecha , tt.tiptranDescripcion from TB_DETALLES_TRANSACCION dt left join TB_ITEM_TRANSACCION it on dt.detranID = it.detranID inner join TB_TRANSACCION tra on dt.tranID = tra.tranID inner join TB_TIPO_TRANSACCION tt on tra.tiptranID = tt.tiptranID group by dt.detranID, dt.detranDescripcion, dt.detranPrecioUnitario, tra.tranFecha, tt.tiptranDescripcion having count(it.itemtraID) >= 0";
+                    break;
+                case 1:
+                    consulta = "select dt.detranID as 'ID', dt.detranDescripcion as 'Descripción',cast(dt.detranPrecioUnitario as decimal(10,2)) as 'Precio Unitario', count(it.itemtraID) as 'Asientos', tra.tranFecha as fecha , tt.tiptranDescripcion from TB_DETALLES_TRANSACCION dt left join TB_ITEM_TRANSACCION it on dt.detranID = it.detranID inner join TB_TRANSACCION tra on dt.tranID = tra.tranID inner join TB_TIPO_TRANSACCION tt on tra.tiptranID = tt.tiptranID group by dt.detranID, dt.detranDescripcion, dt.detranPrecioUnitario, tra.tranFecha, tt.tiptranDescripcion having count(it.itemtraID) > 0";
+                    break;
+                case 2:
+                    consulta = "select dt.detranID as 'ID', dt.detranDescripcion as 'Descripción',cast(dt.detranPrecioUnitario as decimal(10,2)) as 'Precio Unitario', count(it.itemtraID) as 'Asientos', tra.tranFecha as fecha , tt.tiptranDescripcion from TB_DETALLES_TRANSACCION dt left join TB_ITEM_TRANSACCION it on dt.detranID = it.detranID inner join TB_TRANSACCION tra on dt.tranID = tra.tranID inner join TB_TIPO_TRANSACCION tt on tra.tiptranID = tt.tiptranID group by dt.detranID, dt.detranDescripcion, dt.detranPrecioUnitario, tra.tranFecha, tt.tiptranDescripcion having count(it.itemtraID) = 0";
+                    break;
+            }
+            comando = new SqlCommand(consulta, cnn);
+            adapt = new SqlDataAdapter(comando);
+            dt1 = new DataTable();
+            adapt.Fill(dt1);
+            grid.DataSource = dt1;
+            cnn.Close();
 
+        }
+
+        public void verAsientosFecha(DataGridView grid, string desde, string hasta)
+        {
+           
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            comando = new SqlCommand("select dt.detranID as 'ID', dt.detranDescripcion as 'Descripción',cast(dt.detranPrecioUnitario as decimal(10,2)) as 'Precio Unitario', count(it.itemtraID) as 'Asientos', tra.tranFecha as fecha , tt.tiptranDescripcion from TB_DETALLES_TRANSACCION dt left join TB_ITEM_TRANSACCION it on dt.detranID = it.detranID inner join TB_TRANSACCION tra on dt.tranID = tra.tranID inner join TB_TIPO_TRANSACCION tt on tra.tiptranID = tt.tiptranID group by dt.detranID, dt.detranDescripcion, dt.detranPrecioUnitario, tra.tranFecha, tt.tiptranDescripcion as tipo  having count(it.itemtraID) >= 0 and tranFecha between '" + desde + "' and '" + hasta + "' order by dt.detranID ", cnn);
+            adapt = new SqlDataAdapter(comando);
+            dt1 = new DataTable();
+            adapt.Fill(dt1);
+            grid.DataSource = dt1;
+            cnn.Close();
+
+        }
     }
 }

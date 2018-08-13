@@ -22,6 +22,7 @@ namespace capaPresentacion
         private void btnClientes_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelVentas, new formListaClientes());
+            
         }
 
         private void btnIngresoVentas_Click(object sender, EventArgs e)

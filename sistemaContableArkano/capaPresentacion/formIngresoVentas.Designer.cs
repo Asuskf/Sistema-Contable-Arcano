@@ -72,14 +72,13 @@
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
             this.clmTransaccionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCedulaRuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombreApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAutorizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDescripcionCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDescripcionServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -659,14 +658,13 @@
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmTransaccionID,
-            this.usuNombre,
             this.clmCedulaRuc,
             this.clmNombreApellido,
             this.clmAutorizacion,
             this.clmDescripcionCompra,
             this.clmDescripcionServicio,
             this.clmCantidad,
-            this.clmPrecioUnitario,
+            this.clmPrecio,
             this.clmTotal,
             this.clmFechaInicio,
             this.clmFechaFin});
@@ -693,17 +691,11 @@
             // clmTransaccionID
             // 
             this.clmTransaccionID.DataPropertyName = "tranID";
+            this.clmTransaccionID.FillWeight = 120F;
             this.clmTransaccionID.HeaderText = "TransacciónID";
             this.clmTransaccionID.Name = "clmTransaccionID";
             this.clmTransaccionID.ReadOnly = true;
             this.clmTransaccionID.Visible = false;
-            // 
-            // usuNombre
-            // 
-            this.usuNombre.DataPropertyName = "usuNombre";
-            this.usuNombre.HeaderText = "usuNombre";
-            this.usuNombre.Name = "usuNombre";
-            this.usuNombre.ReadOnly = true;
             // 
             // clmCedulaRuc
             // 
@@ -751,13 +743,14 @@
             this.clmCantidad.Name = "clmCantidad";
             this.clmCantidad.ReadOnly = true;
             // 
-            // clmPrecioUnitario
+            // clmPrecio
             // 
-            this.clmPrecioUnitario.DataPropertyName = "detranPrecioUnitario";
-            this.clmPrecioUnitario.HeaderText = "Precio Unitario";
-            this.clmPrecioUnitario.Name = "clmPrecioUnitario";
-            this.clmPrecioUnitario.ReadOnly = true;
-            this.clmPrecioUnitario.Width = 150;
+            this.clmPrecio.DataPropertyName = "Precio_Unitario";
+            this.clmPrecio.HeaderText = "Precio Unitario";
+            this.clmPrecio.MinimumWidth = 100;
+            this.clmPrecio.Name = "clmPrecio";
+            this.clmPrecio.ReadOnly = true;
+            this.clmPrecio.Width = 150;
             // 
             // clmTotal
             // 
@@ -868,14 +861,13 @@
         private System.Windows.Forms.TextBox txtCI_RUCProveedor;
         private System.Windows.Forms.ComboBox cmbNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTransaccionID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCedulaRuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombreApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAutorizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcionCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDescripcionServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaFin;

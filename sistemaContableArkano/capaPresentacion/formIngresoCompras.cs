@@ -13,7 +13,7 @@ namespace capaPresentacion
     public partial class formIngresoCompras : Form
     {
         capaDatos.ConexionBD capaDatos = new capaDatos.ConexionBD();
-        Controladores.controladores validarDatos = new Controladores.controladores();
+        capaPresentacion.Controladores.controladores validarDatos = new capaPresentacion.Controladores.controladores();
 
         public formIngresoCompras()
         {
@@ -24,14 +24,14 @@ namespace capaPresentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
         }
 
         private void btnAniadirCompra_Click(object sender, EventArgs e)
         {
             verificarControles();
-            if (camposllenos==true)
+            if (camposllenos == true)
             {
                 string precioConvertido = validarDatos.valorMoneda2(txtPrecio.Text);
                 MessageBox.Show(capaDatos.IngresarCompraVenta(cmbNombre, 1, txtDescripcionCompra.Text, dateTimeFecha.Text, txtAutorizacionCompra.Text, dateTimeFechaVencimiento.Text, txtDescripcionCompra2.Text, precioConvertido, Convert.ToInt32(txtCantidadCompra.Text)));
@@ -52,12 +52,12 @@ namespace capaPresentacion
             if (camposllenos == true)
             {
                 string precioConvertido = validarDatos.valorMoneda2(txtPrecio.Text);
-                MessageBox.Show(capaDatos.actualizarCompraVenta(cmbNombre, 1,txtDescripcionCompra.Text, dateTimeFecha.Text, txtAutorizacionCompra.Text, dateTimeFechaVencimiento.Text, txtDescripcionCompra2.Text, precioConvertido, Convert.ToInt32(txtCantidadCompra.Text), transaccionID));
+                MessageBox.Show(capaDatos.actualizarCompraVenta(cmbNombre, 1, txtDescripcionCompra.Text, dateTimeFecha.Text, txtAutorizacionCompra.Text, dateTimeFechaVencimiento.Text, txtDescripcionCompra2.Text, precioConvertido, Convert.ToInt32(txtCantidadCompra.Text), transaccionID));
                 capaDatos.verCompraVenta(dgvDetalleCompra, 1);
                 limpiarControles2();
                 camposllenos = false;
             }
-                
+
         }
 
         private void formIngresoCompras_Load(object sender, EventArgs e)
@@ -125,11 +125,11 @@ namespace capaPresentacion
             transaccionID = Convert.ToInt32(dgvDetalleCompra.CurrentRow.Cells[0].Value);
             this.txtProveedorCI_RUC.Text = dgvDetalleCompra.CurrentRow.Cells[1].Value.ToString();
             this.cmbNombre.Text = dgvDetalleCompra.CurrentRow.Cells[2].Value.ToString();
-            this.txtAutorizacionCompra.Text= dgvDetalleCompra.CurrentRow.Cells[3].Value.ToString();
+            this.txtAutorizacionCompra.Text = dgvDetalleCompra.CurrentRow.Cells[3].Value.ToString();
             this.txtDescripcionCompra.Text = dgvDetalleCompra.CurrentRow.Cells[4].Value.ToString();
             this.txtDescripcionCompra2.Text = dgvDetalleCompra.CurrentRow.Cells[5].Value.ToString();
             this.txtCantidadCompra.Text = dgvDetalleCompra.CurrentRow.Cells[6].Value.ToString();
-            double cc= Convert.ToDouble(dgvDetalleCompra.CurrentRow.Cells[7].Value.ToString());
+            double cc = Convert.ToDouble(dgvDetalleCompra.CurrentRow.Cells[7].Value.ToString());
             this.txtPrecio.Text = cc.ToString("#,##0.00");
             this.dateTimeFecha.Text = dgvDetalleCompra.CurrentRow.Cells[8].Value.ToString();
             this.dateTimeFechaVencimiento.Text = dgvDetalleCompra.CurrentRow.Cells[9].Value.ToString();

@@ -15,6 +15,7 @@ namespace capaPresentacion
     {
         ConexionBD capaDatos = new ConexionBD();
 
+        int idAsiento;
         public formIngresoAsiento()
         {
             InitializeComponent();
@@ -46,9 +47,36 @@ namespace capaPresentacion
 
         private void formIngresoAsiento_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sistemaContableArcano2DataSet.TB_TIPO_TRANSACCION' Puede moverla o quitarla según sea necesario.
-           
+            capaDatos.verAsientos(dgvAsientos, 0);
+        }
 
+        private void btnAsiIngresados_Click(object sender, EventArgs e)
+        {
+            capaDatos.verAsientos(dgvAsientos, 1);
+        }
+
+        private void btnAsiSinIngresar_Click(object sender, EventArgs e)
+        {
+            capaDatos.verAsientos(dgvAsientos, 2);
+        }
+
+        private void dgvAsientos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            double valor = Convert.ToDouble(dgvAsientos.CurrentRow.Cells[2].Value);
+            double iva = (valor * 0.12);
+            double total = (valor * 1.12);
+
+            idAsiento = Convert.ToInt32(dgvAsientos.CurrentRow.Cells[0].Value);
+            lblDesTransaccion.Text = dgvAsientos.CurrentRow.Cells[1].Value.ToString();
+            lblValor.Text = dgvAsientos.CurrentRow.Cells[2].Value.ToString();
+            lblIva.Text = iva.ToString();
+            lblTotal.Text = total.ToString();
+        }
+
+        private void btnBusAsiento_Click(object sender, EventArgs e)
+        {
+            capaDatos.verAsientosFecha(dgvAsientos, dtmDesde.Text, dtmDesde.Text);
+            
         }
     }
 }
