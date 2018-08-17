@@ -1,4 +1,5 @@
-﻿using System;
+﻿using capaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace capaPresentacion
 {
     public partial class formReporteAsiento : Form
     {
+        ConexionBD capaDatos = new ConexionBD();
+
         public formReporteAsiento()
         {
             InitializeComponent();
+            capaDatos.buscarComboboxItemAsiento(cmbValor);
+        }
+
+        private void cmbValor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            capaDatos.cargarDatosAsientos(cmbValor, lblDesCodigo);
         }
     }
 }

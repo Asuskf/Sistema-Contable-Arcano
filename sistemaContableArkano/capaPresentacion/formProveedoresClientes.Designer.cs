@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedoresClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCedula = new System.Windows.Forms.Label();
@@ -512,8 +512,8 @@
             // clmClieProverID
             // 
             this.clmClieProverID.DataPropertyName = "detperID";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmClieProverID.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmClieProverID.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmClieProverID.HeaderText = "PersonaID";
             this.clmClieProverID.Name = "clmClieProverID";
             this.clmClieProverID.ReadOnly = true;
@@ -522,8 +522,8 @@
             // clmDescripcion
             // 
             this.clmDescripcion.DataPropertyName = "perDescripcion";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmDescripcion.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmDescripcion.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmDescripcion.HeaderText = "Descripción";
             this.clmDescripcion.Name = "clmDescripcion";
             this.clmDescripcion.ReadOnly = true;
@@ -531,8 +531,8 @@
             // clmCedulaRuc
             // 
             this.clmCedulaRuc.DataPropertyName = "detperCedulaRuc";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmCedulaRuc.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmCedulaRuc.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmCedulaRuc.HeaderText = "Cédula/Ruc";
             this.clmCedulaRuc.Name = "clmCedulaRuc";
             this.clmCedulaRuc.ReadOnly = true;
@@ -541,8 +541,8 @@
             // clmNombre
             // 
             this.clmNombre.DataPropertyName = "detperNombre";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmNombre.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmNombre.DefaultCellStyle = dataGridViewCellStyle4;
             this.clmNombre.HeaderText = "Nombre";
             this.clmNombre.Name = "clmNombre";
             this.clmNombre.ReadOnly = true;
@@ -551,8 +551,8 @@
             // clmApellido
             // 
             this.clmApellido.DataPropertyName = "detperApellido";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmApellido.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmApellido.DefaultCellStyle = dataGridViewCellStyle5;
             this.clmApellido.HeaderText = "Apellido";
             this.clmApellido.Name = "clmApellido";
             this.clmApellido.ReadOnly = true;
@@ -561,8 +561,8 @@
             // clmCorreo
             // 
             this.clmCorreo.DataPropertyName = "detperCorreo";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmCorreo.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmCorreo.DefaultCellStyle = dataGridViewCellStyle6;
             this.clmCorreo.HeaderText = "Correo";
             this.clmCorreo.Name = "clmCorreo";
             this.clmCorreo.ReadOnly = true;
@@ -571,8 +571,8 @@
             // clmDireccion
             // 
             this.clmDireccion.DataPropertyName = "detperDireccion";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
-            this.clmDireccion.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Bold);
+            this.clmDireccion.DefaultCellStyle = dataGridViewCellStyle7;
             this.clmDireccion.HeaderText = "Dirección";
             this.clmDireccion.Name = "clmDireccion";
             this.clmDireccion.ReadOnly = true;

@@ -15,6 +15,7 @@ namespace capaPresentacion
     public partial class formIngresoAsiento : Form
     {
         ConexionBD capaDatos = new ConexionBD();
+
         Controladores.controladores validarDatos = new Controladores.controladores();
 
         int idAsiento;
@@ -56,11 +57,13 @@ namespace capaPresentacion
         private void btnAsiIngresados_Click(object sender, EventArgs e)
         {
             capaDatos.verAsientos(dgvAsientos, 1);
+            validarDatos.contorladorBotonesOpcAs(btnAsiIngresados, btnAsiSinIngresar, 218, 154, 72);
         }
 
         private void btnAsiSinIngresar_Click(object sender, EventArgs e)
         {
             capaDatos.verAsientos(dgvAsientos, 2);
+            validarDatos.contorladorBotonesOpcAs(btnAsiSinIngresar, btnAsiIngresados, 142, 81, 4);
         }
 
         private void dgvAsientos_CellClick(object sender, DataGridViewCellEventArgs e)

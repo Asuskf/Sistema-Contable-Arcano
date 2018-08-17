@@ -174,6 +174,7 @@
             this.cmbValor.Name = "cmbValor";
             this.cmbValor.Size = new System.Drawing.Size(232, 21);
             this.cmbValor.TabIndex = 77;
+            this.cmbValor.SelectedIndexChanged += new System.EventHandler(this.cmbValor_SelectedIndexChanged);
             // 
             // lblDesCodigo
             // 

@@ -127,7 +127,26 @@ namespace capaPresentacion.Controladores
             string valorMoneda = cajaTexto2;
             return valorMoneda;
         }
-        
+        public void controladorBotonesMenPrin(Button activo, Button desactivado, Button desactivado2, Button desactivado3, Button desactivado4) {
+            activo.BackColor = Color.FromArgb(0, 0, 0);
+            desactivado.BackColor = Color.FromArgb(0, 130, 204);
+            desactivado2.BackColor = Color.FromArgb(0, 130, 204);
+            desactivado3.BackColor = Color.FromArgb(0, 130, 204);
+            desactivado4.BackColor = Color.FromArgb(0, 130, 204);
+        }
+
+        public void controladorBotonesMenSec(Button activo, Button desactivado, int R, int G, int B, Button desactivado2, int R2, int G2, int B2) {
+            activo.BackColor = Color.FromArgb(0, 0, 0);
+            desactivado.BackColor = Color.FromArgb(R, G, B);
+            desactivado2.BackColor = Color.FromArgb(R2, G2, B2);
+        }
+
+        public void contorladorBotonesOpcAs(Button activo, Button desactivado, int R, int G, int B) {
+            activo.BackColor = Color.FromArgb(121, 128, 130);
+            activo.Enabled = false;
+            desactivado.BackColor = Color.FromArgb(R, G, B);
+            desactivado.Enabled = true;
+        }
     }
 }
 
