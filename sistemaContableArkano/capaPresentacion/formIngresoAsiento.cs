@@ -102,9 +102,17 @@ namespace capaPresentacion
             string ivaStr = validarDatos.valorMoneda2(Math.Round(iva, 2).ToString());
             string totalStr = validarDatos.valorMoneda2(Math.Round(total, 2).ToString());
 
-            MessageBox.Show(capaDatos.grabarAsiento(idAsiento, cmbValor, 2, valorStr, cmbIva, 2, ivaStr, cmbTotal, 1, totalStr));
+            if (dgvAsientos.CurrentRow.Cells[5].Value.ToString() == "compra")
+            {
+                MessageBox.Show(capaDatos.grabarAsiento(idAsiento, cmbValor, 1, valorStr, cmbIva, 1, ivaStr, cmbTotal, 2, totalStr));
 
-            
+            }
+            else
+            {
+                MessageBox.Show(capaDatos.grabarAsiento(idAsiento, cmbValor, 2, valorStr, cmbIva, 2, ivaStr, cmbTotal, 1, totalStr));
+            }
+
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
