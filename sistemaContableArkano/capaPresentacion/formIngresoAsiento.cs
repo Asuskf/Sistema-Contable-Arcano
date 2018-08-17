@@ -69,6 +69,16 @@ namespace capaPresentacion
             double iva = (valor * 0.12);
             double total = (valor * 1.12);
 
+            if (dgvAsientos.CurrentRow.Cells[5].Value.ToString() == "compra")
+            {
+                lblDebe.Text = "Haber";
+                lblHaber.Text = "Debe";
+            }
+            else {
+                lblDebe.Text = "Debe";
+                lblHaber.Text = "Haber";
+            }
+            
             idAsiento = Convert.ToInt32(dgvAsientos.CurrentRow.Cells[0].Value);
             lblDesTransaccion.Text = dgvAsientos.CurrentRow.Cells[1].Value.ToString();
             lblValor.Text = Math.Round(valor, 2).ToString();
@@ -91,7 +101,8 @@ namespace capaPresentacion
             string valorStr = validarDatos.valorMoneda2(Math.Round(valor, 2).ToString());
             string ivaStr = validarDatos.valorMoneda2(Math.Round(iva, 2).ToString());
             string totalStr = validarDatos.valorMoneda2(Math.Round(total, 2).ToString());
-              MessageBox.Show(capaDatos.grabarAsiento(idAsiento, cmbValor, 2, valorStr, cmbIva, 2, ivaStr, cmbTotal, 1, totalStr));
+
+            MessageBox.Show(capaDatos.grabarAsiento(idAsiento, cmbValor, 2, valorStr, cmbIva, 2, ivaStr, cmbTotal, 1, totalStr));
 
             
         }

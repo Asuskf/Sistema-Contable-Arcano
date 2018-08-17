@@ -391,10 +391,10 @@ namespace capaDatos
                 comando = new SqlCommand("insert into TB_ITEM_TRANSACCION (detranID, plaindID, tipAsID, itemtraValor) values('" + detranID + "', '" + plaindID.SelectedValue + "', '" + tipoAs+ "', '" + itemValor + "'), ('" + detranID + "', '" + plaindID2.SelectedValue + "', '" + tipoAs2 + "', '" + itemValor2 + "'), ('" + detranID + "', '" + plaindID3.SelectedValue + "', '" + tipoAs3 + "', '" + itemValor3 + "')", cnn);
                 comando.ExecuteNonQuery();
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
 
-                mensaje = "Ha ocurrido un error al realizar la transacción ";
+                mensaje = "Error, No has seleccionado una transacción ";
             }
             cnn.Close();
             return mensaje;

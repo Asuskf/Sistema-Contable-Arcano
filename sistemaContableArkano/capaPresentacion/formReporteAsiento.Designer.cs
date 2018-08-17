@@ -33,21 +33,15 @@
             this.lblReporteAsientos = new System.Windows.Forms.Label();
             this.dgvReporteCompras = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.dateTimeFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.dateTimeFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.btnMostrarReporte = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnExportarPDF = new System.Windows.Forms.Button();
+            this.cmbValor = new System.Windows.Forms.ComboBox();
+            this.lblDesCodigo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteCompras)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
@@ -99,96 +93,23 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnMostrarReporte, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblDesCodigo, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cmbValor, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMostrarReporte, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 41);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 34);
             this.tableLayoutPanel2.TabIndex = 76;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel3.Controls.Add(this.lblFechaInicio, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimeFechaInicio, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(311, 28);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // lblFechaInicio
-            // 
-            this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicio.Location = new System.Drawing.Point(3, 0);
-            this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(118, 28);
-            this.lblFechaInicio.TabIndex = 0;
-            this.lblFechaInicio.Text = "Desde:";
-            this.lblFechaInicio.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // dateTimeFechaInicio
-            // 
-            this.dateTimeFechaInicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimeFechaInicio.Location = new System.Drawing.Point(127, 3);
-            this.dateTimeFechaInicio.Name = "dateTimeFechaInicio";
-            this.dateTimeFechaInicio.Size = new System.Drawing.Size(181, 20);
-            this.dateTimeFechaInicio.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel4.Controls.Add(this.lblFechaFin, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dateTimeFechaFinal, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(478, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(313, 28);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblFechaFin.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFin.Location = new System.Drawing.Point(3, 0);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(119, 18);
-            this.lblFechaFin.TabIndex = 0;
-            this.lblFechaFin.Text = "Hasta:";
-            this.lblFechaFin.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // dateTimeFechaFinal
-            // 
-            this.dateTimeFechaFinal.Location = new System.Drawing.Point(128, 3);
-            this.dateTimeFechaFinal.Name = "dateTimeFechaFinal";
-            this.dateTimeFechaFinal.Size = new System.Drawing.Size(182, 20);
-            this.dateTimeFechaFinal.TabIndex = 1;
-            // 
             // btnMostrarReporte
             // 
-            this.btnMostrarReporte.Location = new System.Drawing.Point(320, 3);
+            this.btnMostrarReporte.Location = new System.Drawing.Point(638, 3);
             this.btnMostrarReporte.Name = "btnMostrarReporte";
             this.btnMostrarReporte.Size = new System.Drawing.Size(152, 23);
             this.btnMostrarReporte.TabIndex = 2;
@@ -245,6 +166,27 @@
             this.btnExportarPDF.Text = "Exportar PDF";
             this.btnExportarPDF.UseVisualStyleBackColor = false;
             // 
+            // cmbValor
+            // 
+            this.cmbValor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbValor.FormattingEnabled = true;
+            this.cmbValor.Location = new System.Drawing.Point(3, 3);
+            this.cmbValor.Name = "cmbValor";
+            this.cmbValor.Size = new System.Drawing.Size(232, 21);
+            this.cmbValor.TabIndex = 77;
+            // 
+            // lblDesCodigo
+            // 
+            this.lblDesCodigo.AutoSize = true;
+            this.lblDesCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDesCodigo.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesCodigo.Location = new System.Drawing.Point(241, 0);
+            this.lblDesCodigo.Name = "lblDesCodigo";
+            this.lblDesCodigo.Size = new System.Drawing.Size(391, 34);
+            this.lblDesCodigo.TabIndex = 78;
+            this.lblDesCodigo.Text = "Descripción código";
+            this.lblDesCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formReporteAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,10 +200,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteCompras)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -274,15 +213,11 @@
         private System.Windows.Forms.Label lblReporteAsientos;
         private System.Windows.Forms.DataGridView dgvReporteCompras;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label lblFechaInicio;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaInicio;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.DateTimePicker dateTimeFechaFinal;
         private System.Windows.Forms.Button btnMostrarReporte;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Button btnExportarPDF;
+        private System.Windows.Forms.ComboBox cmbValor;
+        private System.Windows.Forms.Label lblDesCodigo;
     }
 }
