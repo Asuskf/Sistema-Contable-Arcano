@@ -127,6 +127,7 @@ namespace capaPresentacion.Controladores
             string valorMoneda = cajaTexto2;
             return valorMoneda;
         }
+        
     }
 }
 

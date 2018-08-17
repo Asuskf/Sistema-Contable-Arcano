@@ -378,5 +378,27 @@ namespace capaDatos
             cnn.Close();
 
         }
+
+        
+        public string grabarAsiento(int detranID, ComboBox plaindID, int tipoAs, string itemValor, ComboBox plaindID2, int tipoAs2, string itemValor2, ComboBox plaindID3, int tipoAs3, string itemValor3)
+    {
+            string mensaje = "Registro guardado con exito";
+
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            try
+            {
+                comando = new SqlCommand("insert into TB_ITEM_TRANSACCION (detranID, plaindID, tipAsID, itemtraValor) values('" + detranID + "', '" + plaindID.SelectedValue + "', '" + tipoAs+ "', '" + itemValor + "'), ('" + detranID + "', '" + plaindID2.SelectedValue + "', '" + tipoAs2 + "', '" + itemValor2 + "'), ('" + detranID + "', '" + plaindID3.SelectedValue + "', '" + tipoAs3 + "', '" + itemValor3 + "')", cnn);
+                comando.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+
+                mensaje = "Ha ocurrido un error al realizar la transacción ";
+            }
+            cnn.Close();
+            return mensaje;
+        }
+
     }
 }
