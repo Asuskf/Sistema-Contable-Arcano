@@ -33,6 +33,7 @@
             this.lblReporteVentas = new System.Windows.Forms.Label();
             this.dgvReporteVentas = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnMostrarReporteVentas = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.dateTimeFechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblNumeroTotal = new System.Windows.Forms.Label();
-            this.btnMostrarReporteVentas = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteVentas)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -118,6 +118,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 33);
             this.tableLayoutPanel2.TabIndex = 76;
+            // 
+            // btnMostrarReporteVentas
+            // 
+            this.btnMostrarReporteVentas.Location = new System.Drawing.Point(320, 3);
+            this.btnMostrarReporteVentas.Name = "btnMostrarReporteVentas";
+            this.btnMostrarReporteVentas.Size = new System.Drawing.Size(152, 23);
+            this.btnMostrarReporteVentas.TabIndex = 3;
+            this.btnMostrarReporteVentas.Text = "Mostrar reporte";
+            this.btnMostrarReporteVentas.UseVisualStyleBackColor = true;
+            this.btnMostrarReporteVentas.Click += new System.EventHandler(this.btnMostrarReporteVentas_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -241,6 +251,7 @@
             this.btnExportarPDF.TabStop = false;
             this.btnExportarPDF.Text = "Exportar PDF";
             this.btnExportarPDF.UseVisualStyleBackColor = false;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -279,16 +290,6 @@
             this.lblNumeroTotal.Size = new System.Drawing.Size(40, 50);
             this.lblNumeroTotal.TabIndex = 1;
             this.lblNumeroTotal.Text = "0,00";
-            // 
-            // btnMostrarReporteVentas
-            // 
-            this.btnMostrarReporteVentas.Location = new System.Drawing.Point(320, 3);
-            this.btnMostrarReporteVentas.Name = "btnMostrarReporteVentas";
-            this.btnMostrarReporteVentas.Size = new System.Drawing.Size(152, 23);
-            this.btnMostrarReporteVentas.TabIndex = 3;
-            this.btnMostrarReporteVentas.Text = "Mostrar reporte";
-            this.btnMostrarReporteVentas.UseVisualStyleBackColor = true;
-            this.btnMostrarReporteVentas.Click += new System.EventHandler(this.btnMostrarReporteVentas_Click);
             // 
             // formReporteVentas
             // 

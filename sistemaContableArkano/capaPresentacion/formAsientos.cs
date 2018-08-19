@@ -22,11 +22,14 @@ namespace capaPresentacion
         private void btnAsiento_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelAsiento, new formIngresoAsiento());
+            controladores.controladorBotonesSubMenAsc(btnAsiento, btnMayorizacion, 10, 161, 141);
         }
 
         private void btnMayorizacion_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelAsiento, new formReporteAsiento());
+            controladores.controladorBotonesSubMenAsc(btnMayorizacion, btnAsiento, 56, 77, 140);
+
         }
     }
 }

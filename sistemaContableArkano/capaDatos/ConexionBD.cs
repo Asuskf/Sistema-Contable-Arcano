@@ -304,18 +304,18 @@ namespace capaDatos
         {
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
-            comando = new SqlCommand("select plaindID, plaindNumero from TB_PLANCUENTAS_INDICE", cnn);
+            comando = new SqlCommand("select plaindID, plaindNombre from TB_PLANCUENTAS_INDICE", cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
             adapt.Fill(dt1);
             comboBox.ValueMember = "plaindID";
-            comboBox.DisplayMember = "plaindNumero";
+            comboBox.DisplayMember = "plaindNombre";
             comboBox.DataSource = dt1;
 
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
             foreach (DataRow row in dt1.Rows)
             {
-                coleccion.Add(Convert.ToString(row["plaindNumero"]));
+                coleccion.Add(Convert.ToString(row["plaindNombre"]));
             }
             comboBox.AutoCompleteCustomSource = coleccion;
             comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMenuPrincipal));
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.btnAsientoa = new System.Windows.Forms.Button();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnAsientoa = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -78,6 +78,24 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(210, 650);
             this.menuVertical.TabIndex = 0;
+            // 
+            // btnAsientoa
+            // 
+            this.btnAsientoa.FlatAppearance.BorderSize = 0;
+            this.btnAsientoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAsientoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsientoa.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsientoa.ForeColor = System.Drawing.Color.White;
+            this.btnAsientoa.Image = ((System.Drawing.Image)(resources.GetObject("btnAsientoa.Image")));
+            this.btnAsientoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsientoa.Location = new System.Drawing.Point(4, 428);
+            this.btnAsientoa.Name = "btnAsientoa";
+            this.btnAsientoa.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAsientoa.Size = new System.Drawing.Size(209, 45);
+            this.btnAsientoa.TabIndex = 64;
+            this.btnAsientoa.Text = "Asientos";
+            this.btnAsientoa.UseVisualStyleBackColor = true;
+            this.btnAsientoa.Click += new System.EventHandler(this.btnAsientoa_Click);
             // 
             // lblApellido
             // 
@@ -304,24 +322,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1090, 600);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelContenedor_MouseDown);
-            // 
-            // btnAsientoa
-            // 
-            this.btnAsientoa.FlatAppearance.BorderSize = 0;
-            this.btnAsientoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnAsientoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsientoa.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsientoa.ForeColor = System.Drawing.Color.White;
-            this.btnAsientoa.Image = ((System.Drawing.Image)(resources.GetObject("btnAsientoa.Image")));
-            this.btnAsientoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsientoa.Location = new System.Drawing.Point(4, 428);
-            this.btnAsientoa.Name = "btnAsientoa";
-            this.btnAsientoa.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnAsientoa.Size = new System.Drawing.Size(209, 45);
-            this.btnAsientoa.TabIndex = 64;
-            this.btnAsientoa.Text = "Asientos";
-            this.btnAsientoa.UseVisualStyleBackColor = true;
-            this.btnAsientoa.Click += new System.EventHandler(this.btnAsientoa_Click);
             // 
             // formMenuPrincipal
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capaDatos;
+using capaPresentacion.Reportes.repVentas;
 
 namespace capaPresentacion
 {
@@ -40,6 +41,10 @@ namespace capaPresentacion
             capaDatos.LLenarGrid(dgvReporteVentas, sentenLLenarCompras);
         }
 
-
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            repVentas rep = new repVentas();
+            rep.Show();
+        }
     }
 }

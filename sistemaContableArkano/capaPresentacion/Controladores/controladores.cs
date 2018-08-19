@@ -147,6 +147,10 @@ namespace capaPresentacion.Controladores
             desactivado.BackColor = Color.FromArgb(R, G, B);
             desactivado.Enabled = true;
         }
+        public void controladorBotonesSubMenAsc(Button activo, Button desactivado, int R, int G, int B) {
+            activo.BackColor = Color.FromArgb(0, 0, 0);
+            desactivado.BackColor = Color.FromArgb(R,G,B);
+        }
     }
 }
 
