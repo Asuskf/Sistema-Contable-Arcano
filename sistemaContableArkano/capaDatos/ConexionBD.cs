@@ -16,7 +16,7 @@ namespace capaDatos
         //cadena de conexion
         //private string cadenaBD = "Data Source=DESKTOP-A4GPQL3;Initial Catalog=SistemaContableArcano2;Integrated Security=True";
         //private string cadenaBD = "Data Source=SMLAB304PC21_17;Initial Catalog=SistemaContableArcano2;User ID=SA;Password=Uisrael2018"; 
-        private string cadenaBD = "Data Source=DESKTOP-A4GPQL3;Initial Catalog=SistemaContableArcano2;Integrated Security=True";
+        private string cadenaBD = "Data Source=DESKTOP-TL8NQ49\\ALEXGD;Initial Catalog=SistemaContableArcano;Integrated Security=True";
         public SqlConnection cnn;
         private SqlCommandBuilder cmb;
         public DataSet ds = new DataSet();  //el data set guarda varias tablas llamadas Datatable que nos servira para mostrar los datos
@@ -130,6 +130,14 @@ namespace capaDatos
             cnn.Close();
         }
 
+        public void consultarReporte(string sql5, DataTable tabla)
+        {
+            cnn.Open();
+            comando = new SqlCommand(sql5, cnn);
+            SqlDataAdapter adapta = new SqlDataAdapter(comando);
+            adapta.Fill(tabla);
+            cnn.Close();
+        }
 
         public void verImagen(PictureBox pbIconoUsuario, string usuNombreUsuario)
         {
@@ -259,7 +267,7 @@ namespace capaDatos
             {
                 if (cnn.State == ConnectionState.Closed)
                     cnn.Open();
-                comando = new SqlCommand("exec SP_editarCompraVenta '" + detperID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "', '" + tranDescripcion + "', '" + tranFecha + "', '" + tranAutorizacion + "', '" + tranFechaVencimiento + "', '" + detranDescripcion + "', '" + detranPrecioUnitario + "', '" + detranCantidad + "', '" + tranID + "' ", cnn);
+                comando = new SqlCommand("exec SP_editarCompraVenta '" + detperID.SelectedValue + "','" + usuariologeado + "','" + tiptranID + "', '" + tranDescripcion + "', '" + Convert.ToDateTime(tranFecha).ToString("yyyy-MM-dd") + "', '" + tranAutorizacion + "', '" + Convert.ToDateTime(tranFechaVencimiento).ToString("yyyy-MM-dd") + "', '" + detranDescripcion + "', '" + detranPrecioUnitario + "', '" + detranCantidad + "', '" + tranID + "' ", cnn);
                 comando.ExecuteNonQuery();
             }
             catch (SqlException)
@@ -304,18 +312,18 @@ namespace capaDatos
         {
             if (cnn.State == ConnectionState.Closed)
                 cnn.Open();
-            comando = new SqlCommand("select plaindID, plaindNumero from TB_PLANCUENTAS_INDICE", cnn);
+            comando = new SqlCommand("select plaindID, plaindNombre from TB_PLANCUENTAS_INDICE", cnn);
             adapt = new SqlDataAdapter(comando);
             dt1 = new DataTable();
             adapt.Fill(dt1);
             comboBox.ValueMember = "plaindID";
-            comboBox.DisplayMember = "plaindNumero";
+            comboBox.DisplayMember = "plaindNombre";
             comboBox.DataSource = dt1;
 
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
             foreach (DataRow row in dt1.Rows)
             {
-                coleccion.Add(Convert.ToString(row["plaindNumero"]));
+                coleccion.Add(Convert.ToString(row["plaindNombre"]));
             }
             comboBox.AutoCompleteCustomSource = coleccion;
             comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -381,7 +389,7 @@ namespace capaDatos
 
         
         public string grabarAsiento(int detranID, ComboBox plaindID, int tipoAs, string itemValor, ComboBox plaindID2, int tipoAs2, string itemValor2, ComboBox plaindID3, int tipoAs3, string itemValor3)
-    {
+        {
             string mensaje = "Registro guardado con exito";
 
             if (cnn.State == ConnectionState.Closed)
@@ -400,5 +408,45 @@ namespace capaDatos
             return mensaje;
         }
 
+        public void mostrarReporteAsiento(int plaindID2,DataGridView grid)
+        {
+            string sentenciGrid;
+            DataTable valorsRealList;
+            string detranDescripcion, plaindNumero, tranFecha;
+            double itemtraValor;
+            int plaindID, tipAsID,contaDataTable=0;
+            
+            try
+            {
+                sentenciGrid = "select pli.plaindID as 'ID',pli.plaindNumero as 'Código', dt.detranDescripcion as 'Descripción', tra.tranFecha as 'Fecha', it.itemtraValor as 'valor',it.tipAsID from TB_PLANCUENTAS_INDICE pli inner join TB_ITEM_TRANSACCION it on pli.plaindID = it.plaindID inner join TB_TIPO_ASIENTO ta on it.tipAsID = ta.tipAsID inner join TB_DETALLES_TRANSACCION dt on it.detranID = dt.detranID inner join TB_TRANSACCION tra on dt.tranID = tra.tranID where pli.plaindID = '" + plaindID2 + "'";
+
+                valorsRealList = new DataTable();
+                consultarReporte(sentenciGrid, valorsRealList);
+
+                foreach (DataRow rowRecorrer in valorsRealList.Rows)
+                {
+                    plaindID = Convert.ToInt32(valorsRealList.Rows[contaDataTable].ItemArray[0]);
+                    plaindNumero = valorsRealList.Rows[contaDataTable].ItemArray[1].ToString();
+                    detranDescripcion = valorsRealList.Rows[contaDataTable].ItemArray[2].ToString();
+                    tranFecha = valorsRealList.Rows[contaDataTable].ItemArray[3].ToString();
+                    itemtraValor = Convert.ToDouble(valorsRealList.Rows[contaDataTable].ItemArray[4].ToString());
+                    tipAsID = Convert.ToInt32(valorsRealList.Rows[contaDataTable].ItemArray[5]);
+                    if (tipAsID == 1)
+                        grid.Rows.Add(plaindID, tranFecha, plaindNumero, detranDescripcion,itemtraValor.ToString("#,##0.00"), "0.00");
+                    else
+                        grid.Rows.Add(plaindID, tranFecha, plaindNumero, detranDescripcion, "0.00", itemtraValor.ToString("#,##0.00"));
+
+                    contaDataTable++;
+                }
+                    
+                
+            }
+            catch (SqlException)
+            {
+
+                MessageBox.Show("Error al mostrar el reporte", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }

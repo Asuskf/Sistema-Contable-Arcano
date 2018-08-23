@@ -33,14 +33,16 @@ namespace capaPresentacion
             verificarControles();
             if (camposllenos == true)
             {
-                string precioConvertido = validarDatos.valorMoneda2(txtPrecio.Text);
+                double precioConvertido2 = Convert.ToDouble(txtPrecio.Text);
+                string precioConvertido = validarDatos.valorMoneda2(precioConvertido2.ToString());
+                //string precioConvertido = validarDatos.valorMoneda2(txtPrecio.Text);
                 MessageBox.Show(capaDatos.IngresarCompraVenta(cmbNombre, 1, txtDescripcionCompra.Text, dateTimeFecha.Text, txtAutorizacionCompra.Text, dateTimeFechaVencimiento.Text, txtDescripcionCompra2.Text, precioConvertido, Convert.ToInt32(txtCantidadCompra.Text)));
                 capaDatos.verCompraVenta(dgvDetalleCompra, 1);
                 limpiarControles2();
                 camposllenos = false;
             }
         }
-
+        
         private void cmbNombre_SelectedIndexChanged(object sender, EventArgs e)
         {
             capaDatos.cargarDatos(cmbNombre, txtProveedorCI_RUC, txtCorreo);
@@ -51,7 +53,8 @@ namespace capaPresentacion
             verificarControles();
             if (camposllenos == true)
             {
-                string precioConvertido = validarDatos.valorMoneda2(txtPrecio.Text);
+                double precioConvertido2 = Convert.ToDouble(txtPrecio.Text);
+                string precioConvertido = validarDatos.valorMoneda2(precioConvertido2.ToString());
                 MessageBox.Show(capaDatos.actualizarCompraVenta(cmbNombre, 1, txtDescripcionCompra.Text, dateTimeFecha.Text, txtAutorizacionCompra.Text, dateTimeFechaVencimiento.Text, txtDescripcionCompra2.Text, precioConvertido, Convert.ToInt32(txtCantidadCompra.Text), transaccionID));
                 capaDatos.verCompraVenta(dgvDetalleCompra, 1);
                 limpiarControles2();
