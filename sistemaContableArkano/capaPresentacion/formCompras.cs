@@ -28,16 +28,19 @@ namespace capaPresentacion
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelCompras, new formListaProveedores());
+            controladores.controladorBotonesMenSec(btnProveedores,btnIngresoCompras, 210, 122, 65, btnReportes,10,161,141);
         }
 
         private void btnIngresoCompras_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelCompras, new formIngresoCompras());
+            controladores.controladorBotonesMenSec(btnIngresoCompras, btnProveedores,56,77,140, btnReportes,10, 161, 141);
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
             controladores.abrirFormularioPanel(panelCompras, new formReporteCompras());
+            controladores.controladorBotonesMenSec(btnReportes, btnIngresoCompras, 210, 122, 65, btnProveedores, 56, 77, 140);
         }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)

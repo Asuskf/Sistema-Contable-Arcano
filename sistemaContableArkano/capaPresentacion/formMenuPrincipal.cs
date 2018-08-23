@@ -86,7 +86,7 @@ namespace capaPresentacion
             frmUsu.iconoPasado += new formUsuario.pasarIcono(ejecutar);
             frmUsu.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
             controladores.abrirFormularioPanel(panelContenedor, frmUsu);
-
+            controladores.controladorBotonesMenPrin(btnUsuario, btnCompras, btnVentas, btnProveedorCliente, btnAsientoa);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -99,6 +99,7 @@ namespace capaPresentacion
             formCompras frmC = new formCompras();
             frmC.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
             controladores.abrirFormularioPanel(panelContenedor, frmC);
+            controladores.controladorBotonesMenPrin(btnCompras, btnVentas, btnUsuario, btnProveedorCliente, btnAsientoa);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -106,6 +107,7 @@ namespace capaPresentacion
             formProveedoresClientes frmP = new formProveedoresClientes();
             frmP.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
             controladores.abrirFormularioPanel(panelContenedor, frmP);
+            controladores.controladorBotonesMenPrin(btnProveedorCliente, btnVentas, btnUsuario, btnCompras, btnAsientoa);
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
@@ -113,6 +115,7 @@ namespace capaPresentacion
             formVentas frmV = new formVentas();
             frmV.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
             controladores.abrirFormularioPanel(panelContenedor, frmV);
+            controladores.controladorBotonesMenPrin(btnVentas,btnUsuario,btnCompras,btnProveedorCliente,btnAsientoa);
         }
         private void mostrarInicio()
         {
@@ -135,6 +138,7 @@ namespace capaPresentacion
             formAsientos frmA = new formAsientos();
             frmA.FormClosed += new FormClosedEventHandler(mostrarInicioCerrar);
             controladores.abrirFormularioPanel(panelContenedor, frmA);
+            controladores.controladorBotonesMenPrin(btnAsientoa, btnUsuario, btnCompras, btnVentas, btnProveedorCliente);
         }
     }
 }
